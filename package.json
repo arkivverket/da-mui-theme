@@ -2,6 +2,7 @@
   "name": "@digitalarkivet/mui-theme",
   "version": "1.0.0",
   "description": "MUI themes for Digitalarkivet applications",
+  "private": false,
   "main": "src/light.tsx",
   "author": "Arkivvverket",
   "license": "MIT",
@@ -20,7 +21,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@mui/material": "^5.5.1"
   }
 }
