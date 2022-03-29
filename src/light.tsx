@@ -1,100 +1,95 @@
 import { createTheme } from '@mui/material/styles'
 
 export const theme = createTheme({
-    palette: {
-        primary: {
-            light: '#f2f2f2',
-            main: '#1d1d1d',
-            dark: '#000000',
-        },
-        secondary: {
-            light: '##F0F9F9',
-            main: '##A6D9D8',
-            dark: '##222222',
-        },
-        error: {
-            main: '#9c070b',
-        },
-        info: {
-            main: '#96a6bc',
-        },
-        background: {
-            default: '#e5e5e5',
-        }
-    },
-    typography: {
-        fontSize: 14, // 1 rem is still 16px
-        fontFamily: [
-            'Source Sans Pro',
-            '"Helvetica Neue"',
-            'Arial',
-            'sans-serif',
-        ].join(','),
-        body1: {
-            fontSize: 14,
-        },
-        h1: {
-            color: '#1D1D1D',
-            fontWeight: 500,
-            fontSize: 24,
-            lineHeight: '2rem',
-            marginBottom: '1.3rem',
-        },
-        h2: {
-            fontWeight: 500,
-            fontSize: 22,
-            lineHeight: '1.8rem',
-            marginBottom: '1rem',
-        },
-        h5: {
-            fontWeight: 450,
-            fontSize: 14,
-        },
-        h6: {                     // Digitalarkivet header
-            color: '#efefef',
-            textAlign: 'center',
-            textTransform: 'uppercase',
-            fontWeight: 400,
-            fontSize: 22,
-            letterSpacing: '3px',
-        }
-    },
-    components: {
-        MuiButton: {
-            defaultProps: {
-                disableElevation: true,
-            },
-            styleOverrides: {
-                root: {
-                    backgroundColor: '#A6D9D8',
-                    '&:hover': {
-                        backgroundColor: '#99C7C5'
-                    },
-                    color: '#222222',
-                    paddingLeft: '2rem',
-                    paddingRight: '2rem',
-                    textTransform: 'none',
-                    fontSize: 14,
-                    minWidth: '120px'
-                },
-            },
-            variants: [{
-                props: { variant: 'secondary' },
-                style: {
-                    backgroundColor: '#FFFFFF',
-                    border: '2px solid #A6D9D8',
-                    '&:hover': {
-                        backgroundColor: '#FFFFFF',
-                        border: '2px solid #99C7C5'
-                    }
-                }
-            }],
-        }
-    },
+	palette: {
+		background: {
+				default: "#fafafa",
+				paper: "#ffffff",
+		},
+		text: {
+				secondary: "rgba(0,0,0,0.6)",
+				primary: "rgba(0,0,0,0.87)",
+				disabled: "rgba(0,0,0,0.38)",
+		},
+		divider: 'rgba(0,0,0,0.12)',
+		primary: {
+			main: "#3f51b5",
+			contrastText: "#ffffff",
+			dark: "#002884",
+			light: "#757de8",
+		},
+		secondary: {
+			main: "#daefef",
+			dark: "#a8bdbd",
+			light: "#e9ffff",
+			contrastText: "#1d1d1d",
+		},
+		error: {
+			main: "#d32f2f",
+			dark: "#c62828",
+			light: "#ef5350",
+			contrastText: "#ffffff",
+		},
+		warning: {
+			main: "#ed6c02",
+			dark: "#e65100",
+			light: "#ff9800",
+			contrastText: "#ffffff",
+		},
+		info: {
+			main: "#0288d1",
+			dark: "#01579b",
+			light: "#03a9f4",
+			contrastText: "#ffffff",
+		},
+		success: {
+			main: "#2e7d32",
+			dark: "#1b5e20",
+			light: "#4caf50",
+			contrastText: "#ffffff",
+		},
+	},
+	typography: {
+		fontSize: 14, // 1 rem is still 16px
+		fontFamily: [
+			'Source Sans Pro',
+			'"Helvetica Neue"',
+			'Arial',
+			'sans-serif',
+		].join(','),
+		body1: {
+			fontSize: 14,
+		},
+		h1: {
+			color: '#1D1D1D',
+			fontWeight: 500,
+			fontSize: 24,
+			lineHeight: '2rem',
+			marginBottom: '1.3rem',
+		},
+		h2: {
+			fontWeight: 500,
+			fontSize: 22,
+			lineHeight: '1.8rem',
+			marginBottom: '1rem',
+		},
+		h5: {
+			fontWeight: 450,
+			fontSize: 14,
+		},
+		h6: { // Digitalarkivet header
+			color: '#efefef',
+			textAlign: 'center',
+			textTransform: 'uppercase',
+			fontWeight: 400,
+			fontSize: 22,
+			letterSpacing: '3px',
+		}
+	},
 })
 
 declare module '@mui/material/Button' {
-    interface ButtonPropsVariantOverrides {
-        secondary: true
-    }
+	interface ButtonPropsVariantOverrides {
+		secondary: true
+	}
 }
