@@ -2,7 +2,7 @@
   "name": "@digitalarkivet/mui-theme",
   "version": "1.0.0",
   "description": "MUI themes for Digitalarkivet applications",
-  "main": "src/light.tsx",
+  "main": "src/light.js",
   "author": "Arkivvverket",
   "license": "MIT",
   "homepage": "https://digitalarkivet.no",
