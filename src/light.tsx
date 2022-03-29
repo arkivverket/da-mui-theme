@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from "@mui/material/styles"
 
 export const theme = createTheme({
 	palette: {
@@ -11,7 +11,7 @@ export const theme = createTheme({
 				primary: "rgba(0,0,0,0.87)",
 				disabled: "rgba(0,0,0,0.38)",
 		},
-		divider: 'rgba(0,0,0,0.12)',
+		divider: "rgba(0,0,0,0.12)",
 		primary: {
 			main: "#3f51b5",
 			contrastText: "#ffffff",
@@ -52,44 +52,38 @@ export const theme = createTheme({
 	typography: {
 		fontSize: 14, // 1 rem is still 16px
 		fontFamily: [
-			'Source Sans Pro',
-			'"Helvetica Neue"',
-			'Arial',
-			'sans-serif',
-		].join(','),
+			"Source Sans Pro",
+			"Helvetica Neue",
+			"Arial",
+			"sans-serif",
+		].join(","),
 		body1: {
 			fontSize: 14,
 		},
 		h1: {
-			color: '#1D1D1D',
+			color: "#1D1D1D",
 			fontWeight: 500,
 			fontSize: 24,
-			lineHeight: '2rem',
-			marginBottom: '1.3rem',
+			lineHeight: "2rem",
+			marginBottom: "1.3rem",
 		},
 		h2: {
 			fontWeight: 500,
 			fontSize: 22,
-			lineHeight: '1.8rem',
-			marginBottom: '1rem',
+			lineHeight: "1.8rem",
+			marginBottom: "1rem",
 		},
 		h5: {
 			fontWeight: 450,
 			fontSize: 14,
 		},
 		h6: { // Digitalarkivet header
-			color: '#efefef',
-			textAlign: 'center',
-			textTransform: 'uppercase',
+			color: "#efefef",
+			textAlign: "center",
+			textTransform: "uppercase",
 			fontWeight: 400,
 			fontSize: 22,
-			letterSpacing: '3px',
+			letterSpacing: "3px",
 		}
 	},
 })
-
-declare module '@mui/material/Button' {
-	interface ButtonPropsVariantOverrides {
-		secondary: true
-	}
-}
