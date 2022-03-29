@@ -1,21 +1,25 @@
 {
-  "name": "da-mui-template",
+  "name": "@digitalarkivet/mui-theme",
   "version": "1.0.0",
   "description": "MUI themes for Digitalarkivet applications",
   "main": "src/light.tsx",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Arkivvverket",
+  "license": "MIT",
+  "homepage": "https://digitalarkivet.no",
+  "keywords": [
+    "mui",
+    "digitalarkivet"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arkivverket/da-mui-template.git"
   },
-  "author": "",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/arkivverket/da-mui-template/issues"
   },
-  "homepage": "https://github.com/arkivverket/da-mui-template#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "@mui/material": "^5.5.1"
   }
