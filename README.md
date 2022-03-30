@@ -1,2 +1,3 @@
-# da-mui-template
-Template repo for MUI theme used in Digitalarkivet applications.
+# Digitalarkivet MUI Theme
+
+Package for MUI themes used in Digitalarkivet applications.
