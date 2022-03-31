@@ -3,13 +3,13 @@ import { createTheme } from "@mui/material/styles"
 export const theme = createTheme({
 	palette: {
 		background: {
-				default: "#fafafa",
-				paper: "#ffffff",
+			default: "#fafafa",
+			paper: "#ffffff",
 		},
 		text: {
-				secondary: "rgba(0,0,0,0.6)",
-				primary: "rgba(0,0,0,0.87)",
-				disabled: "rgba(0,0,0,0.38)",
+			secondary: "rgba(0,0,0,0.6)",
+			primary: "rgba(0,0,0,0.87)",
+			disabled: "rgba(0,0,0,0.38)",
 		},
 		divider: "rgba(0,0,0,0.12)",
 		primary: {
@@ -86,4 +86,24 @@ export const theme = createTheme({
 			letterSpacing: "3px",
 		}
 	},
+	components: {
+		MuiPaper: {
+			variants: [{
+				props: {
+					variant: 'padded',
+					elevation: 1,
+				},
+				style: {
+					padding: '2rem 3rem',
+					marginBottom: '1rem',
+				}
+			}]
+		}
+	}
 })
+
+declare module '@mui/material/Paper' {
+	interface PaperPropsVariantOverrides {
+		padded: true
+	}
+}
