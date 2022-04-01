@@ -95,6 +95,8 @@ const theme = createTheme({
 				style: {
 					padding: '2rem 3rem',
 					marginBottom: '1rem',
+					borderRadius: '1px',
+					boxShadow: '0px 0px 0px 1px #E0E0E0',
 				}
 			}]
 		}
