@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles"
 
-export const theme = createTheme({
+const theme = createTheme({
 	palette: {
 		background: {
 			default: "#fafafa",
@@ -91,11 +91,12 @@ export const theme = createTheme({
 			variants: [{
 				props: {
 					variant: 'padded',
-					elevation: 1,
 				},
 				style: {
 					padding: '2rem 3rem',
 					marginBottom: '1rem',
+					borderRadius: '1px',
+					boxShadow: '0px 0px 0px 1px #E0E0E0',
 				}
 			}]
 		}
@@ -107,3 +108,5 @@ declare module '@mui/material/Paper' {
 		padded: true
 	}
 }
+
+export default theme;

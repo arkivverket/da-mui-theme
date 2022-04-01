@@ -1,9 +1,10 @@
 {
   "name": "@digitalarkivet/mui-theme",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "MUI themes for Digitalarkivet applications",
   "private": false,
-  "main": "src/light.ts",
+  "main": "dist/light.js",
+  "types": "dist/light.d.ts",
   "author": "Arkivvverket",
   "license": "MIT",
   "homepage": "https://digitalarkivet.no",
@@ -19,10 +20,15 @@
     "url": "https://github.com/arkivverket/da-mui-theme/issues"
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.5.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3"
   }
 }
