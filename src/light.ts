@@ -60,42 +60,42 @@ const theme = createTheme({
 		body1: {
 			fontWeight: 400,
 			fontSize: 16,
-			lineHeight: 22,
+			lineHeight: "22px",
 			letterSpacing: "0.15px",
 		},
 		body2: {
 			fontWeight: 400,
 			fontSize: 14,
-			lineHeight: 20,
+			lineHeight: "20px",
 			letterSpacing: "0.17px",
 		},
 		h1: {
 			fontWeight: 300,
 			fontSize: 96,
-			lineHeight: 112,
+			lineHeight: "112px",
 			letterSpacing: "-1.5px",
 		},
 		h2: {
 			fontWeight: 300,
 			fontSize: 60,
-			lineHeight: 72,
+			lineHeight: "72px",
 			letterSpacing: "-0.5px",
 		},
 		h3: {
 			fontWeight: 400,
 			fontSize: 48,
-			lineHeight: 56,
+			lineHeight: "56px",
 		},
 		h4: {
 			fontWeight: 400,
 			fontSize: 30,
-			lineHeight: 37,
+			lineHeight: "37px",
 			letterSpacing: "0.25px",
 		},
 		h5: {
 			fontWeight: 400,
 			fontSize: 24,
-			lineHeight: 32,
+			lineHeight: "32px",
 		},
 		// Digitalarkivet header
 		h6: {
@@ -109,13 +109,13 @@ const theme = createTheme({
 		subtitle1: {
 			fontWeight: 400,
 			fontSize: 16,
-			lineHeight: 28,
+			lineHeight: "28px",
 			letterSpacing: "0.15px",
 		},
 		subtitle2: {
 			fontWeight: 600,
 			fontSize: 14,
-			lineHeight: 22,
+			lineHeight: "22px",
 			letterSpacing: "0.1px",
 		},
 	},
