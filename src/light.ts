@@ -88,8 +88,8 @@ const theme = createTheme({
 		},
 		h4: {
 			fontWeight: 400,
-			fontSize: 34,
-			lineHeight: 42,
+			fontSize: 30,
+			lineHeight: 37,
 			letterSpacing: "0.25px",
 		},
 		h5: {
