@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles"
 const theme = createTheme({
 	palette: {
 		background: {
-			default: "#fafafa",
+			default: "#f5f5f5",
 			paper: "#ffffff",
 		},
 		text: {
@@ -58,33 +58,66 @@ const theme = createTheme({
 			"sans-serif",
 		].join(","),
 		body1: {
+			fontWeight: 400,
+			fontSize: 16,
+			lineHeight: 22,
+			letterSpacing: "0.15px",
+		},
+		body2: {
+			fontWeight: 400,
 			fontSize: 14,
+			lineHeight: 20,
+			letterSpacing: "0.17px",
 		},
 		h1: {
-			color: "#1D1D1D",
-			fontWeight: 500,
-			fontSize: 24,
-			lineHeight: "2rem",
-			marginBottom: "1.3rem",
+			fontWeight: 300,
+			fontSize: 96,
+			lineHeight: 112,
+			letterSpacing: "-1.5px",
 		},
 		h2: {
-			fontWeight: 500,
-			fontSize: 22,
-			lineHeight: "1.8rem",
-			marginBottom: "1rem",
+			fontWeight: 300,
+			fontSize: 60,
+			lineHeight: 72,
+			letterSpacing: "-0.5px",
+		},
+		h3: {
+			fontWeight: 400,
+			fontSize: 48,
+			lineHeight: 56,
+		},
+		h4: {
+			fontWeight: 400,
+			fontSize: 34,
+			lineHeight: 42,
+			letterSpacing: "0.25px",
 		},
 		h5: {
-			fontWeight: 450,
-			fontSize: 14,
+			fontWeight: 400,
+			fontSize: 24,
+			lineHeight: 32,
 		},
-		h6: { // Digitalarkivet header
+		// Digitalarkivet header
+		h6: {
 			color: "#efefef",
 			textAlign: "center",
 			textTransform: "uppercase",
 			fontWeight: 400,
 			fontSize: 22,
 			letterSpacing: "3px",
-		}
+		},
+		subtitle1: {
+			fontWeight: 400,
+			fontSize: 16,
+			lineHeight: 28,
+			letterSpacing: "0.15px",
+		},
+		subtitle2: {
+			fontWeight: 600,
+			fontSize: 14,
+			lineHeight: 22,
+			letterSpacing: "0.1px",
+		},
 	},
 	components: {
 		MuiPaper: {
