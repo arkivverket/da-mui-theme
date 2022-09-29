@@ -122,20 +122,22 @@ const theme = createTheme({
 	},
 	components: {
 		MuiPaper: {
-			variants: [{
-				props: {
-					variant: 'padded',
+			variants: [
+				{
+					props: {
+						variant: "padded",
+					},
+					style: {
+						padding: "2rem 3rem",
+						marginBottom: "1rem",
+						borderRadius: "1px",
+						boxShadow: "0px 0px 0px 1px #E0E0E0",
+					},
 				},
-				style: {
-					padding: '2rem 3rem',
-					marginBottom: '1rem',
-					borderRadius: '1px',
-					boxShadow: '0px 0px 0px 1px #E0E0E0',
-				}
-			}]
-		}
-	}
-})
+			],
+		},
+	},
+});
 
 declare module '@mui/material/Paper' {
 	interface PaperPropsVariantOverrides {
