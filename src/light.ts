@@ -52,8 +52,9 @@ const theme = createTheme({
 	typography: {
 		fontSize: 14, // 1 rem is still 16px
 		fontFamily: [
-			"Source Sans Pro",
-			"Helvetica Neue",
+			"'Source Sans 3'",
+			"'Source Sans Pro'",
+			"'Helvetica Neue'",
 			"Arial",
 			"sans-serif",
 		].join(","),
