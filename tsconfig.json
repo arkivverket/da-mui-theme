@@ -1,21 +1,18 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": [
-      "es2017",
-      "es7",
-      "es6",
-      "dom"
-    ],
-    "declaration": true,
-    "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "test"
-  ]
+    "extends": "./tsconfig.dist.json",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "rootDir": "",
+        "baseUrl": "./gallery/src/",
+        "paths": {
+            "@da-mui-theme/*": ["../../src/*"]
+        },
+        "outDir": "./gallery/build"
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "test",
+        "gallery/build"
+      ]
 }
