@@ -10,6 +10,11 @@ declare module "@mui/material/styles" {
 		white: string
 	}
 
+	interface PaletteColor {
+		"25p": string
+		"50p": string
+	}
+
 	interface SimplePaletteColorOptions {
 		"25p": string
 		"50p": string
@@ -24,16 +29,17 @@ declare module "@mui/material/styles" {
 		selected: string
 	}
 }
-/** 
- * The Arkivverket MUI theme
+
+/**
+ * Arkivverket colors
  */
-const theme = createTheme({
+const themeColors = createTheme({
 	palette: {
 		background: {
 			default: "#f5f5f5",
 			paper: "#ffffff",
 			black: "#000",
-			white: "fff",
+			white: "#fff",
 			disabled: "rgba(224, 224, 224, 1)",
 			border: "rgba(196, 196, 196, 1)",
 			hover: "rgba(247, 248, 252, 1)",
@@ -162,24 +168,41 @@ const theme = createTheme({
 			letterSpacing: "0.1px",
 		},
 	},
-	components: {
-		MuiPaper: {
-			variants: [
-				{
-					props: {
-						variant: "padded",
+})
+
+/**
+ * The Arkivverket MUI theme
+ */
+const theme = createTheme(
+	{
+		components: {
+			MuiPaper: {
+				variants: [
+					{
+						props: {
+							variant: "padded",
+						},
+						style: {
+							padding: "2rem 3rem",
+							marginBottom: "1rem",
+							borderRadius: "1px",
+							boxShadow: "0px 0px 0px 1px #E0E0E0",
+						},
 					},
-					style: {
-						padding: "2rem 3rem",
-						marginBottom: "1rem",
-						borderRadius: "1px",
-						boxShadow: "0px 0px 0px 1px #E0E0E0",
-					},
+				],
+			},
+			MuiTextField: {
+				defaultProps: {
+					size: "small",
+					fullWidth: true,
 				},
-			],
+			},
 		},
 	},
-})
+	themeColors,
+)
+
+
 
 declare module "@mui/material/Paper" {
 	interface PaperPropsVariantOverrides {
