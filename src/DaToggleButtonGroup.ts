@@ -1,4 +1,4 @@
-import { PaletteOptions, SimplePaletteColorOptions, styled, ToggleButtonGroup, ToggleButtonGroupProps } from "@mui/material"
+import { PaletteOptions, styled, ToggleButtonGroup, ToggleButtonGroupProps } from "@mui/material"
 
 type DaToggleButtonGroupProps = ToggleButtonGroupProps & {
 	palette?: keyof Pick<PaletteOptions, "primary" | "secondary" | "info" | "error" | "warning" | "success">
