@@ -19,7 +19,6 @@ export const DaToggleButtonGroup = styled(ToggleButtonGroup, {
 		},
 		"& .MuiToggleButton-root": {
 			color: colorBase.main,
-			backgroundColor: theme.palette.background.white,
 			marginLeft: "1px",
 
 			"&:first-of-type": {
