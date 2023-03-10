@@ -58,7 +58,7 @@ export const SpacingExample = () => {
 							<ArrowDropDown />
 						</DaToggleButton>
 					</DaToggleButtonGroup>
-					<Popper anchorEl={popperRef.current} open={isOpen}>
+					<Popper anchorEl={popperRef.current} open={isOpen} sx={{ backgroundColor: "white" }}>
 						<DaToggleButtonGroup
 							orientation="vertical"
 							value={groupValue}
