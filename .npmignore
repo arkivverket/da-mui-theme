@@ -2,3 +2,5 @@ CODEOWNERS
 package-lock.json
 .editorconfig
 .github/
+.vscode/
+.prettierrc
