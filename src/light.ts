@@ -202,13 +202,10 @@ const theme = createTheme(
 	themeColors,
 )
 
-
-
 declare module "@mui/material/Paper" {
 	interface PaperPropsVariantOverrides {
 		padded: true
 	}
 }
-
 
 export default theme
