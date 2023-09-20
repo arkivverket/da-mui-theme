@@ -209,6 +209,14 @@ const theme = createTheme(
 					disableElevation: true,
 				}
 			},
+			MuiFab: {
+				defaultProps: {
+					color: "primary",
+					sx: {
+						boxShadow: 0,
+					},
+				}
+			},
 			MuiSwitch: {
 				styleOverrides: {
 					colorPrimary: {
@@ -228,9 +236,9 @@ const theme = createTheme(
 							opacity: 1,
 							backgroundColor: themeColors.palette.brandGrey.variant2,
 						}
-					}
+					},
 				},
-			}
+			},
 		},
 	},
 	themeColors,
