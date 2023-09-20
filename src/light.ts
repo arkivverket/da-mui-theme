@@ -179,7 +179,7 @@ const themeColors = createTheme({
 			lineHeight: "22px",
 			letterSpacing: "0.15px",
 		},
-	}
+	},
 })
 
 /**
@@ -207,7 +207,10 @@ const theme = createTheme(
 			MuiButton: {
 				defaultProps: {
 					disableElevation: true,
-				}
+					sx: {
+						textTransform: "none",
+					},
+				},
 			},
 			MuiFab: {
 				defaultProps: {
@@ -216,9 +219,10 @@ const theme = createTheme(
 						boxShadow: 0,
 						":active": {
 							boxShadow: 0,
-						}
+						},
+						textTransform: "none",
 					},
-				}
+				},
 			},
 			MuiSwitch: {
 				styleOverrides: {
@@ -226,7 +230,7 @@ const theme = createTheme(
 						color: themeColors.palette.text.primary,
 						"&.Mui-disabled": {
 							color: themeColors.palette.brandGrey.variant5,
-						}
+						},
 					},
 					track: {
 						opacity: 1,
@@ -238,7 +242,7 @@ const theme = createTheme(
 						".Mui-disabled.Mui-disabled + &": {
 							opacity: 1,
 							backgroundColor: themeColors.palette.brandGrey.variant2,
-						}
+						},
 					},
 				},
 			},
