@@ -91,6 +91,12 @@ declare module '@mui/material/Fab' {
 	}
 }
 
+declare module "@mui/material/Paper" {
+	interface PaperPropsVariantOverrides {
+		padded: true
+	}
+}
+
 /**
  * Arkivverket colors
  */
@@ -112,7 +118,7 @@ const themeColors = createTheme({
 		},
 		primary: {
 			main: "#2F4029",
-			contrastText: "#ffffff",
+			contrastText: "#FFFFFF",
 			dark: "#2B3B26",
 			light: "#505F4B",
 		},
@@ -179,6 +185,7 @@ const themeColors = createTheme({
 /**
  * The Arkivverket MUI theme
  */
+
 const theme = createTheme(
 	{
 		components: {
@@ -212,7 +219,7 @@ const theme = createTheme(
 					},
 					track: {
 						opacity: 1,
-						backgroundColor: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/
+						backgroundColor: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
 						".Mui-checked.Mui-checked + &": {
 							opacity: 1,
 							backgroundColor: themeColors.palette.brandGreen.variant2,
@@ -228,11 +235,5 @@ const theme = createTheme(
 	},
 	themeColors,
 )
-
-declare module "@mui/material/Paper" {
-	interface PaperPropsVariantOverrides {
-		padded: true
-	}
-}
 
 export default theme
