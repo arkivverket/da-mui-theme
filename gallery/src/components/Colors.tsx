@@ -53,9 +53,7 @@ const PaletteDisplay = ({ name, path }: { name: string; path: string }) => {
 			<Box display="grid" gridTemplateAreas={{ xs: '"a a" "b c" "d e"', md: '"a a b c" "a a d e"' }}>
 				<ColorDrop path={path} name="Main" big gridArea="a" />
 				<ColorDrop path={path} name="Dark" gridArea="b" />
-				<ColorDrop path={path} name="50p" gridArea="c" />
 				<ColorDrop path={path} name="Light" gridArea="d" />
-				<ColorDrop path={path} name="25p" gridArea="e" />
 			</Box>
 		</Stack>
 	)
@@ -68,9 +66,7 @@ const TextPaletteDisplay = ({}) => {
 			<Box display="grid" gridTemplateAreas={'"a a b c" "a a d e" "a a f g"'}>
 				<ColorDrop path={"text"} name="Primary" big gridArea="a" />
 				<ColorDrop path={"text"} name="Secondary" gridArea="b" />
-				<ColorDrop path={"text"} name="50p" gridArea="c" />
 				<ColorDrop path={"text"} name="Disabled" gridArea="d" />
-				<ColorDrop path={"text"} name="25p" gridArea="e" />
 				<ColorDrop path={"text"} name="White" gridArea="f" />
 			</Box>
 		</Stack>
@@ -86,13 +82,9 @@ const BackgroundPaletteDisplay = ({}) => {
 		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
 			<Typography variant="h4">Backgrounds</Typography>
 			<Stack>
-				<ColorDrop path={"background"} name="Black" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="White" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Disabled" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Border" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Hover" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Selected" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Primary" direction={"row"} sx={{ ...dropSx }} />
+				<ColorDrop path={"background"} name="Default" direction={"row"} sx={{ ...dropSx }} />
+				<ColorDrop path={"background"} name="Content" direction={"row"} sx={{ ...dropSx }} />
+				<ColorDrop path={"background"} name="Assets" direction={"row"} sx={{ ...dropSx }} />
 			</Stack>
 		</Stack>
 	)
@@ -108,24 +100,10 @@ export const Colors = () => {
 					<PaletteDisplay name="Primary colors" path="primary" />
 				</Grid>
 				<Grid item xs={6}>
-					<PaletteDisplay name="Info" path="info" />
-				</Grid>
-				<Grid item xs={6}>
 					<PaletteDisplay name="Secondary colors" path="secondary" />
 				</Grid>
 				<Grid item xs={6}>
-					<PaletteDisplay name="Error" path="error" />
-				</Grid>
-
-				<Grid item xs={6}>
 					<TextPaletteDisplay />
-				</Grid>
-
-				<Grid item xs={6}>
-					<PaletteDisplay name="Warning" path="warning" />
-				</Grid>
-				<Grid item xs={6}>
-					<PaletteDisplay name="Success" path="success" />
 				</Grid>
 				<Grid item xs={6}>
 					<BackgroundPaletteDisplay />

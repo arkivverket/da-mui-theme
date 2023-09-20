@@ -1,32 +1,68 @@
-import { createTheme } from "@mui/material/styles"
+import { PaletteColor, createTheme } from "@mui/material/styles"
 
 /**
  * Extra colors used by Arkivverket
  */
 declare module "@mui/material/styles" {
-	interface TypeText {
-		"25p": string
-		"50p": string
-		white: string
-	}
-
-	interface PaletteColor {
-		"25p": string
-		"50p": string
-	}
-
-	interface SimplePaletteColorOptions {
-		"25p": string
-		"50p": string
-	}
 
 	interface TypeBackground {
-		black: string
-		white: string
-		disabled: string
-		border: string
-		hover: string
-		selected: string
+		content: string
+		assets: string
+	}
+
+	interface TypeText {
+		primaryWhite: string
+	}
+
+	interface PaletteOptions {
+		secondaryResult: PaletteColor;
+		brandGreen: {
+			variant1: string
+			variant2: string
+			variant3: string
+			variant4: string
+			variant5: string
+			variant6: string
+		}
+		brandBlue: {
+			variant1: string
+		}
+		brandOrange: {
+			variant1: string
+			variant2: string
+			variant3: string
+			variant4: string
+		}
+		brandYellow: {
+			variant1: string
+		}
+		brandBlack: {
+			variant1: string
+		}
+		brandWhite: {
+			variant1: string
+		}
+		brandGrey: {
+			variant1: string
+			variant2: string
+			variant3: string
+			variant4: string
+			variant5: string
+			variant6: string
+			variant7: string
+		}
+	}
+}
+
+declare module '@mui/material/Button' {
+	interface ButtonPropsColorOverrides {
+		secondaryResult: true
+	}
+}
+
+declare module '@mui/material/Fab' {
+	interface FabPropsColorOverrides {
+		secondaryResult: true
 	}
 }
 
@@ -34,140 +70,85 @@ declare module "@mui/material/styles" {
  * Arkivverket colors
  */
 const themeColors = createTheme({
+	shape: {
+		borderRadius: 1
+	},
 	palette: {
 		background: {
-			default: "#f5f5f5",
-			paper: "#ffffff",
-			black: "#000",
-			white: "#fff",
-			disabled: "rgba(224, 224, 224, 1)",
-			border: "rgba(196, 196, 196, 1)",
-			hover: "rgba(247, 248, 252, 1)",
-			selected: "rgba(240, 241, 249, 1)",
+			default: "#F9FAF7",
+			content: "#FFFFFF",
+			assets: "#F8F8F8",
 		},
 		text: {
-			secondary: "rgba(0,0,0,0.6)",
-			primary: "rgba(0,0,0,0.87)",
-			disabled: "rgba(0,0,0,0.38)",
-			"25p": "rgba(245, 245, 245, 1)",
-			"50p": "rgba(144, 144, 144, 1)",
-			white: "#fff",
+			primary: "#1D1D1D",
+			primaryWhite: "#FFFFFF",
+			secondary: "#636363",
+			disabled: "#AEAEAE",
 		},
-		divider: "rgba(0,0,0,0.12)",
 		primary: {
-			main: "#3f51b5",
+			main: "#2F4029",
 			contrastText: "#ffffff",
-			dark: "#002884",
-			light: "#757de8",
-			"50p": "rgba(159, 168, 218, 1)",
-			"25p": "rgba(207, 212, 237, 1)",
+			dark: "#2B3B26",
+			light: "#505F4B",
 		},
 		secondary: {
-			main: "#daefef",
-			dark: "#a8bdbd",
-			light: "#e9ffff",
-			contrastText: "#1d1d1d",
-			"50p": "rgba(237, 247, 247, 1)",
-			"25p": "rgba(246, 251, 251, 1)",
+			main: "#DFF0C2",
+			contrastText: "#1D1D1D",
+			dark: "#CDDDB2",
+			light: "#E4F2CC",
 		},
-		error: {
-			main: "#d32f2f",
-			dark: "#c62828",
-			light: "#ef5350",
-			contrastText: "#ffffff",
-			"50p": "rgba(233, 151, 151, 1)",
-			"25p": "rgba(244, 203, 203, 1)",
+		secondaryResult: {
+			main: '#E3ECF9',
+			contrastText: '#1D1D1D',
+			dark: '#D1D9E5',
+			light: '#E7EFFA',
 		},
-		warning: {
-			main: "#ed6c02",
-			dark: "#e65100",
-			light: "#ff9800",
-			contrastText: "#ffffff",
-			"50p": "rgba(246, 182, 128, 1)",
-			"25p": "rgba(251, 218, 192, 1)",
+		brandGreen: {
+			variant1: "#F9FAF7",
+			variant2: "#DFF0C2",
+			variant3: "#C6D7A9",
+			variant4: "#AEBF90",
+			variant5: "#7C8E5D",
+			variant6: "#2F4029",
 		},
-		info: {
-			main: "#0288d1",
-			dark: "#01579b",
-			light: "#03a9f4",
-			contrastText: "#ffffff",
-			"50p": "rgba(128, 195, 232, 1)",
-			"25p": "rgba(192, 225, 244, 1)",
+		brandBlue: {
+			variant1: "#E3ECF9",
 		},
-		success: {
-			main: "#2e7d32",
-			dark: "#1b5e20",
-			light: "#4caf50",
-			contrastText: "#ffffff",
-			"50p": "rgba(192, 225, 244, 1)",
-			"25p": "rgba(203, 223, 204, 1)",
+		brandOrange: {
+			variant1: "#FCD1A4",
+			variant2: "#FEB37F",
+			variant3: "#FF965B",
+			variant4: "#A73C2E",
+		},
+		brandYellow: {
+			variant1: "#FBEEC8",
+		},
+		brandBlack: {
+			variant1: "#000000",
+		},
+		brandWhite: {
+			variant1: "#FFFFFF",
+		},
+		brandGrey: {
+			variant1: "#F8F8F8",
+			variant2: "#EBEBEB",
+			variant3: "#D7D7D7",
+			variant4: "#C2C2C2",
+			variant5: "#AEAEAE",
+			variant6: "#636363",
+			variant7: "#1D1D1D",
 		},
 	},
 	typography: {
 		fontSize: 14, // 1 rem is still 16px
-		fontFamily: ["'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
+		fontFamily: ["'Neue Haas Grotesk'", "'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
 		body1: {
 			fontWeight: 400,
 			fontSize: 16,
 			lineHeight: "22px",
 			letterSpacing: "0.15px",
 		},
-		body2: {
-			fontWeight: 400,
-			fontSize: 14,
-			lineHeight: "20px",
-			letterSpacing: "0.17px",
-		},
-		h1: {
-			fontWeight: 300,
-			fontSize: 96,
-			lineHeight: "112px",
-			letterSpacing: "-1.5px",
-		},
-		h2: {
-			fontWeight: 300,
-			fontSize: 60,
-			lineHeight: "72px",
-			letterSpacing: "-0.5px",
-		},
-		h3: {
-			fontWeight: 400,
-			fontSize: 48,
-			lineHeight: "56px",
-		},
-		h4: {
-			fontWeight: 400,
-			fontSize: 30,
-			lineHeight: "37px",
-			letterSpacing: "0.25px",
-		},
-		h5: {
-			fontWeight: 400,
-			fontSize: 24,
-			lineHeight: "32px",
-		},
-		// Digitalarkivet header
-		h6: {
-			color: "#efefef",
-			textAlign: "center",
-			textTransform: "uppercase",
-			fontWeight: 400,
-			fontSize: 22,
-			letterSpacing: "3px",
-		},
-		subtitle1: {
-			fontWeight: 400,
-			fontSize: 16,
-			lineHeight: "28px",
-			letterSpacing: "0.15px",
-		},
-		subtitle2: {
-			fontWeight: 600,
-			fontSize: 14,
-			lineHeight: "22px",
-			letterSpacing: "0.1px",
-		},
-	},
+	}
 })
 
 /**
@@ -191,12 +172,11 @@ const theme = createTheme(
 					},
 				],
 			},
-			MuiTextField: {
+			MuiButton: {
 				defaultProps: {
-					size: "small",
-					fullWidth: true,
-				},
-			},
+					disableElevation: true,
+				}
+			}
 		},
 	},
 	themeColors,

@@ -1,12 +1,22 @@
 version: 2
 updates:
-  # github-actions
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
-      
+    target-branch: "1.x"
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
+    target-branch: "1.x"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    target-branch: "master"
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    target-branch: "master"
