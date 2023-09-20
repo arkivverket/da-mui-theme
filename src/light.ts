@@ -214,6 +214,9 @@ const theme = createTheme(
 					color: "primary",
 					sx: {
 						boxShadow: 0,
+						":active": {
+							boxShadow: 0,
+						}
 					},
 				}
 			},
