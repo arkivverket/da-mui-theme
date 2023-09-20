@@ -90,6 +90,22 @@ const BackgroundPaletteDisplay = ({}) => {
 	)
 }
 
+const BrandPaletteDisplay = ({ color, variants }: { color: string; variants: number }) => {
+	const dropSx = {
+		justifyContent: "flex-start",
+	}
+	return (
+		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
+			<Typography variant="h4">{color}</Typography>
+			<Stack>
+				{Array.from({ length: variants }, (_, i) => (
+					<ColorDrop path={color} name={`variant${i + 1}`} direction={"row"} sx={{ ...dropSx }} />
+				))}
+			</Stack>
+		</Stack>
+	)
+}
+
 export const Colors = () => {
 	return (
 		<Paper variant="padded">
@@ -107,6 +123,27 @@ export const Colors = () => {
 				</Grid>
 				<Grid item xs={6}>
 					<BackgroundPaletteDisplay />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandGreen" variants={6} />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandBlue" variants={1} />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandOrange" variants={4} />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandYellow" variants={1} />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandBlack" variants={1} />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandWhite" variants={1} />
+				</Grid>
+				<Grid item xs={6}>
+					<BrandPaletteDisplay color="brandGrey" variants={7} />
 				</Grid>
 			</Grid>
 		</Paper>
