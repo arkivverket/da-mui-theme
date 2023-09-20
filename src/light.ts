@@ -1,7 +1,7 @@
 import { PaletteColor, createTheme } from "@mui/material/styles"
 
 /**
- * Extra colors used by Arkivverket
+ * Module augmentations
  */
 
 interface BrandGreen {
@@ -47,7 +47,6 @@ interface BrandWhite {
 }
 
 declare module "@mui/material/styles" {
-
 	interface TypeBackground {
 		content: string
 		assets: string
@@ -98,8 +97,9 @@ declare module "@mui/material/Paper" {
 }
 
 /**
- * Arkivverket colors
+ * Digitalarkivet colors
  */
+
 const themeColors = createTheme({
 	shape: {
 		borderRadius: 1
@@ -183,7 +183,7 @@ const themeColors = createTheme({
 })
 
 /**
- * The Arkivverket MUI theme
+ * The Digitalarkivet MUI theme
  */
 
 const theme = createTheme(

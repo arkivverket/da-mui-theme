@@ -50,10 +50,10 @@ const PaletteDisplay = ({ name, path }: { name: string; path: string }) => {
 	return (
 		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
 			<Typography variant="h4">{name}</Typography>
-			<Box display="grid" gridTemplateAreas={{ xs: '"a a" "b c" "d e"', md: '"a a b c" "a a d e"' }}>
+			<Box display="grid" gridTemplateAreas={{ xs: '"a a" "b b" "c c"', md: '"a a b c" "a a b c"' }}>
 				<ColorDrop path={path} name="Main" big gridArea="a" />
 				<ColorDrop path={path} name="Dark" gridArea="b" />
-				<ColorDrop path={path} name="Light" gridArea="d" />
+				<ColorDrop path={path} name="Light" gridArea="c" />
 			</Box>
 		</Stack>
 	)
@@ -63,11 +63,11 @@ const TextPaletteDisplay = ({}) => {
 	return (
 		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
 			<Typography variant="h4">Text</Typography>
-			<Box display="grid" gridTemplateAreas={'"a a b c" "a a d e" "a a f g"'}>
+			<Box display="grid" gridTemplateAreas={'"a a b b" "a a c c" "a a d d"'}>
 				<ColorDrop path={"text"} name="Primary" big gridArea="a" />
 				<ColorDrop path={"text"} name="Secondary" gridArea="b" />
-				<ColorDrop path={"text"} name="Disabled" gridArea="d" />
-				<ColorDrop path={"text"} name="White" gridArea="f" />
+				<ColorDrop path={"text"} name="Disabled" gridArea="c" />
+				<ColorDrop path={"text"} name="White" gridArea="d" />
 			</Box>
 		</Stack>
 	)
