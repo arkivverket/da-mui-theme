@@ -176,6 +176,34 @@ const theme = createTheme(
 				defaultProps: {
 					disableElevation: true,
 				}
+			},
+			MuiSwitch: {
+				styleOverrides: {
+					switchBase: {
+						color: themeColors.palette.text.primary,
+					},
+					colorPrimary: {
+						"&.Mui-disabled": {
+							// @ts-ignore
+							color: themeColors.palette.brandGrey.variant5,
+						}
+					},
+					track: {
+						opacity: 1,
+						// @ts-ignore
+						backgroundColor: "#EDF1E8",
+						".Mui-checked.Mui-checked + &": {
+							opacity: 1,
+							// @ts-ignore
+							backgroundColor: themeColors.palette.brandGreen.variant2,
+						},
+						".Mui-disabled.Mui-disabled + &": {
+							opacity: 1,
+							// @ts-ignore
+							backgroundColor: themeColors.palette.brandGrey.variant2,
+						}
+					}
+				},
 			}
 		},
 	},
