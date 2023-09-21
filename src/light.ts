@@ -27,7 +27,7 @@ interface BrandBlue {
 	variant1: string
 }
 
-interface BrandOrage {
+interface BrandOrange {
 	variant2: string
 	variant3: string
 	variant4: string
@@ -60,7 +60,7 @@ declare module "@mui/material/styles" {
 		brandGreen: BrandGreen
 		brandGrey: BrandGrey
 		brandBlue: BrandBlue
-		brandOrange: BrandOrage
+		brandOrange: BrandOrange
 		brandYellow: BrandYellow
 		brandBlack: BrandBlack
 		brandWhite: BrandWhite
@@ -70,7 +70,7 @@ declare module "@mui/material/styles" {
 		secondaryResult: PaletteColor;
 		brandGreen: BrandGreen
 		brandBlue: BrandBlue
-		brandOrange: BrandOrage
+		brandOrange: BrandOrange
 		brandYellow: BrandYellow
 		brandBlack: BrandBlack
 		brandWhite: BrandWhite
@@ -279,6 +279,18 @@ const theme = createTheme(
 						},
 					},
 				},
+				variants: [
+					{
+						props: {
+							variant: "standard",
+						},
+						style: {
+							"& .MuiInput-underline:after": {
+								borderBottomWidth: "1px",
+							},
+						},
+					},
+				],
 			},
 		},
 	},

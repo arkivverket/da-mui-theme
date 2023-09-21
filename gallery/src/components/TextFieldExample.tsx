@@ -24,12 +24,30 @@ export const TextFieldExample = () => {
 					</InnerPaper>
 				</Grid>
 				<Grid item xs={6}>
-					<Typography variant="h3">Default - Standard</Typography>
+					<Typography variant="h3">Default (error)</Typography>
+
+					<InnerPaper variant="padded">
+						<TextField label="Enabled" color="error" />
+						&nbsp;
+						<TextField label="Disabled" color="error" disabled />
+					</InnerPaper>
+				</Grid>
+				<Grid item xs={6}>
+					<Typography variant="h3">Default (standard)</Typography>
 
 					<InnerPaper variant="padded">
 						<TextField label="Enabled" variant="standard" />
 						&nbsp;
 						<TextField label="Disabled" variant="standard" disabled />
+					</InnerPaper>
+				</Grid>
+				<Grid item xs={6}>
+					<Typography variant="h3">Default (error, standard)</Typography>
+
+					<InnerPaper variant="padded">
+						<TextField label="Enabled" color="error" variant="standard" />
+						&nbsp;
+						<TextField label="Disabled" color="error" variant="standard" disabled />
 					</InnerPaper>
 				</Grid>
 			</Grid>
