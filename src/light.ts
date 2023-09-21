@@ -224,6 +224,29 @@ const theme = createTheme(
 					},
 				},
 			},
+			MuiRadio: {
+				styleOverrides: {
+					colorPrimary: {
+						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+							color: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+							stroke: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+							strokeWidth: 3,
+						},
+						"&.Mui-checked": {
+							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+								color: themeColors.palette.brandGreen.variant2,
+								stroke: themeColors.palette.brandGreen.variant2,
+							},
+						},
+						"&.Mui-disabled": {
+							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+								color: themeColors.palette.brandGrey.variant2,
+								stroke: themeColors.palette.brandGrey.variant2,
+							},
+						},
+					},
+				},
+			},
 			MuiSwitch: {
 				styleOverrides: {
 					colorPrimary: {
