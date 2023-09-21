@@ -116,7 +116,7 @@ const themeTypography = createTheme({
 	typography: {
 		fontSize: 14, // 1 rem is still 16px
 		fontFamily: ["'Neue Haas Grotesk'", "'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
-		fontWeightRoman: 400,
+		fontWeightRoman: 400, // Alias for fontWeightRegular
 		lineHeight100: 1.0,
 		lineHeight110: 1.1,
 		lineHeight120: 1.2,
