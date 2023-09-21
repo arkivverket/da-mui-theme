@@ -4,6 +4,7 @@ import { ButtonExample } from "./ButtonExample"
 import { SwitchExample } from "./SwitchExample"
 import { RadioExample } from "./RadioExample"
 import { FabExample } from "./FabExample"
+import { TextFieldExample } from "./TextFieldExample"
 
 export const Gallery = () => (
 	<Container maxWidth="xl">
@@ -12,6 +13,7 @@ export const Gallery = () => (
 			<Colors />
 			<ButtonExample />
 			<FabExample />
+			<TextFieldExample />
 			<SwitchExample />
 			<RadioExample />
 		</Stack>

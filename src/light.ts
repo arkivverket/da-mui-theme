@@ -5,22 +5,22 @@ import { PaletteColor, createTheme } from "@mui/material/styles"
  */
 
 interface BrandGreen {
+	variant05: string
 	variant1: string
 	variant2: string
 	variant3: string
 	variant4: string
 	variant5: string
-	variant6: string
 }
 
 interface BrandGrey {
+	variant05: string
 	variant1: string
 	variant2: string
 	variant3: string
 	variant4: string
 	variant5: string
 	variant6: string
-	variant7: string
 }
 
 interface BrandBlue {
@@ -28,10 +28,10 @@ interface BrandBlue {
 }
 
 interface BrandOrage {
-	variant1: string
 	variant2: string
 	variant3: string
 	variant4: string
+	variant5: string
 }
 
 interface BrandYellow {
@@ -135,21 +135,21 @@ const themeColors = createTheme({
 			light: '#E7EFFA',
 		},
 		brandGreen: {
-			variant1: "#F9FAF7",
-			variant2: "#DFF0C2",
-			variant3: "#C6D7A9",
-			variant4: "#AEBF90",
-			variant5: "#7C8E5D",
-			variant6: "#2F4029",
+			variant05: "#F9FAF7",
+			variant1: "#DFF0C2",
+			variant2: "#C6D7A9",
+			variant3: "#AEBF90",
+			variant4: "#7C8E5D",
+			variant5: "#2F4029",
 		},
 		brandBlue: {
 			variant1: "#E3ECF9",
 		},
 		brandOrange: {
-			variant1: "#FCD1A4",
-			variant2: "#FEB37F",
-			variant3: "#FF965B",
-			variant4: "#A73C2E",
+			variant2: "#FCD1A4",
+			variant3: "#FEB37F",
+			variant4: "#FF965B",
+			variant5: "#A73C2E",
 		},
 		brandYellow: {
 			variant1: "#FBEEC8",
@@ -161,13 +161,13 @@ const themeColors = createTheme({
 			variant1: "#FFFFFF",
 		},
 		brandGrey: {
-			variant1: "#F8F8F8",
-			variant2: "#EBEBEB",
-			variant3: "#D7D7D7",
-			variant4: "#C2C2C2",
-			variant5: "#AEAEAE",
-			variant6: "#636363",
-			variant7: "#1D1D1D",
+			variant05: "#F8F8F8",
+			variant1: "#EBEBEB",
+			variant2: "#D7D7D7",
+			variant3: "#C2C2C2",
+			variant4: "#AEAEAE",
+			variant5: "#636363",
+			variant6: "#1D1D1D",
 		},
 	},
 	typography: {
@@ -234,14 +234,14 @@ const theme = createTheme(
 						},
 						"&.Mui-checked": {
 							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
-								color: themeColors.palette.brandGreen.variant2,
-								stroke: themeColors.palette.brandGreen.variant2,
+								color: themeColors.palette.brandGreen.variant1,
+								stroke: themeColors.palette.brandGreen.variant1,
 							},
 						},
 						"&.Mui-disabled": {
 							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
-								color: themeColors.palette.brandGrey.variant2,
-								stroke: themeColors.palette.brandGrey.variant2,
+								color: themeColors.palette.brandGrey.variant1,
+								stroke: themeColors.palette.brandGrey.variant1,
 							},
 						},
 					},
@@ -252,7 +252,7 @@ const theme = createTheme(
 					colorPrimary: {
 						color: themeColors.palette.text.primary,
 						"&.Mui-disabled": {
-							color: themeColors.palette.brandGrey.variant5,
+							color: themeColors.palette.brandGrey.variant4,
 						},
 					},
 					track: {
@@ -260,11 +260,22 @@ const theme = createTheme(
 						backgroundColor: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
 						".Mui-checked.Mui-checked + &": {
 							opacity: 1,
-							backgroundColor: themeColors.palette.brandGreen.variant2,
+							backgroundColor: themeColors.palette.brandGreen.variant1,
 						},
 						".Mui-disabled.Mui-disabled + &": {
 							opacity: 1,
-							backgroundColor: themeColors.palette.brandGrey.variant2,
+							backgroundColor: themeColors.palette.brandGrey.variant1,
+						},
+					},
+				},
+			},
+			MuiTextField: {
+				styleOverrides: {
+					root: {
+						"& .MuiOutlinedInput-root": {
+							"&.Mui-focused fieldset": {
+								borderWidth: "1px",
+							},
 						},
 					},
 				},

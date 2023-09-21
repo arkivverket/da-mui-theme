@@ -90,7 +90,17 @@ const BackgroundPaletteDisplay = ({}) => {
 	)
 }
 
-const BrandPaletteDisplay = ({ color, variants }: { color: string; variants: number }) => {
+const BrandPaletteDisplay = ({
+	color,
+	variants,
+	skip = 0,
+	has05 = false,
+}: {
+	color: string
+	variants: number
+	skip?: number
+	has05?: boolean
+}) => {
 	const dropSx = {
 		justifyContent: "flex-start",
 	}
@@ -98,8 +108,9 @@ const BrandPaletteDisplay = ({ color, variants }: { color: string; variants: num
 		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
 			<Typography variant="h4">{color}</Typography>
 			<Stack>
+				{has05 && <ColorDrop path={color} name={`variant05`} direction={"row"} sx={{ ...dropSx }} />}
 				{Array.from({ length: variants }, (_, i) => (
-					<ColorDrop path={color} name={`variant${i + 1}`} direction={"row"} sx={{ ...dropSx }} />
+					<ColorDrop path={color} name={`variant${i + 1 + skip}`} direction={"row"} sx={{ ...dropSx }} />
 				))}
 			</Stack>
 		</Stack>
@@ -125,13 +136,13 @@ export const Colors = () => {
 					<BackgroundPaletteDisplay />
 				</Grid>
 				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandGreen" variants={6} />
+					<BrandPaletteDisplay color="brandGreen" variants={5} has05 />
 				</Grid>
 				<Grid item xs={6}>
 					<BrandPaletteDisplay color="brandBlue" variants={1} />
 				</Grid>
 				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandOrange" variants={4} />
+					<BrandPaletteDisplay color="brandOrange" skip={1} variants={4} />
 				</Grid>
 				<Grid item xs={6}>
 					<BrandPaletteDisplay color="brandYellow" variants={1} />
@@ -143,7 +154,7 @@ export const Colors = () => {
 					<BrandPaletteDisplay color="brandWhite" variants={1} />
 				</Grid>
 				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandGrey" variants={7} />
+					<BrandPaletteDisplay color="brandGrey" variants={6} has05 />
 				</Grid>
 			</Grid>
 		</Paper>
