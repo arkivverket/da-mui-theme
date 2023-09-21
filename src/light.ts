@@ -288,6 +288,12 @@ const theme = createTheme(
 							"& .MuiInput-underline:after": {
 								borderBottomWidth: "1px",
 							},
+							"&& .MuiInput-root:hover::before": {
+								borderBottomWidth: "1px",
+							},
+							"&& .MuiInput-root.Mui-disabled::before": {
+								borderBottomStyle: "solid",
+							},
 						},
 					},
 				],
