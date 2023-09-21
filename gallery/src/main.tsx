@@ -4,6 +4,7 @@ import { Gallery } from "./components/Gallery"
 import theme from "@da-mui-theme/light"
 
 const rootNode = document.getElementById("app")
+
 createRoot(rootNode as HTMLElement).render(
 	<ThemeProvider theme={theme}>
 		<CssBaseline />

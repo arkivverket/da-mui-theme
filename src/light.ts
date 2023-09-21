@@ -78,6 +78,18 @@ declare module "@mui/material/styles" {
 	}
 }
 
+declare module "@mui/material/styles/createTypography" {
+	interface FontStyle {
+		fontWeightRoman: React.CSSProperties['fontWeight']
+		lineHeight100: React.CSSProperties['lineHeight']
+		lineHeight110: React.CSSProperties['lineHeight']
+		lineHeight120: React.CSSProperties['lineHeight']
+		lineHeight130: React.CSSProperties['lineHeight']
+		lineHeight140: React.CSSProperties['lineHeight']
+		lineHeight150: React.CSSProperties['lineHeight']
+	}
+}
+
 declare module '@mui/material/Button' {
 	interface ButtonPropsColorOverrides {
 		secondaryResult: true
@@ -97,7 +109,25 @@ declare module "@mui/material/Paper" {
 }
 
 /**
- * Digitalarkivet colors
+ * Digitalarkivet base typography
+ */
+
+const themeTypography = createTheme({
+	typography: {
+		fontSize: 14, // 1 rem is still 16px
+		fontFamily: ["'Neue Haas Grotesk'", "'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
+		fontWeightRoman: 400,
+		lineHeight100: 1.0,
+		lineHeight110: 1.1,
+		lineHeight120: 1.2,
+		lineHeight130: 1.3,
+		lineHeight140: 1.4,
+		lineHeight150: 1.5,
+	},
+})
+
+/**
+ * Digitalarkivet palette and typography
  */
 
 const themeColors = createTheme({
@@ -171,19 +201,36 @@ const themeColors = createTheme({
 		},
 	},
 	typography: {
-		fontSize: 14, // 1 rem is still 16px
-		fontFamily: ["'Neue Haas Grotesk'", "'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
-		body1: {
-			fontWeight: 400,
-			fontSize: 16,
-			lineHeight: "22px",
-			letterSpacing: "0.15px",
+		h1: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: "4.5rem",
+			lineHeight: themeTypography.typography.lineHeight130,
+		},
+		h2: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: "3.5rem",
+			lineHeight: themeTypography.typography.lineHeight130,
+		},
+		h3: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: "2.5rem",
+			lineHeight: themeTypography.typography.lineHeight130,
+		},
+		h4: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: "2rem",
+			lineHeight: themeTypography.typography.lineHeight130,
+		},
+		h5: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: "1.5rem",
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 	},
 })
 
 /**
- * The Digitalarkivet MUI theme
+ * Digitalarkivet MUI theme
  */
 
 const theme = createTheme(
@@ -300,7 +347,7 @@ const theme = createTheme(
 			},
 		},
 	},
-	themeColors,
+	themeTypography, themeColors,
 )
 
 export default theme
