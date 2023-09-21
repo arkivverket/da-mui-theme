@@ -1,10 +1,52 @@
 import { PaletteColor, createTheme } from "@mui/material/styles"
 
 /**
- * Extra colors used by Arkivverket
+ * Module augmentations
  */
-declare module "@mui/material/styles" {
 
+interface BrandGreen {
+	variant1: string
+	variant2: string
+	variant3: string
+	variant4: string
+	variant5: string
+	variant6: string
+}
+
+interface BrandGrey {
+	variant1: string
+	variant2: string
+	variant3: string
+	variant4: string
+	variant5: string
+	variant6: string
+	variant7: string
+}
+
+interface BrandBlue {
+	variant1: string
+}
+
+interface BrandOrage {
+	variant1: string
+	variant2: string
+	variant3: string
+	variant4: string
+}
+
+interface BrandYellow {
+	variant1: string
+}
+
+interface BrandBlack {
+	variant1: string
+}
+
+interface BrandWhite {
+	variant1: string
+}
+
+declare module "@mui/material/styles" {
 	interface TypeBackground {
 		content: string
 		assets: string
@@ -14,43 +56,25 @@ declare module "@mui/material/styles" {
 		primaryWhite: string
 	}
 
+	interface Palette {
+		brandGreen: BrandGreen
+		brandGrey: BrandGrey
+		brandBlue: BrandBlue
+		brandOrange: BrandOrage
+		brandYellow: BrandYellow
+		brandBlack: BrandBlack
+		brandWhite: BrandWhite
+	}
+
 	interface PaletteOptions {
 		secondaryResult: PaletteColor;
-		brandGreen: {
-			variant1: string
-			variant2: string
-			variant3: string
-			variant4: string
-			variant5: string
-			variant6: string
-		}
-		brandBlue: {
-			variant1: string
-		}
-		brandOrange: {
-			variant1: string
-			variant2: string
-			variant3: string
-			variant4: string
-		}
-		brandYellow: {
-			variant1: string
-		}
-		brandBlack: {
-			variant1: string
-		}
-		brandWhite: {
-			variant1: string
-		}
-		brandGrey: {
-			variant1: string
-			variant2: string
-			variant3: string
-			variant4: string
-			variant5: string
-			variant6: string
-			variant7: string
-		}
+		brandGreen: BrandGreen
+		brandBlue: BrandBlue
+		brandOrange: BrandOrage
+		brandYellow: BrandYellow
+		brandBlack: BrandBlack
+		brandWhite: BrandWhite
+		brandGrey: BrandGrey
 	}
 }
 
@@ -66,9 +90,16 @@ declare module '@mui/material/Fab' {
 	}
 }
 
+declare module "@mui/material/Paper" {
+	interface PaperPropsVariantOverrides {
+		padded: true
+	}
+}
+
 /**
- * Arkivverket colors
+ * Digitalarkivet colors
  */
+
 const themeColors = createTheme({
 	shape: {
 		borderRadius: 1
@@ -87,7 +118,7 @@ const themeColors = createTheme({
 		},
 		primary: {
 			main: "#2F4029",
-			contrastText: "#ffffff",
+			contrastText: "#FFFFFF",
 			dark: "#2B3B26",
 			light: "#505F4B",
 		},
@@ -148,12 +179,13 @@ const themeColors = createTheme({
 			lineHeight: "22px",
 			letterSpacing: "0.15px",
 		},
-	}
+	},
 })
 
 /**
- * The Arkivverket MUI theme
+ * The Digitalarkivet MUI theme
  */
+
 const theme = createTheme(
 	{
 		components: {
@@ -175,17 +207,71 @@ const theme = createTheme(
 			MuiButton: {
 				defaultProps: {
 					disableElevation: true,
-				}
-			}
+					sx: {
+						textTransform: "none",
+					},
+				},
+			},
+			MuiFab: {
+				defaultProps: {
+					color: "primary",
+					sx: {
+						boxShadow: 0,
+						":active": {
+							boxShadow: 0,
+						},
+						textTransform: "none",
+					},
+				},
+			},
+			MuiRadio: {
+				styleOverrides: {
+					colorPrimary: {
+						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+							color: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+							stroke: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+							strokeWidth: 3,
+						},
+						"&.Mui-checked": {
+							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+								color: themeColors.palette.brandGreen.variant2,
+								stroke: themeColors.palette.brandGreen.variant2,
+							},
+						},
+						"&.Mui-disabled": {
+							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+								color: themeColors.palette.brandGrey.variant2,
+								stroke: themeColors.palette.brandGrey.variant2,
+							},
+						},
+					},
+				},
+			},
+			MuiSwitch: {
+				styleOverrides: {
+					colorPrimary: {
+						color: themeColors.palette.text.primary,
+						"&.Mui-disabled": {
+							color: themeColors.palette.brandGrey.variant5,
+						},
+					},
+					track: {
+						opacity: 1,
+						backgroundColor: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+						".Mui-checked.Mui-checked + &": {
+							opacity: 1,
+							backgroundColor: themeColors.palette.brandGreen.variant2,
+						},
+						".Mui-disabled.Mui-disabled + &": {
+							opacity: 1,
+							backgroundColor: themeColors.palette.brandGrey.variant2,
+						},
+					},
+				},
+			},
 		},
 	},
 	themeColors,
 )
-
-declare module "@mui/material/Paper" {
-	interface PaperPropsVariantOverrides {
-		padded: true
-	}
-}
 
 export default theme

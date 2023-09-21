@@ -8,47 +8,47 @@ const InnerPaper = styled(Paper)({
 		"0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 9px 46px 8px rgba(0, 0, 0, 0.12), 0px 24px 38px 3px rgba(0, 0, 0, 0.14);",
 })
 
-export const ButtonExample = () => {
+export const FabExample = () => {
 	return (
 		<Paper variant="padded">
-			<Typography variant="h2">Eksempel på knapper</Typography>
+			<Typography variant="h2">Eksempel på Fabs</Typography>
 
 			<Grid container>
 				<Grid item xs={6}>
 					<Typography variant="h3">Primary</Typography>
 
 					<InnerPaper variant="padded">
-						<Button variant="contained">Enabled</Button>
+						<Fab variant="extended">Enabled</Fab>
 						&nbsp;
-						<Button variant="contained" disabled>
+						<Fab variant="extended" disabled>
 							Disabled
-						</Button>
+						</Fab>
 					</InnerPaper>
 				</Grid>
 				<Grid item xs={6}>
 					<Typography variant="h3">Secondary</Typography>
 
 					<InnerPaper variant="padded">
-						<Button variant="contained" color="secondary">
+						<Fab variant="extended" color="secondary">
 							Enabled
-						</Button>
+						</Fab>
 						&nbsp;
-						<Button variant="contained" color="secondary" disabled>
+						<Fab variant="extended" color="secondary" disabled>
 							Disabled
-						</Button>
+						</Fab>
 					</InnerPaper>
 				</Grid>
 				<Grid item xs={6}>
 					<Typography variant="h3">Secondary Result</Typography>
 
 					<InnerPaper variant="padded">
-						<Button variant="contained" color="secondaryResult">
+						<Fab variant="extended" color="secondaryResult">
 							Enabled
-						</Button>
+						</Fab>
 						&nbsp;
-						<Button variant="contained" color="secondaryResult" disabled>
+						<Fab variant="extended" color="secondaryResult" disabled>
 							Disabled
-						</Button>
+						</Fab>
 					</InnerPaper>
 				</Grid>
 			</Grid>
