@@ -87,6 +87,15 @@ declare module "@mui/material/styles/createTypography" {
 		lineHeight130: React.CSSProperties['lineHeight']
 		lineHeight140: React.CSSProperties['lineHeight']
 		lineHeight150: React.CSSProperties['lineHeight']
+		fontSize12: React.CSSProperties['fontSize']
+		fontSize14: React.CSSProperties['fontSize']
+		fontSize16: React.CSSProperties['fontSize']
+		fontSize20: React.CSSProperties['fontSize']
+		fontSize24: React.CSSProperties['fontSize']
+		fontSize32: React.CSSProperties['fontSize']
+		fontSize40: React.CSSProperties['fontSize']
+		fontSize56: React.CSSProperties['fontSize']
+		fontSize72: React.CSSProperties['fontSize']
 	}
 }
 
@@ -114,7 +123,7 @@ declare module "@mui/material/Paper" {
 
 const themeTypography = createTheme({
 	typography: {
-		fontSize: 14, // 1 rem is still 16px
+		fontSize: 16,
 		fontFamily: ["'Neue Haas Grotesk'", "'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
 		fontWeightRoman: 400, // Alias for fontWeightRegular
 		lineHeight100: 1.0,
@@ -123,6 +132,15 @@ const themeTypography = createTheme({
 		lineHeight130: 1.3,
 		lineHeight140: 1.4,
 		lineHeight150: 1.5,
+		fontSize12: 12,
+		fontSize14: 14,
+		fontSize16: 16,
+		fontSize20: 20,
+		fontSize24: 24,
+		fontSize32: 32,
+		fontSize40: 32,
+		fontSize56: 56,
+		fontSize72: 72,
 	},
 })
 
@@ -203,27 +221,27 @@ const themeColors = createTheme({
 	typography: {
 		h1: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
-			fontSize: "4.5rem",
+			fontSize: themeTypography.typography.fontSize72,
 			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h2: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
-			fontSize: "3.5rem",
+			fontSize: themeTypography.typography.fontSize56,
 			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h3: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
-			fontSize: "2.5rem",
+			fontSize: themeTypography.typography.fontSize40,
 			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h4: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
-			fontSize: "2rem",
+			fontSize: themeTypography.typography.fontSize32,
 			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h5: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
-			fontSize: "1.5rem",
+			fontSize: themeTypography.typography.fontSize24,
 			lineHeight: themeTypography.typography.lineHeight130,
 		},
 	},
