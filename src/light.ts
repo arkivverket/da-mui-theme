@@ -97,6 +97,34 @@ declare module "@mui/material/styles/createTypography" {
 		fontSize56: React.CSSProperties['fontSize']
 		fontSize72: React.CSSProperties['fontSize']
 	}
+
+	interface Typography {
+		body: React.CSSProperties
+		bodyBold: React.CSSProperties
+		bodyLarge: React.CSSProperties
+		bodyLargeBold: React.CSSProperties
+		bodyLink: React.CSSProperties
+		buttonLink: React.CSSProperties
+		buttonLinkSmall: React.CSSProperties
+		captionBold: React.CSSProperties
+		input: React.CSSProperties
+		label: React.CSSProperties
+		labelBold: React.CSSProperties
+	}
+
+	interface TypographyOptions {
+		body?: React.CSSProperties
+		bodyBold?: React.CSSProperties
+		bodyLarge?: React.CSSProperties
+		bodyLargeBold?: React.CSSProperties
+		bodyLink?: React.CSSProperties
+		buttonLink?: React.CSSProperties
+		buttonLinkSmall?: React.CSSProperties
+		captionBold?: React.CSSProperties
+		input?: React.CSSProperties
+		label?: React.CSSProperties
+		labelBold?: React.CSSProperties
+	}
 }
 
 declare module '@mui/material/Button' {
@@ -219,6 +247,51 @@ const themeColors = createTheme({
 		},
 	},
 	typography: {
+		body: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		bodyBold: {
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		bodyLarge: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize20,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		bodyLargeBold: {
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize20,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		bodyLink: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		buttonLink: {
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		buttonLinkSmall: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize12,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		caption: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize14,
+			lineHeight: themeTypography.typography.lineHeight140,
+		},
+		captionBold: {
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize14,
+			lineHeight: themeTypography.typography.lineHeight140,
+		},
 		h1: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
 			fontSize: themeTypography.typography.fontSize72,
@@ -242,6 +315,21 @@ const themeColors = createTheme({
 		h5: {
 			fontWeight: themeTypography.typography.fontWeightRoman,
 			fontSize: themeTypography.typography.fontSize24,
+			lineHeight: themeTypography.typography.lineHeight130,
+		},
+		input: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
+		},
+		label: {
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize12,
+			lineHeight: themeTypography.typography.lineHeight130,
+		},
+		labelBold: {
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize12,
 			lineHeight: themeTypography.typography.lineHeight130,
 		},
 	},
@@ -292,18 +380,32 @@ const theme = createTheme(
 			MuiRadio: {
 				styleOverrides: {
 					colorPrimary: {
+						"&": {
+							background: "radial-gradient(ellipse at center, #EDF1E8 0%, #EDF1E8 20%, #EDF1E8 20%, #EDF1E8 20%, rgba(0,0,0,0) 20%)",
+						},
 						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
 							color: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
 							stroke: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
-							strokeWidth: 3,
+							strokeWidth: 4,
+							boxShadow: " 0px 0px 0px 99px rgba(0,0,0,1) inset",
 						},
 						"&.Mui-checked": {
+							background: "radial-gradient(ellipse at center, "
+							+ themeColors.palette.brandGreen.variant1 + " 0%, "
+							+ themeColors.palette.brandGreen.variant1 + " 20%, "
+							+ themeColors.palette.brandGreen.variant1 + " 20%, "
+							+ themeColors.palette.brandGreen.variant1 + " 20%, rgba(0,0,0,0) 20%)",
 							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
 								color: themeColors.palette.brandGreen.variant1,
 								stroke: themeColors.palette.brandGreen.variant1,
 							},
 						},
 						"&.Mui-disabled": {
+							background: "radial-gradient(ellipse at center, "
+							+ themeColors.palette.brandGrey.variant1 + " 0%, "
+							+ themeColors.palette.brandGrey.variant1 + " 20%, "
+							+ themeColors.palette.brandGrey.variant1 + " 20%, "
+							+ themeColors.palette.brandGrey.variant1 + " 20%, rgba(0,0,0,0) 20%)",
 							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
 								color: themeColors.palette.brandGrey.variant1,
 								stroke: themeColors.palette.brandGrey.variant1,
