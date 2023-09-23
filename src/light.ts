@@ -46,6 +46,14 @@ interface BrandWhite {
 	variant1: string
 }
 
+interface Fill {
+	primary: string
+	secondary: string
+	secondaryResult: string
+	tertiary: string
+	disabled: string
+}
+
 declare module "@mui/material/styles" {
 	interface TypeBackground {
 		content: string
@@ -64,6 +72,7 @@ declare module "@mui/material/styles" {
 		brandYellow: BrandYellow
 		brandBlack: BrandBlack
 		brandWhite: BrandWhite
+		fill: Fill
 	}
 
 	interface PaletteOptions {
@@ -75,6 +84,7 @@ declare module "@mui/material/styles" {
 		brandBlack: BrandBlack
 		brandWhite: BrandWhite
 		brandGrey: BrandGrey
+		fill: Fill
 	}
 }
 
@@ -185,6 +195,13 @@ const themeColors = createTheme({
 			default: "#F9FAF7",
 			content: "#FFFFFF",
 			assets: "#F8F8F8",
+		},
+		fill: {
+			primary: "#2F4029",
+			secondary: "#E8F7CF",
+			secondaryResult: "#E3ECF9",
+			tertiary: "#EDF1E8",
+			disabled: "#EBEBEB",
 		},
 		text: {
 			primary: "#1D1D1D",
@@ -381,11 +398,15 @@ const theme = createTheme(
 				styleOverrides: {
 					colorPrimary: {
 						"&": {
-							background: "radial-gradient(ellipse at center, #EDF1E8 0%, #EDF1E8 20%, #EDF1E8 20%, #EDF1E8 20%, rgba(0,0,0,0) 20%)",
+							background: "radial-gradient(ellipse at center, "
+							+ themeColors.palette.fill.tertiary + " 0%, "
+							+ themeColors.palette.fill.tertiary + " 20%, "
+							+ themeColors.palette.fill.tertiary + " 20%, "
+							+ themeColors.palette.fill.tertiary + " 20%, rgba(0,0,0,0) 20%)",
 						},
 						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
-							color: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
-							stroke: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+							color: themeColors.palette.fill.tertiary,
+							stroke: themeColors.palette.fill.tertiary,
 							strokeWidth: 4,
 							boxShadow: " 0px 0px 0px 99px rgba(0,0,0,1) inset",
 						},
@@ -402,13 +423,13 @@ const theme = createTheme(
 						},
 						"&.Mui-disabled": {
 							background: "radial-gradient(ellipse at center, "
-							+ themeColors.palette.brandGrey.variant1 + " 0%, "
-							+ themeColors.palette.brandGrey.variant1 + " 20%, "
-							+ themeColors.palette.brandGrey.variant1 + " 20%, "
-							+ themeColors.palette.brandGrey.variant1 + " 20%, rgba(0,0,0,0) 20%)",
+							+ themeColors.palette.fill.disabled + " 0%, "
+							+ themeColors.palette.fill.disabled + " 20%, "
+							+ themeColors.palette.fill.disabled + " 20%, "
+							+ themeColors.palette.fill.disabled + " 20%, rgba(0,0,0,0) 20%)",
 							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
-								color: themeColors.palette.brandGrey.variant1,
-								stroke: themeColors.palette.brandGrey.variant1,
+								color: themeColors.palette.fill.disabled,
+								stroke: themeColors.palette.fill.disabled,
 							},
 						},
 					},
@@ -424,14 +445,14 @@ const theme = createTheme(
 					},
 					track: {
 						opacity: 1,
-						backgroundColor: "#EDF1E8", // This color doesn't exist in the theme ¯\_(ツ)_/¯
+						backgroundColor:themeColors.palette.fill.tertiary,
 						".Mui-checked.Mui-checked + &": {
 							opacity: 1,
 							backgroundColor: themeColors.palette.brandGreen.variant1,
 						},
 						".Mui-disabled.Mui-disabled + &": {
 							opacity: 1,
-							backgroundColor: themeColors.palette.brandGrey.variant1,
+							backgroundColor: themeColors.palette.fill.disabled,
 						},
 					},
 				},
