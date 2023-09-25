@@ -162,7 +162,14 @@ declare module "@mui/material/Paper" {
 const themeTypography = createTheme({
 	typography: {
 		fontSize: 16,
-		fontFamily: ["'Neue Haas Grotesk'", "'Source Sans 3'", "'Source Sans Pro'", "'Helvetica Neue'", "Arial", "sans-serif"].join(","),
+		fontFamily: [
+			"'Neue Haas Grotesk'",
+			"'Source Sans 3'",
+			"'Source Sans Pro'",
+			"'Helvetica Neue'",
+			"Arial",
+			"sans-serif"
+		].join(","),
 		fontWeightRoman: 400, // Alias for fontWeightRegular
 		lineHeight100: 1.0,
 		lineHeight110: 1.1,
@@ -404,7 +411,7 @@ const theme = createTheme(
 							+ themeColors.palette.fill.tertiary + " 20%, "
 							+ themeColors.palette.fill.tertiary + " 20%, rgba(0,0,0,0) 20%)",
 						},
-						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path": {
 							color: themeColors.palette.fill.tertiary,
 							stroke: themeColors.palette.fill.tertiary,
 							strokeWidth: 4,
@@ -445,7 +452,7 @@ const theme = createTheme(
 					},
 					track: {
 						opacity: 1,
-						backgroundColor:themeColors.palette.fill.tertiary,
+						backgroundColor: themeColors.palette.fill.tertiary,
 						".Mui-checked.Mui-checked + &": {
 							opacity: 1,
 							backgroundColor: themeColors.palette.brandGreen.variant1,
