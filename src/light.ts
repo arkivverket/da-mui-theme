@@ -493,6 +493,33 @@ const theme = createTheme(
 					},
 				],
 			},
+			MuiSelect: {
+				styleOverrides: {
+					root: {
+						"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+							borderWidth: "1px",
+						},
+					},
+				},
+			},
+			MuiMenuItem: {
+				styleOverrides: {
+					root: {
+						"&:hover": {
+							backgroundColor: themeColors.palette.brandGreen.variant05,
+						},
+						"&:focus": {
+							backgroundColor: themeColors.palette.brandGreen.variant05,
+						},
+						"&.Mui-selected": {
+							backgroundColor: themeColors.palette.fill.tertiary,
+							"&:hover": {
+								backgroundColor: themeColors.palette.brandGreen.variant05,
+							},
+						},
+					},
+				},
+			},
 		},
 	},
 	themeTypography, themeColors,
