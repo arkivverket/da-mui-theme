@@ -195,7 +195,7 @@ const themeTypography = createTheme({
 
 const themeColors = createTheme({
 	shape: {
-		borderRadius: 1
+		borderRadius: 2
 	},
 	palette: {
 		background: {
@@ -516,6 +516,21 @@ const theme = createTheme(
 							"&:hover": {
 								backgroundColor: themeColors.palette.brandGreen.variant05,
 							},
+						},
+					},
+				},
+			},
+			MuiChip: {
+				styleOverrides: {
+					root: {
+						backgroundColor: themeColors.palette.fill.secondary,
+						fontWeight: themeTypography.typography.fontWeightBold,
+						fontSize: themeTypography.typography.fontSize12,
+						"&:hover": {
+							backgroundColor: themeColors.palette.secondary.dark,
+						},
+						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+							color: themeColors.palette.text.primary,
 						},
 					},
 				},

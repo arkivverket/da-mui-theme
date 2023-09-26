@@ -1,4 +1,4 @@
-import { Container, Stack, Switch, Typography } from "@mui/material"
+import { Autocomplete, Container, Stack, Switch, Typography } from "@mui/material"
 import { Colors } from "./Colors"
 import { ButtonExample } from "./ButtonExample"
 import { SwitchExample } from "./SwitchExample"
@@ -6,6 +6,7 @@ import { RadioExample } from "./RadioExample"
 import { FabExample } from "./FabExample"
 import { TextFieldExample } from "./TextFieldExample"
 import { SelectExample } from "./SelectExample"
+import { AutoCompleteExample } from "./AutoCompleteExample"
 
 export const Gallery = () => (
 	<Container maxWidth="xl">
@@ -16,6 +17,7 @@ export const Gallery = () => (
 			<FabExample />
 			<TextFieldExample />
 			<SelectExample />
+			<AutoCompleteExample />
 			<SwitchExample />
 			<RadioExample />
 		</Stack>

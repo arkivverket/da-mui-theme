@@ -20,9 +20,13 @@ export const FabExample = () => {
 					<InnerPaper variant="padded">
 						<Fab variant="extended">Enabled</Fab>
 						&nbsp;
+						<Fab>E</Fab>
+						&nbsp;
 						<Fab variant="extended" disabled>
 							Disabled
 						</Fab>
+						&nbsp;
+						<Fab disabled>D</Fab>
 					</InnerPaper>
 				</Grid>
 				<Grid item xs={6}>
@@ -33,8 +37,14 @@ export const FabExample = () => {
 							Enabled
 						</Fab>
 						&nbsp;
+						<Fab color="secondary">E</Fab>
+						&nbsp;
 						<Fab variant="extended" color="secondary" disabled>
 							Disabled
+						</Fab>
+						&nbsp;
+						<Fab color="secondary" disabled>
+							D
 						</Fab>
 					</InnerPaper>
 				</Grid>
@@ -46,8 +56,13 @@ export const FabExample = () => {
 							Enabled
 						</Fab>
 						&nbsp;
+						<Fab color="secondaryResult">E</Fab>
+						&nbsp;
 						<Fab variant="extended" color="secondaryResult" disabled>
 							Disabled
+						</Fab>
+						<Fab color="secondaryResult" disabled>
+							D
 						</Fab>
 					</InnerPaper>
 				</Grid>
