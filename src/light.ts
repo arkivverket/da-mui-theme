@@ -535,6 +535,15 @@ const theme = createTheme(
 					},
 				},
 			},
+			MuiFormControlLabel: {
+				styleOverrides: {
+					root: {
+						"& span": {
+							fontWeight: themeTypography.typography.fontWeightBold,
+						},
+					},
+				},
+			},
 		},
 	},
 	themeTypography, themeColors,
