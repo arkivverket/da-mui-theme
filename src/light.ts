@@ -170,6 +170,7 @@ const themeTypography = createTheme({
 			"Arial",
 			"sans-serif"
 		].join(","),
+		fontWeightBold: 500,
 		fontWeightRoman: 400, // Alias for fontWeightRegular
 		lineHeight100: 1.0,
 		lineHeight110: 1.1,
