@@ -186,34 +186,36 @@ declare module "@mui/material/Paper" {
  * Digitalarkivet base typography
  */
 
-const themeTypography = {
-	fontSize: 16,
-	fontFamily: [
-		"'Neue Haas Grotesk'",
-		"'Source Sans 3'",
-		"'Source Sans Pro'",
-		"'Helvetica Neue'",
-		"Arial",
-		"sans-serif"
-	].join(","),
-	fontWeightBold: 500,
-	fontWeightRoman: 400, // Alias for fontWeightRegular
-	lineHeight100: 1.0,
-	lineHeight110: 1.1,
-	lineHeight120: 1.2,
-	lineHeight130: 1.3,
-	lineHeight140: 1.4,
-	lineHeight150: 1.5,
-	fontSize12: 12,
-	fontSize14: 14,
-	fontSize16: 16,
-	fontSize20: 20,
-	fontSize24: 24,
-	fontSize32: 32,
-	fontSize40: 32,
-	fontSize56: 56,
-	fontSize72: 72,
-}
+const themeTypography = createTheme({
+	typography: {
+		fontSize: 16,
+		fontFamily: [
+			"'Neue Haas Grotesk'",
+			"'Source Sans 3'",
+			"'Source Sans Pro'",
+			"'Helvetica Neue'",
+			"Arial",
+			"sans-serif"
+		].join(","),
+		fontWeightBold: 500,
+		fontWeightRoman: 400, // Alias for fontWeightRegular
+		lineHeight100: 1.0,
+		lineHeight110: 1.1,
+		lineHeight120: 1.2,
+		lineHeight130: 1.3,
+		lineHeight140: 1.4,
+		lineHeight150: 1.5,
+		fontSize12: 12,
+		fontSize14: 14,
+		fontSize16: 16,
+		fontSize20: 20,
+		fontSize24: 24,
+		fontSize32: 32,
+		fontSize40: 32,
+		fontSize56: 56,
+		fontSize72: 72,
+	},
+})
 
 /**
  * Digitalarkivet palette and typography
@@ -328,91 +330,91 @@ const themeColors = createTheme({
 		},
 	},
 	typography: {
-		...themeTypography,
+		...themeTypography.typography,
 		body: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize16,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		bodyBold: {
-			fontWeight: themeTypography.fontWeightBold,
-			fontSize: themeTypography.fontSize16,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		bodyLarge: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize20,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize20,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		bodyLargeBold: {
-			fontWeight: themeTypography.fontWeightBold,
-			fontSize: themeTypography.fontSize20,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize20,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		bodyLink: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize16,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		buttonLink: {
-			fontWeight: themeTypography.fontWeightBold,
-			fontSize: themeTypography.fontSize16,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		buttonLinkSmall: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize12,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize12,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		caption: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize14,
-			lineHeight: themeTypography.lineHeight140,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize14,
+			lineHeight: themeTypography.typography.lineHeight140,
 		},
 		captionBold: {
-			fontWeight: themeTypography.fontWeightBold,
-			fontSize: themeTypography.fontSize14,
-			lineHeight: themeTypography.lineHeight140,
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize14,
+			lineHeight: themeTypography.typography.lineHeight140,
 		},
 		h1: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize72,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize72,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h2: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize56,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize56,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h3: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize40,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize40,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h4: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize32,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize32,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		h5: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize24,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize24,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		input: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize16,
-			lineHeight: themeTypography.lineHeight150,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize16,
+			lineHeight: themeTypography.typography.lineHeight150,
 		},
 		label: {
-			fontWeight: themeTypography.fontWeightRoman,
-			fontSize: themeTypography.fontSize12,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightRoman,
+			fontSize: themeTypography.typography.fontSize12,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 		labelBold: {
-			fontWeight: themeTypography.fontWeightBold,
-			fontSize: themeTypography.fontSize12,
-			lineHeight: themeTypography.lineHeight130,
+			fontWeight: themeTypography.typography.fontWeightBold,
+			fontSize: themeTypography.typography.fontSize12,
+			lineHeight: themeTypography.typography.lineHeight130,
 		},
 	},
 })
@@ -589,8 +591,8 @@ const theme = createTheme(
 				styleOverrides: {
 					root: {
 						backgroundColor: themeColors.palette.fill.secondary,
-						fontWeight: themeTypography.fontWeightBold,
-						fontSize: themeTypography.fontSize12,
+						fontWeight: themeTypography.typography.fontWeightBold,
+						fontSize: themeTypography.typography.fontSize12,
 						"&:hover": {
 							backgroundColor: themeColors.palette.secondary.dark,
 						},
@@ -604,7 +606,7 @@ const theme = createTheme(
 				styleOverrides: {
 					root: {
 						"& span": {
-							fontWeight: themeTypography.fontWeightBold,
+							fontWeight: themeTypography.typography.fontWeightBold,
 						},
 					},
 				},
