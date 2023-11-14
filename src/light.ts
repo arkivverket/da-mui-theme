@@ -54,6 +54,29 @@ interface Fill {
 	disabled: string
 }
 
+interface Border {
+	inputDefault: string
+	inputActive: string
+	disabled: string
+}
+
+interface WarningPalette {
+	content: string
+	accent: string
+	background: string
+}
+
+interface Warnings {
+	success: WarningPalette
+	error: WarningPalette
+	warning: WarningPalette
+	info: WarningPalette
+	disabled: {
+		content: string
+		background: string
+	}
+}
+
 declare module "@mui/material/styles" {
 	interface TypeBackground {
 		content: string
@@ -73,6 +96,8 @@ declare module "@mui/material/styles" {
 		brandBlack: BrandBlack
 		brandWhite: BrandWhite
 		fill: Fill
+		border: Border
+		warnings: Warnings
 	}
 
 	interface PaletteOptions {
@@ -85,6 +110,8 @@ declare module "@mui/material/styles" {
 		brandWhite: BrandWhite
 		brandGrey: BrandGrey
 		fill: Fill
+		border: Border
+		warnings: Warnings
 	}
 }
 
@@ -270,6 +297,37 @@ const themeColors = createTheme({
 			variant5: "#636363",
 			variant6: "#1D1D1D",
 		},
+		border: {
+			inputDefault: "#D7D7D7",
+			inputActive: "#1D1D1D",
+			disabled: "#D7D7D7",
+		},
+		warnings: {
+			success: {
+				content: "#2F4029",
+				accent: "#3B5F00",
+				background: "#E8F7CF",
+			},
+			error: {
+				content: "#631901",
+				accent: "#EB3B00",
+				background: "#FFDCD7",
+			},
+			warning: {
+				content: "#4D3814",
+				accent: "#E25F00",
+				background: "#FFEED1",
+			},
+			info: {
+				content: "#123565",
+				accent: "#2A6AC5",
+				background: "#E3ECF9",
+			},
+			disabled: {
+				content: "#AEAEAE",
+				background: "#EBEBEB",
+			},
+		},
 	},
 	typography: {
 		body: {
@@ -411,11 +469,18 @@ const theme = createTheme(
 							+ themeColors.palette.fill.tertiary + " 20%, "
 							+ themeColors.palette.fill.tertiary + " 20%, "
 							+ themeColors.palette.fill.tertiary + " 20%, rgba(0,0,0,0) 20%)",
+							padding: "6px",
+						},
+						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root)": {
+							borderWidth: "1px",
+							borderStyle: "solid",
+							boderColor: themeColors.palette.border.inputActive,
+							borderRadius: "50%",
 						},
 						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path": {
 							color: themeColors.palette.fill.tertiary,
 							stroke: themeColors.palette.fill.tertiary,
-							strokeWidth: 4,
+							strokeWidth: 5,
 							boxShadow: " 0px 0px 0px 99px rgba(0,0,0,1) inset",
 						},
 						"&.Mui-checked": {
