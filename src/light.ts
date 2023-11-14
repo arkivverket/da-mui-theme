@@ -188,7 +188,7 @@ declare module "@mui/material/Paper" {
 
 const themeTypography = createTheme({
 	typography: {
-		fontSize: 16,
+		fontSize: 14,
 		fontFamily: [
 			"'Neue Haas Grotesk'",
 			"'Source Sans 3'",
