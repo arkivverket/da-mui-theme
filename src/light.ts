@@ -332,7 +332,6 @@ const themeColors = createTheme({
 	typography: {
 		...themeTypography.typography,
 		body: {
-			fontFamily: themeTypography.typography.fontFamily,
 			fontWeight: themeTypography.typography.fontWeightRoman,
 			fontSize: themeTypography.typography.fontSize16,
 			lineHeight: themeTypography.typography.lineHeight150,
@@ -427,13 +426,6 @@ const themeColors = createTheme({
 const theme = createTheme(
 	{
 		components: {
-			MuiCssBaseline: {
-				styleOverrides: {
-					body: {
-						fontFamily: themeTypography.typography.fontFamily,
-					},
-				},
-			},
 			MuiPaper: {
 				variants: [
 					{
