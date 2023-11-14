@@ -1,6 +1,6 @@
 {
 	"name": "@digitalarkivet/mui-theme",
-	"version": "2.0.0-alpha9",
+	"version": "2.0.0-alpha10",
 	"description": "MUI themes for Digitalarkivet applications",
 	"private": false,
 	"main": "dist/main.js",
