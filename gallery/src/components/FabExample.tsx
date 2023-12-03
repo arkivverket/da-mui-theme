@@ -1,4 +1,4 @@
-import { Autocomplete, Button, Fab, Grid, Paper, Popper, Stack, styled, TextField, Typography } from "@mui/material"
+import { Autocomplete, Button, Fab, Grid, Paper, Popper, Stack, styled, TextField, Tooltip, Typography } from "@mui/material"
 import { useRef, useState } from "react"
 import { ArrowDropDown } from "@mui/icons-material"
 
@@ -20,7 +20,9 @@ export const FabExample = () => {
 					<InnerPaper variant="padded">
 						<Fab variant="extended">Enabled</Fab>
 						&nbsp;
-						<Fab>E</Fab>
+						<Tooltip title="Tooltip">
+							<Fab>E</Fab>
+						</Tooltip>
 						&nbsp;
 						<Fab variant="extended" disabled>
 							Disabled
@@ -37,7 +39,9 @@ export const FabExample = () => {
 							Enabled
 						</Fab>
 						&nbsp;
-						<Fab color="secondary">E</Fab>
+						<Tooltip title="Tooltip">
+							<Fab color="secondary">E</Fab>
+						</Tooltip>
 						&nbsp;
 						<Fab variant="extended" color="secondary" disabled>
 							Disabled
@@ -56,7 +60,9 @@ export const FabExample = () => {
 							Enabled
 						</Fab>
 						&nbsp;
-						<Fab color="secondaryResult">E</Fab>
+						<Tooltip title="Tooltip">
+							<Fab color="secondaryResult">E</Fab>
+						</Tooltip>
 						&nbsp;
 						<Fab variant="extended" color="secondaryResult" disabled>
 							Disabled
