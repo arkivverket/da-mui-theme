@@ -88,6 +88,7 @@ declare module "@mui/material/styles" {
 	}
 
 	interface Palette {
+		secondaryResult: PaletteColor
 		brandGreen: BrandGreen
 		brandGrey: BrandGrey
 		brandBlue: BrandBlue
@@ -101,14 +102,14 @@ declare module "@mui/material/styles" {
 	}
 
 	interface PaletteOptions {
-		secondaryResult: PaletteColor;
+		secondaryResult: PaletteColor
 		brandGreen: BrandGreen
+		brandGrey: BrandGrey
 		brandBlue: BrandBlue
 		brandOrange: BrandOrange
 		brandYellow: BrandYellow
 		brandBlack: BrandBlack
 		brandWhite: BrandWhite
-		brandGrey: BrandGrey
 		fill: Fill
 		border: Border
 		warnings: Warnings
@@ -117,22 +118,22 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/styles/createTypography" {
 	interface FontStyle {
-		fontWeightRoman: React.CSSProperties['fontWeight']
-		lineHeight100: React.CSSProperties['lineHeight']
-		lineHeight110: React.CSSProperties['lineHeight']
-		lineHeight120: React.CSSProperties['lineHeight']
-		lineHeight130: React.CSSProperties['lineHeight']
-		lineHeight140: React.CSSProperties['lineHeight']
-		lineHeight150: React.CSSProperties['lineHeight']
-		fontSize12: React.CSSProperties['fontSize']
-		fontSize14: React.CSSProperties['fontSize']
-		fontSize16: React.CSSProperties['fontSize']
-		fontSize20: React.CSSProperties['fontSize']
-		fontSize24: React.CSSProperties['fontSize']
-		fontSize32: React.CSSProperties['fontSize']
-		fontSize40: React.CSSProperties['fontSize']
-		fontSize56: React.CSSProperties['fontSize']
-		fontSize72: React.CSSProperties['fontSize']
+		fontWeightRoman: React.CSSProperties["fontWeight"]
+		lineHeight100: React.CSSProperties["lineHeight"]
+		lineHeight110: React.CSSProperties["lineHeight"]
+		lineHeight120: React.CSSProperties["lineHeight"]
+		lineHeight130: React.CSSProperties["lineHeight"]
+		lineHeight140: React.CSSProperties["lineHeight"]
+		lineHeight150: React.CSSProperties["lineHeight"]
+		fontSize12: React.CSSProperties["fontSize"]
+		fontSize14: React.CSSProperties["fontSize"]
+		fontSize16: React.CSSProperties["fontSize"]
+		fontSize20: React.CSSProperties["fontSize"]
+		fontSize24: React.CSSProperties["fontSize"]
+		fontSize32: React.CSSProperties["fontSize"]
+		fontSize40: React.CSSProperties["fontSize"]
+		fontSize56: React.CSSProperties["fontSize"]
+		fontSize72: React.CSSProperties["fontSize"]
 	}
 
 	interface Typography {
@@ -164,13 +165,13 @@ declare module "@mui/material/styles/createTypography" {
 	}
 }
 
-declare module '@mui/material/Button' {
+declare module "@mui/material/Button" {
 	interface ButtonPropsColorOverrides {
 		secondaryResult: true
 	}
 }
 
-declare module '@mui/material/Fab' {
+declare module "@mui/material/Fab" {
 	interface FabPropsColorOverrides {
 		secondaryResult: true
 	}
@@ -195,7 +196,7 @@ const themeTypography = createTheme({
 			"'Source Sans Pro'",
 			"'Helvetica Neue'",
 			"Arial",
-			"sans-serif"
+			"sans-serif",
 		].join(","),
 		fontWeightBold: 500,
 		fontWeightRoman: 400, // Alias for fontWeightRegular
@@ -223,7 +224,7 @@ const themeTypography = createTheme({
 
 const themeColors = createTheme({
 	shape: {
-		borderRadius: 2
+		borderRadius: 2,
 	},
 	palette: {
 		background: {
@@ -257,10 +258,10 @@ const themeColors = createTheme({
 			light: "#E4F2CC",
 		},
 		secondaryResult: {
-			main: '#E3ECF9',
-			contrastText: '#1D1D1D',
-			dark: '#D1D9E5',
-			light: '#E7EFFA',
+			main: "#E3ECF9",
+			contrastText: "#1D1D1D",
+			dark: "#D1D9E5",
+			light: "#E7EFFA",
 		},
 		brandGreen: {
 			variant05: "#F9FAF7",
@@ -465,11 +466,16 @@ const theme = createTheme(
 				styleOverrides: {
 					colorPrimary: {
 						"&": {
-							background: "radial-gradient(ellipse at center, "
-							+ themeColors.palette.fill.tertiary + " 0%, "
-							+ themeColors.palette.fill.tertiary + " 20%, "
-							+ themeColors.palette.fill.tertiary + " 20%, "
-							+ themeColors.palette.fill.tertiary + " 20%, rgba(0,0,0,0) 20%)",
+							background:
+								"radial-gradient(ellipse at center, " +
+								themeColors.palette.fill.tertiary +
+								" 0%, " +
+								themeColors.palette.fill.tertiary +
+								" 20%, " +
+								themeColors.palette.fill.tertiary +
+								" 20%, " +
+								themeColors.palette.fill.tertiary +
+								" 20%, rgba(0,0,0,0) 20%)",
 							padding: "6px",
 						},
 						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root)": {
@@ -485,23 +491,33 @@ const theme = createTheme(
 							boxShadow: " 0px 0px 0px 99px rgba(0,0,0,1) inset",
 						},
 						"&.Mui-checked": {
-							background: "radial-gradient(ellipse at center, "
-							+ themeColors.palette.brandGreen.variant1 + " 0%, "
-							+ themeColors.palette.brandGreen.variant1 + " 20%, "
-							+ themeColors.palette.brandGreen.variant1 + " 20%, "
-							+ themeColors.palette.brandGreen.variant1 + " 20%, rgba(0,0,0,0) 20%)",
-							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+							background:
+								"radial-gradient(ellipse at center, " +
+								themeColors.palette.brandGreen.variant1 +
+								" 0%, " +
+								themeColors.palette.brandGreen.variant1 +
+								" 20%, " +
+								themeColors.palette.brandGreen.variant1 +
+								" 20%, " +
+								themeColors.palette.brandGreen.variant1 +
+								" 20%, rgba(0,0,0,0) 20%)",
+							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path": {
 								color: themeColors.palette.brandGreen.variant1,
 								stroke: themeColors.palette.brandGreen.variant1,
 							},
 						},
 						"&.Mui-disabled": {
-							background: "radial-gradient(ellipse at center, "
-							+ themeColors.palette.fill.disabled + " 0%, "
-							+ themeColors.palette.fill.disabled + " 20%, "
-							+ themeColors.palette.fill.disabled + " 20%, "
-							+ themeColors.palette.fill.disabled + " 20%, rgba(0,0,0,0) 20%)",
-							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+							background:
+								"radial-gradient(ellipse at center, " +
+								themeColors.palette.fill.disabled +
+								" 0%, " +
+								themeColors.palette.fill.disabled +
+								" 20%, " +
+								themeColors.palette.fill.disabled +
+								" 20%, " +
+								themeColors.palette.fill.disabled +
+								" 20%, rgba(0,0,0,0) 20%)",
+							"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path": {
 								color: themeColors.palette.fill.disabled,
 								stroke: themeColors.palette.fill.disabled,
 							},
@@ -596,7 +612,7 @@ const theme = createTheme(
 						"&:hover": {
 							backgroundColor: themeColors.palette.secondary.dark,
 						},
-						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path":{
+						"& .MuiSvgIcon-root:not(.MuiSvgIcon-root ~ .MuiSvgIcon-root) path": {
 							color: themeColors.palette.text.primary,
 						},
 					},
@@ -617,7 +633,7 @@ const theme = createTheme(
 						backgroundColor: themeColors.palette.background.content,
 						color: themeColors.palette.text.primary,
 						fontSize: themeTypography.typography.fontSize12,
-						boxShadow: '0px 8px 20px 5px rgba(0,0,0,0.1)',
+						boxShadow: "0px 8px 20px 5px rgba(0,0,0,0.1)",
 					},
 				},
 			},
