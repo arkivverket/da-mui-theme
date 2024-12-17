@@ -32,7 +32,7 @@
 	"devDependencies": {
 		"@mui/icons-material": "^5.11.11",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-		"@types/react": "^18.0.28",
+		"@types/react": "^19.0.1",
 		"@types/react-dom": "^19.0.1",
 		"fork-ts-checker-webpack-plugin": "^9.0.0",
 		"html-webpack-plugin": "^5.5.0",
