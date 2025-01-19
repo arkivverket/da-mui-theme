@@ -1,6 +1,6 @@
 {
 	"name": "@digitalarkivet/mui-theme",
-	"version": "2.0.0-alpha14",
+	"version": "3.0.0-alpha1",
 	"description": "MUI themes for Digitalarkivet applications",
 	"private": false,
 	"main": "dist/main.js",
@@ -25,20 +25,23 @@
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.8.2",
-		"@emotion/styled": "^11.8.1",
-		"@mui/material": "^5.5.3"
+		"@emotion/react": "^11.13.5",
+		"@emotion/styled": "^11.13.5",
+		"@mui-symbols-material/w400": "^0.4.1",
+		"@mui/material": "^6.1.8",
+		"@mui/x-date-pickers": "^7.23.2",
+		"dayjs": "^1.11.13"
 	},
 	"devDependencies": {
-		"@mui/icons-material": "^5.11.11",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+		"@types/node": "^22.10.2",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",
 		"fork-ts-checker-webpack-plugin": "^9.0.0",
 		"html-webpack-plugin": "^5.5.0",
 		"react-dom": "^18.2.0",
 		"ts-loader": "^9.4.2",
-		"typescript": "^5.0.2",
+		"typescript": "^5.7.2",
 		"webpack": "^5.76.0",
 		"webpack-cli": "^5.1.4",
 		"webpack-dev-server": "^5.0.4"

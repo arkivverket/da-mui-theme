@@ -12,7 +12,8 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "rootDir": "./src/"
+    "rootDir": "./src/",
+    "jsx": "react-jsx"
   },
   "exclude": [
     "node_modules",

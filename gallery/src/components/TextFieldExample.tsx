@@ -1,56 +1,76 @@
-import { Autocomplete, Button, Fab, Grid, Paper, Popper, Stack, styled, TextField, Typography } from "@mui/material"
-import { useRef, useState } from "react"
-import { ArrowDropDown } from "@mui/icons-material"
+import { Box, Button, Grid2 as Grid, TextField, Typography } from "@mui/material"
+import React from "react"
+import { ExampleWrapper } from "./ExampleWrapper"
 
-const InnerPaper = styled(Paper)({
-	maxWidth: "600px",
-	boxShadow:
-		"0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 9px 46px 8px rgba(0, 0, 0, 0.12), 0px 24px 38px 3px rgba(0, 0, 0, 0.14);",
-})
+type TextFieldSectionProps = {
+	title: string
+	fields: Array<Array<React.ReactNode>>
+}
+
+const TextFieldSection = ({ title, fields }: TextFieldSectionProps) => (
+	<Grid size={{ xs: 12, md: 6 }} sx={{ p: 2 }}>
+		<Typography variant="section">{title}</Typography>
+
+		{fields.map((field, index) => (
+			<Box key={index} sx={{ display: "flex", gap: 2, alignItems: "baseline", marginBottom: 2 }}>
+				{field.map((item, idx) => (
+					<React.Fragment key={idx}>{item}</React.Fragment>
+				))}
+			</Box>
+		))}
+	</Grid>
+)
 
 export const TextFieldExample = () => {
+	const sections = [
+		{
+			title: "Contained (default)",
+			fields: [
+				[
+					<TextField label="Enabled" helperText="Helper text" />,
+					<Button variant="contained" color="primary">
+						Button
+					</Button>,
+				],
+				[<TextField label="Disabled" disabled />],
+				[<TextField label="With error" error />],
+			],
+		},
+		{
+			title: "Standard",
+			fields: [
+				[<TextField label="Enabled" variant="standard" />],
+				[<TextField label="Disabled" variant="standard" disabled />],
+				[<TextField label="With error" variant="standard" error />],
+			],
+		},
+
+		{
+			title: "Filled",
+			fields: [
+				[<TextField label="Enabled" variant="filled" />],
+				[<TextField label="Disabled" variant="filled" disabled />],
+				[<TextField label="With error" variant="filled" error />],
+			],
+		},
+
+		{
+			title: "Multiline filled (rich)",
+			fields: [[<TextField multiline fullWidth label="Rich" variant="filled" />]],
+		},
+		{
+			title: "Multiline standard (rich)",
+			fields: [[<TextField multiline fullWidth label="Rich" error />]],
+		},
+	]
+
 	return (
-		<Paper variant="padded">
-			<Typography variant="h2">Eksempel på tekstinput</Typography>
-
+		<ExampleWrapper title="Eksempel på tekstinput">
 			<Grid container>
-				<Grid item xs={6}>
-					<Typography variant="h3">Default</Typography>
-
-					<InnerPaper variant="padded">
-						<TextField label="Enabled" />
-						&nbsp;
-						<TextField label="Disabled" disabled />
-					</InnerPaper>
-				</Grid>
-				<Grid item xs={6}>
-					<Typography variant="h3">Default (error)</Typography>
-
-					<InnerPaper variant="padded">
-						<TextField label="Enabled" color="error" />
-						&nbsp;
-						<TextField label="Disabled" color="error" disabled />
-					</InnerPaper>
-				</Grid>
-				<Grid item xs={6}>
-					<Typography variant="h3">Default (standard)</Typography>
-
-					<InnerPaper variant="padded">
-						<TextField label="Enabled" variant="standard" />
-						&nbsp;
-						<TextField label="Disabled" variant="standard" disabled />
-					</InnerPaper>
-				</Grid>
-				<Grid item xs={6}>
-					<Typography variant="h3">Default (error, standard)</Typography>
-
-					<InnerPaper variant="padded">
-						<TextField label="Enabled" color="error" variant="standard" />
-						&nbsp;
-						<TextField label="Disabled" color="error" variant="standard" disabled />
-					</InnerPaper>
-				</Grid>
+				{sections.map((section, index) => (
+					<TextFieldSection key={index} title={section.title} fields={section.fields} />
+				))}
 			</Grid>
-		</Paper>
+		</ExampleWrapper>
 	)
 }
