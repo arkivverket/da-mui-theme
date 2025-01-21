@@ -89,9 +89,11 @@ declare module "@mui/material/styles" {
 		fills: FillColor
 		borders: BorderColor
 	}
+
 	interface TypeText {
 		primaryInvert: string
 	}
+
 	interface TypeBackground {
 		white: string
 		green: string
@@ -283,9 +285,7 @@ const themeTypography = createTheme({
 					font-display: swap;
 					font-weight: 400;
 					src: local('Suisse Intl'), local('SuisseIntl-Regular'),
-               			
 						url('/assets/fonts/SuisseIntl-Regular.woff2') format('woff2'),
-               			
 						url('/assets/fonts/SuisseIntl-Regular.woff') format('woff');
 					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
 			  	},
@@ -295,9 +295,7 @@ const themeTypography = createTheme({
 					font-display: swap;
 					font-weight: 500;
 					src: local('Suisse Intl'), local('SuisseIntl-Medium'),
-               			
 						url('/assets/fonts/SuisseIntl-Medium.woff2') format('woff2'),
-               			
 						url('/assets/fonts/SuisseIntl-Medium.woff') format('woff');
 					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
 			  	},
@@ -307,9 +305,7 @@ const themeTypography = createTheme({
 					font-display: swap;
 					font-weight: 400;
 					src: local('Suisse Intl Mono'),
-               			
 						url('/assets/fonts/SuisseIntlMono-Regular.woff2') format('woff2'),
-               			
 						url('/assets/fonts/SuisseIntlMono-Regular.woff') format('woff');
 					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
 			  	},
@@ -319,9 +315,7 @@ const themeTypography = createTheme({
 					font-display: swap;
 					font-weight: 400;
 					src: local('Suisse Neue'),
-               			
 						url('/assets/fonts/SuisseNeue-Regular.woff2') format('woff2'),
-               			
 						url('/assets/fonts/SuisseNeue-Regular.woff') format('woff');
 					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
 			  	},

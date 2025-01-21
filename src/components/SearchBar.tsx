@@ -2,11 +2,7 @@ import React, { useState } from "react"
 import TextField, { TextFieldProps } from "@mui/material/TextField"
 import { styled } from "@mui/material/styles"
 import { Avatar, Box, Chip, IconButton, InputAdornment, outlinedInputClasses, Tooltip } from "@mui/material"
-import {
-	SearchOutlined as SearchIcon,
-	PhotoCameraOutlined as CameraIcon,
-	CloseOutlined as ClearIcon,
-} from "@mui-symbols-material/w400"
+import { SearchOutlined as SearchIcon, CameraAltOutlined as CameraIcon, CloseOutlined as ClearIcon } from "@mui/icons-material"
 
 interface SearchBarProps extends Omit<TextFieldProps<"outlined">, "variant"> {
 	value?: string
@@ -105,13 +101,13 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>((props, ref
 					label="Photo"
 					onDelete={handleRemoveImage}
 					variant="input"
-					sx={theme => ({
+					sx={{
 						position: "absolute",
 						top: "50%",
 						left: "30%",
 						transform: "translate(-50%, -50%)",
 						zIndex: 10,
-					})}
+					}}
 				/>
 			)}
 		</Box>

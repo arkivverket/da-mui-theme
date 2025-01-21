@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import { AddOutlined as AddIcon, RemoveOutlined as RemoveIcon } from "@mui-symbols-material/w400"
+import { AddOutlined as AddIcon, RemoveOutlined as RemoveIcon } from "@mui/icons-material"
 
 const ExpandIcon: React.FC = () => {
 	return (

@@ -1,7 +1,7 @@
 import { DaBadge } from "@da-mui-theme/components/DaBadge"
 import { ExampleWrapper } from "./ExampleWrapper"
 import { Grid2 as Grid } from "@mui/material"
-import { FeaturedSeasonalAndGiftsFilledOutlined as GiftIcon } from "@mui-symbols-material/w400"
+import { CardGiftcardOutlined as GiftIcon } from "@mui/icons-material"
 
 export const BadgeExample = () => {
 	const colorOptions = ["error", "warning", "info", "success", "news"] as const

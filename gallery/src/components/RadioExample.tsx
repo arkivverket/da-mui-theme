@@ -1,6 +1,6 @@
 import { Box, FormControl, FormControlLabel, IconButton, Radio, RadioGroup } from "@mui/material"
-import { InfoOutlined } from "@mui-symbols-material/w400"
 import { ExampleWrapper } from "./ExampleWrapper"
+import { InfoOutlined } from "@mui/icons-material"
 
 export const RadioExample = () => {
 	return (

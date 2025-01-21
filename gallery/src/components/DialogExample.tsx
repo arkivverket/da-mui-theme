@@ -1,7 +1,7 @@
 import { Box, Button, Dialog, DialogContent, DialogTitle, IconButton, Grid2 as Grid } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 import { useState } from "react"
-import { CloseOutlined as CloseIcon } from "@mui-symbols-material/w400"
+import { CloseOutlined as CloseIcon } from "@mui/icons-material"
 
 export const DialogExample = () => {
 	const [open, setOpen] = useState(false)

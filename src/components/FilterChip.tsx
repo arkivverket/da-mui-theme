@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Box, Chip, ChipProps } from "@mui/material"
 import { styled } from "@mui/material/styles"
-import { CheckOutlined } from "@mui-symbols-material/w400"
+import { CheckOutlined } from "@mui/icons-material"
 import { filterChipStyles } from "../light"
 
 const StyledChip = styled(Chip)<ChipProps>(({ theme, selected }) => ({

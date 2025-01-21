@@ -27,7 +27,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.13.5",
 		"@emotion/styled": "^11.13.5",
-		"@material-symbols/svg-400": "^0.27.2",
+		"@mui/icons-material": "^6.4.0",
 		"@mui/material": "^6.1.8",
 		"@mui/x-date-pickers": "^7.23.2",
 		"@svgr/webpack": "^8.1.0",

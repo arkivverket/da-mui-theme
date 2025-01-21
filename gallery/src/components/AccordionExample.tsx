@@ -1,9 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
-import {
-	SettingsOutlined as SettingsIcon,
-	FeaturedSeasonalAndGiftsFilledOutlined as GiftIcon,
-} from "@mui-symbols-material/w400"
+import { SettingsOutlined as SettingsIcon, CardGiftcardOutlined as GiftIcon } from "@mui/icons-material"
+
 import { DaBadge } from "@da-mui-theme/components/DaBadge"
 
 export const AccordionExample = () => {

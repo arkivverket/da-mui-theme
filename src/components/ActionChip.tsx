@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles"
 import Button from "@mui/material/Button"
 import Menu, { MenuProps } from "@mui/material/Menu"
 import { Box, buttonBaseClasses, MenuItem } from "@mui/material"
-import { KeyboardArrowDownOutlined } from "@mui-symbols-material/w400"
+import { KeyboardArrowDownOutlined } from "@mui/icons-material"
 
 const StyledButton = styled(Button)(({ theme }) => ({
 	borderRadius: theme.customShape.borderRadiusFull,

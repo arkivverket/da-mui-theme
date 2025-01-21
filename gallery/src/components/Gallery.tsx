@@ -21,7 +21,7 @@ import { TabExample } from "./TabExample"
 import { TypographyExample } from "./TypographyExample"
 import { ChipExample } from "./ChipExample"
 import { DialogExample } from "./DialogExample"
-import { CheckOutlined as CheckIcon } from "@mui-symbols-material/w400"
+import { CheckOutlined as CheckIcon } from "@mui/icons-material"
 
 const gallery = [
 	{ label: "Colors", component: Colors },

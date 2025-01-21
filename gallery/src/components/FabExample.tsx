@@ -1,6 +1,6 @@
 import { Fab, Grid2 as Grid, Stack, Tooltip, Typography } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
-import { TuneOutlined } from "@mui-symbols-material/w400"
+import { TuneOutlined } from "@mui/icons-material"
 
 type FabSectionProps = {
 	title: string
