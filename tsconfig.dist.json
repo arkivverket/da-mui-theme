@@ -13,7 +13,10 @@
     "strict": true,
     "esModuleInterop": true,
     "rootDir": "./src/",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+        "@da-mui-theme/*": ["./src/*"]
+    },
   },
   "exclude": [
     "node_modules",
