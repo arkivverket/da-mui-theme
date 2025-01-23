@@ -29,7 +29,6 @@
 		"@emotion/styled": "^11.13.5",
 		"@mui/icons-material": "^6.4.0",
 		"@mui/material": "^6.1.8",
-		"@mui/x-date-pickers": "^7.23.2",
 		"@svgr/webpack": "^8.1.0",
 		"dayjs": "^1.11.13"
 	},
@@ -45,7 +44,8 @@
 		"typescript": "^5.7.2",
 		"webpack": "^5.76.0",
 		"webpack-cli": "^6.0.1",
-		"webpack-dev-server": "^5.0.4"
+		"webpack-dev-server": "^5.0.4",
+		"@mui/x-date-pickers": "^7.23.2"
 	},
 	"files": [
 		"dist",

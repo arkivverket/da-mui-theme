@@ -4,9 +4,11 @@ import { styled } from "@mui/material/styles"
 import { Avatar, Box, Chip, IconButton, InputAdornment, outlinedInputClasses, Tooltip } from "@mui/material"
 import { SearchOutlined as SearchIcon, CameraAltOutlined as CameraIcon, CloseOutlined as ClearIcon } from "@mui/icons-material"
 
+const DEFAULT_PHOTO_SEARCH_TITLE = "Søk med bilde"
+
 interface SearchBarProps extends Omit<TextFieldProps<"outlined">, "variant"> {
 	value?: string
-	photoSearch?: boolean // Enables photo search functionality
+	photoSearch?: boolean | { enabled: boolean; title?: string } // Enables photo search functionality
 	onPhotoSearch?: (file: File | null) => void // Callback for photo search
 }
 
@@ -25,6 +27,9 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>((props, ref
 	const [value, setValue] = useState<string>(valueProp ?? "")
 	const [selectedImage, setSelectedImage] = useState<File | null>(null)
 	const [isReadOnly, setIsReadOnly] = useState(false)
+
+	const photoSeachTitle =
+		typeof photoSearch === "boolean" ? DEFAULT_PHOTO_SEARCH_TITLE : photoSearch?.title || DEFAULT_PHOTO_SEARCH_TITLE
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setValue(event.target.value)
@@ -82,13 +87,15 @@ const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>((props, ref
 										<ClearIcon />
 									</IconButton>
 								</InputAdornment>
-								<InputAdornment position="end" sx={{ display: photoSearch ? "flex" : "none" }}>
-									<Tooltip title="Søk med bilde" arrow>
-										<IconButton onClick={handlePhotoClick}>
-											<CameraIcon />
-										</IconButton>
-									</Tooltip>
-								</InputAdornment>
+								{photoSearch && (typeof photoSearch === "boolean" || photoSearch?.enabled) && (
+									<InputAdornment position="end">
+										<Tooltip title={photoSeachTitle} arrow>
+											<IconButton onClick={handlePhotoClick}>
+												<CameraIcon />
+											</IconButton>
+										</Tooltip>
+									</InputAdornment>
+								)}
 							</>
 						),
 					},
