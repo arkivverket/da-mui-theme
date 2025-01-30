@@ -1,4 +1,4 @@
-import SearchBar from "@da-mui-theme/components/SearchBar"
+import SearchBar from "@digitalarkivet/mui-theme/components/SearchBar"
 import { ExampleWrapper } from "./ExampleWrapper"
 
 export const SearchBarExample = () => {

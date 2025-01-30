@@ -39,7 +39,7 @@ module.exports = {
 	resolve: {
 		extensions: [".tsx", ".ts", ".js"],
 		alias: {
-			"@da-mui-theme": path.resolve(__dirname, "src"),
+			"@digitalarkivet/mui-theme": path.resolve(__dirname, "src"),
 		},
 	},
 }

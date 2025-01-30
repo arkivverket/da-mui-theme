@@ -1,5 +1,5 @@
-import type { DaBadgeClassKey, DaBadgeProps } from "@da-mui-theme/components/DaBadge"
-import type { ProgressBarProps } from "@da-mui-theme/components/ProgressBar"
+import type { DaBadgeClassKey, DaBadgeProps } from "@digitalarkivet/mui-theme/components/DaBadge"
+import type { ProgressBarProps } from "@digitalarkivet/mui-theme/components/ProgressBar"
 import type { PaletteColorOptions } from "@mui/material"
 import type { OverridesStyleRules } from "@mui/material/styles/overrides"
 

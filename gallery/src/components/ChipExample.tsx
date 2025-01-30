@@ -1,7 +1,7 @@
 import { Stack, Grid2 as Grid, Typography, Box, Chip } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
-import FilterChip from "@da-mui-theme/components/FilterChip"
-import ActionChip from "@da-mui-theme/components/ActionChip"
+import FilterChip from "@digitalarkivet/mui-theme/components/FilterChip"
+import ActionChip from "@digitalarkivet/mui-theme/components/ActionChip"
 
 export const ChipExample = () => {
 	return (

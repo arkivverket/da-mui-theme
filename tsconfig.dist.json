@@ -15,7 +15,7 @@
     "rootDir": "./src/",
     "jsx": "react-jsx",
     "paths": {
-        "@da-mui-theme/*": ["./src/*"]
+        "@digitalarkivet/mui-theme/*": ["./src/*"]
     },
   },
   "exclude": [

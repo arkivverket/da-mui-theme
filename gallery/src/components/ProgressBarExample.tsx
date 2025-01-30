@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ExampleWrapper } from "./ExampleWrapper"
-import ProgressBar from "@da-mui-theme/components/ProgressBar"
+import ProgressBar from "@digitalarkivet/mui-theme/components/ProgressBar"
 
 export const ProgressBarExample = () => {
 	const [percentage, setPercentage] = useState(0)

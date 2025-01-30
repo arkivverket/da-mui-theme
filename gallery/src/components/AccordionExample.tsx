@@ -2,7 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from "
 import { ExampleWrapper } from "./ExampleWrapper"
 import { SettingsOutlined as SettingsIcon, CardGiftcardOutlined as GiftIcon } from "@mui/icons-material"
 
-import { DaBadge } from "@da-mui-theme/components/DaBadge"
+import { DaBadge } from "@digitalarkivet/mui-theme/components/DaBadge"
 
 export const AccordionExample = () => {
 	const accordionData = [
