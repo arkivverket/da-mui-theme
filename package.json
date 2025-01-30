@@ -3,9 +3,11 @@
 	"version": "3.0.0-alpha1",
 	"description": "MUI themes for Digitalarkivet applications",
 	"private": false,
-	"main": "dist/main.js",
-	"types": "dist/main.d.ts",
 	"author": "Arkivvverket",
+	"exports": {
+		".": "./dist/main.js",
+		"./components/*": "./dist/components/*.js"
+	},
 	"license": "MIT",
 	"homepage": "https://digitalarkivet.no",
 	"keywords": [
@@ -20,9 +22,9 @@
 		"url": "https://github.com/arkivverket/da-mui-theme/issues"
 	},
 	"scripts": {
-		"build": "tsc -p tsconfig.dist.json",
+		"build": "tsc -p tsconfig.dist.json && mkdir -p dist/types && cp -r src/types/*.d.ts dist/types/",
 		"gallery": "npx webpack serve",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"clean": "rm -r dist/*"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.13.5",
