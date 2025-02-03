@@ -12,7 +12,13 @@
     "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
-    "rootDir": "./src/"
+    "rootDir": "./src/",
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "declarationMap": true,
+    "paths": {
+        "@digitalarkivet/mui-theme/*": ["./src/*"]
+    },
   },
   "exclude": [
     "node_modules",

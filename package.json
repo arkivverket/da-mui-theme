@@ -1,11 +1,13 @@
 {
 	"name": "@digitalarkivet/mui-theme",
-	"version": "2.0.0-alpha14",
+	"version": "3.0.0-alpha1",
 	"description": "MUI themes for Digitalarkivet applications",
 	"private": false,
-	"main": "dist/main.js",
-	"types": "dist/main.d.ts",
 	"author": "Arkivvverket",
+	"exports": {
+		".": "./dist/main.js",
+		"./components/*": "./dist/components/*.js"
+	},
 	"license": "MIT",
 	"homepage": "https://digitalarkivet.no",
 	"keywords": [
@@ -22,23 +24,28 @@
 	"scripts": {
 		"build": "tsc -p tsconfig.dist.json",
 		"gallery": "npx webpack serve",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"clean": "rm -r dist/*"
 	},
-	"dependencies": {
-		"@emotion/react": "^11.8.2",
-		"@emotion/styled": "^11.8.1",
-		"@mui/material": "^5.5.3"
+	"peerDependencies": {
+		"@emotion/react": "^11.13.5",
+		"@emotion/styled": "^11.13.5",
+		"@mui/icons-material": "^6.4.0",
+		"@mui/material": "^6.1.8",
+		"react": "^19.0.0"
 	},
 	"devDependencies": {
-		"@mui/icons-material": "^5.11.11",
+		"@mui/x-date-pickers": "^7.23.2",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+		"@svgr/webpack": "^8.1.0",
+		"@types/node": "^22.10.2",
 		"@types/react": "^19.0.1",
 		"@types/react-dom": "^19.0.1",
+		"dayjs": "^1.11.13",
 		"fork-ts-checker-webpack-plugin": "^9.0.0",
 		"html-webpack-plugin": "^5.5.0",
 		"react-dom": "^19.0.0",
-		"ts-loader": "^9.4.2",
-		"typescript": "^5.0.2",
+		"ts-loader": "^9.5.2",
+		"typescript": "^5.7.2",
 		"webpack": "^5.76.0",
 		"webpack-cli": "^6.0.1",
 		"webpack-dev-server": "^5.0.4"

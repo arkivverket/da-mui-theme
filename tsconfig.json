@@ -5,7 +5,7 @@
         "rootDir": "",
         "baseUrl": "./gallery/src/",
         "paths": {
-            "@da-mui-theme/*": ["../../src/*"]
+            "@digitalarkivet/mui-theme/*": ["../../src/*"]
         },
         "outDir": "./gallery/build"
     },

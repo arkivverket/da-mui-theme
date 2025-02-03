@@ -1,4 +1,5 @@
-import { Box, Grid, Paper, Stack, StackProps, styled, Typography } from "@mui/material"
+import { Box, Grid2 as Grid, Stack, StackProps, styled, Tooltip, Typography, useTheme } from "@mui/material"
+import { ExampleWrapper } from "./ExampleWrapper"
 
 const ColorDropRectangle = styled("div")({
 	boxSizing: "border-box",
@@ -19,8 +20,7 @@ const ColorDropRectangle = styled("div")({
 
 const ColorDropStack = styled(Stack)(({ theme }) => ({
 	borderColor: theme.palette.secondary.main,
-	borderWidth: "1px",
-	borderStyle: "solid",
+
 	padding: "12px",
 	alignItems: "center",
 	justifyContent: "center",
@@ -35,128 +35,110 @@ const ColorDropStack = styled(Stack)(({ theme }) => ({
 	},
 }))
 
+const getColorFromTheme = (colorPath: string) => {
+	const theme = useTheme()
+
+	return colorPath.split(".").reduce((acc, key) => acc && (acc as any)[key], theme.palette)
+}
+
 const ColorDrop = ({ name, path, big, ...props }: { big?: boolean; name: string; path: string } & StackProps) => {
-	const paletteName = `${path}.${name.toLowerCase()}`
+	const paletteName = `${path}.${name.charAt(0).toLowerCase() + name.slice(1)}`
+	const colorValue = getColorFromTheme(paletteName).toString()
 
 	return (
 		<ColorDropStack {...props}>
-			<ColorDropRectangle sx={{ backgroundColor: paletteName }} className={big ? "big" : ""} />
-			<Typography variant="body1">{name}</Typography>
+			<Tooltip title={colorValue}>
+				<ColorDropRectangle sx={{ backgroundColor: paletteName }} className={big ? "big" : ""} />
+			</Tooltip>
+			<Typography variant="label" sx={{ mt: 1 }}>
+				{name}
+			</Typography>
 		</ColorDropStack>
 	)
 }
 
-const PaletteDisplay = ({ name, path }: { name: string; path: string }) => {
+const GenericPaletteDisplay = ({ title, path, colors }: { title: string; path: string; colors: string[] }) => {
+	const layout = calculateGridLayout(colors)
 	return (
-		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
-			<Typography variant="h4">{name}</Typography>
-			<Box display="grid" gridTemplateAreas={{ xs: '"a a" "b b" "c c"', md: '"a a b c" "a a b c"' }}>
-				<ColorDrop path={path} name="Main" big gridArea="a" />
-				<ColorDrop path={path} name="Dark" gridArea="b" />
-				<ColorDrop path={path} name="Light" gridArea="c" />
-			</Box>
-		</Stack>
-	)
-}
-
-const TextPaletteDisplay = ({}) => {
-	return (
-		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
-			<Typography variant="h4">Text</Typography>
-			<Box display="grid" gridTemplateAreas={'"a a b b" "a a c c" "a a d d"'}>
-				<ColorDrop path={"text"} name="Primary" big gridArea="a" />
-				<ColorDrop path={"text"} name="Secondary" gridArea="b" />
-				<ColorDrop path={"text"} name="Disabled" gridArea="c" />
-				<ColorDrop path={"text"} name="White" gridArea="d" />
-			</Box>
-		</Stack>
-	)
-}
-
-const BackgroundPaletteDisplay = ({}) => {
-	const dropSx = {
-		justifyContent: "flex-start",
-	}
-
-	return (
-		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
-			<Typography variant="h4">Backgrounds</Typography>
-			<Stack>
-				<ColorDrop path={"background"} name="Default" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Content" direction={"row"} sx={{ ...dropSx }} />
-				<ColorDrop path={"background"} name="Assets" direction={"row"} sx={{ ...dropSx }} />
-			</Stack>
-		</Stack>
-	)
-}
-
-const BrandPaletteDisplay = ({
-	color,
-	variants,
-	skip = 0,
-	has05 = false,
-}: {
-	color: string
-	variants: number
-	skip?: number
-	has05?: boolean
-}) => {
-	const dropSx = {
-		justifyContent: "flex-start",
-	}
-	return (
-		<Stack sx={{ maxWidth: { xs: "100%", md: "80%", xl: "60%" } }}>
-			<Typography variant="h4">{color}</Typography>
-			<Stack>
-				{has05 && <ColorDrop path={color} name={`variant05`} direction={"row"} sx={{ ...dropSx }} />}
-				{Array.from({ length: variants }, (_, i) => (
-					<ColorDrop path={color} name={`variant${i + 1 + skip}`} direction={"row"} sx={{ ...dropSx }} />
+		<Box>
+			<Typography variant="section">{title}</Typography>
+			<Box
+				sx={{
+					display: "grid",
+					gridTemplateAreas: layout,
+					gridTemplateColumns: {
+						xs: "1fr 1fr", // Two columns for small screens
+						md: "repeat(4, 1fr)", // Four columns for medium screens and up
+					},
+				}}
+			>
+				{colors.map((color, index) => (
+					<ColorDrop
+						key={color}
+						path={path}
+						name={color}
+						big={index === 0}
+						gridArea={String.fromCharCode(97 + index)} // "a", "b", "c", etc.
+					/>
 				))}
-			</Stack>
-		</Stack>
+			</Box>
+		</Box>
 	)
+}
+
+const calculateGridLayout = (colors: string[]): { xs: string; md: string } => {
+	const areas = colors.map((_, index) => String.fromCharCode(97 + index))
+
+	const createRows = (areas: string[], columns: number): string[] => {
+		const rows: string[] = []
+		for (let i = 0; i < areas.length; i += columns) {
+			const row = areas.slice(i, i + columns)
+			while (row.length < columns) {
+				row.push(".")
+			}
+			rows.push(`"${row.join(" ")}"`)
+		}
+		return rows
+	}
+
+	const xsRows = createRows(areas, 2)
+	const mdRows = createRows(areas, 4)
+
+	return {
+		xs: xsRows.join(" "),
+		md: mdRows.join(" "),
+	}
 }
 
 export const Colors = () => {
+	const defaultColors = ["Main", "Dark", "Light"]
+	const palette = [
+		{ name: "Primary colors", path: "primary", colors: defaultColors },
+		{ name: "Secondary colors", path: "secondary", colors: defaultColors },
+		{ name: "Error colors", path: "error", colors: [...defaultColors, "Accent", "Background"] },
+		{ name: "Warning colors", path: "warning", colors: [...defaultColors, "Accent", "Background"] },
+		{ name: "Success colors", path: "success", colors: [...defaultColors, "Accent", "Background"] },
+		{ name: "Info colors", path: "info", colors: [...defaultColors, "Accent", "Background"] },
+		{ name: "News colors", path: "news", colors: ["Main", "Accent", "Background"] },
+		{
+			name: "Background colors",
+			path: "background",
+			colors: ["Default", "White", "Beige", "Green", "Gray", "Floating", "DarkGreen"],
+		},
+		{ name: "Fills colors", path: "fills", colors: ["Primary", "Secondary", "PrimaryHover", "Hover"] },
+		{ name: "Text colors", path: "text", colors: ["Primary", "Secondary", "Disabled", "PrimaryInvert"] },
+		{ name: "Border colors", path: "borders", colors: ["Default", "Active", "Line", "Highlight", "Disabled", "Inverted"] },
+		{ name: "Disabled colors", path: "disabled", colors: ["Main", "Content", "Background"] },
+	]
 	return (
-		<Paper variant="padded">
-			<Typography variant="h2">Fargepalett</Typography>
-
-			<Grid container>
-				<Grid item xs={6}>
-					<PaletteDisplay name="Primary colors" path="primary" />
-				</Grid>
-				<Grid item xs={6}>
-					<PaletteDisplay name="Secondary colors" path="secondary" />
-				</Grid>
-				<Grid item xs={6}>
-					<TextPaletteDisplay />
-				</Grid>
-				<Grid item xs={6}>
-					<BackgroundPaletteDisplay />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandGreen" variants={5} has05 />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandBlue" variants={1} />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandOrange" skip={1} variants={4} />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandYellow" variants={1} />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandBlack" variants={1} />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandWhite" variants={1} />
-				</Grid>
-				<Grid item xs={6}>
-					<BrandPaletteDisplay color="brandGrey" variants={6} has05 />
-				</Grid>
+		<ExampleWrapper title="Fargepalett">
+			<Grid container spacing={2}>
+				{palette.map(({ name, path, colors }) => (
+					<Grid key={path} size={{ xs: 12, sm: 6, lg: 4 }}>
+						<GenericPaletteDisplay title={name} path={path} colors={colors} />
+					</Grid>
+				))}
 			</Grid>
-		</Paper>
+		</ExampleWrapper>
 	)
 }

@@ -1,69 +1,65 @@
-import {
-	Autocomplete,
-	Button,
-	Chip,
-	Fab,
-	FormControl,
-	FormControlLabel,
-	FormLabel,
-	InputLabel,
-	MenuItem,
-	Paper,
-	Popper,
-	Radio,
-	RadioGroup,
-	Select,
-	SelectChangeEvent,
-	Stack,
-	styled,
-	Switch,
-	TextField,
-	Typography,
-} from "@mui/material"
-import { useRef, useState } from "react"
-import { ArrowDropDown } from "@mui/icons-material"
+import { Autocomplete, Checkbox, Chip, FormControl, FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material"
 import React from "react"
-
-const InnerPaper = styled(Paper)({
-	maxWidth: "600px",
-	boxShadow:
-		"0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 9px 46px 8px rgba(0, 0, 0, 0.12), 0px 24px 38px 3px rgba(0, 0, 0, 0.14);",
-})
+import { ExampleWrapper } from "./ExampleWrapper"
 
 export const AutoCompleteExample = () => {
-	const fixedOptions: any = [] // @ts-ignore
+	const fixedOptions: any = []
 	const [value, setValue] = React.useState([...fixedOptions])
+	const [color, setColor] = React.useState<"default" | "error" | "warning">("default")
+	const [disabled, setDisabled] = React.useState(false)
+
+	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setColor(event.target.value as "default" | "error" | "warning")
+	}
 
 	return (
-		<Paper variant="padded">
-			<Typography variant="h2">Eksempel på Autocompletes</Typography>
-
-			<InnerPaper variant="padded">
-				<FormControl fullWidth>
-					<Autocomplete
-						multiple
-						id="fixed-tags-demo"
-						value={value}
-						onChange={(event, newValue) => {
-							setValue([...fixedOptions, ...newValue.filter(option => fixedOptions.indexOf(option) === -1)])
-						}}
-						options={top100Films}
-						getOptionLabel={option => option.title}
-						renderTags={(tagValue, getTagProps) =>
-							tagValue.map((option, index) => (
-								<Chip
-									label={option.title}
-									{...getTagProps({ index })}
-									disabled={fixedOptions.indexOf(option) !== -1}
-								/>
-							))
-						}
-						style={{ width: 500 }}
-						renderInput={params => <TextField {...params} label="Favorittfilmer" placeholder="Favoritter" />}
-					/>
-				</FormControl>
-			</InnerPaper>
-		</Paper>
+		<ExampleWrapper title="Eksempel på Autocompletes">
+			<FormControl fullWidth>
+				<Autocomplete
+					multiple
+					id="fixed-tags-demo"
+					value={value}
+					onChange={(_event, newValue) => {
+						setValue([...fixedOptions, ...newValue.filter(option => fixedOptions.indexOf(option) === -1)])
+					}}
+					options={top100Films}
+					getOptionLabel={option => option.title}
+					disableCloseOnSelect
+					renderTags={(tagValue, getTagProps) =>
+						tagValue.map((option, index) => (
+							<Chip color={color} label={option.title} {...getTagProps({ index })} disabled={disabled} />
+						))
+					}
+					style={{ width: 500 }}
+					renderInput={params => <TextField {...params} label="Favorittfilmer" placeholder="Favoritter" />}
+				/>
+			</FormControl>
+			<FormControl>
+				<RadioGroup
+					aria-labelledby="demo-radio-buttons-group-label"
+					defaultValue="default"
+					value={color}
+					onChange={handleChange}
+				>
+					<FormControlLabel value="default" control={<Radio />} label="Default" />
+					<FormControlLabel value="error" control={<Radio />} label="Error" />
+					<FormControlLabel value="warning" control={<Radio />} label="Warning" />
+				</RadioGroup>
+			</FormControl>
+			<FormControl>
+				<FormControlLabel
+					control={
+						<Checkbox
+							onChange={() => {
+								setDisabled(!disabled)
+							}}
+							checked={disabled}
+						/>
+					}
+					label="Disable chips"
+				/>
+			</FormControl>
+		</ExampleWrapper>
 	)
 }
 
