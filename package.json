@@ -22,7 +22,7 @@
 		"url": "https://github.com/arkivverket/da-mui-theme/issues"
 	},
 	"scripts": {
-		"build": "tsc -p tsconfig.dist.json && mkdir -p dist/types && cp -r src/types/*.d.ts dist/types/",
+		"build": "tsc -p tsconfig.dist.json",
 		"gallery": "npx webpack serve",
 		"clean": "rm -r dist/*"
 	},

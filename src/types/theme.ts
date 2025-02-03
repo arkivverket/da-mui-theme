@@ -1,11 +1,3 @@
-import "@mui/material/styles"
-import "@mui/material/styles/createTypography"
-import "@mui/material/Typography"
-import "@mui/material/Alert"
-import "@mui/material/Tabs"
-import "@mui/material/Chip"
-import "@mui/material/Paper"
-
 import type { DaBadgeClassKey, DaBadgeProps } from "@digitalarkivet/mui-theme/components/DaBadge"
 import type { ProgressBarProps } from "@digitalarkivet/mui-theme/components/ProgressBar"
 import type { PaletteColorOptions } from "@mui/material"
