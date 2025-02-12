@@ -17,18 +17,7 @@ export const DatePickerExample = () => {
 		>
 			<ExampleWrapper title="Eksempel på DatePickers">
 				<InnerPaper>
-					<DatePicker
-						slotProps={{
-							actionBar: {
-								actions: ["clear"],
-							},
-						}}
-						sx={{
-							"& .MuiInputBase-input": {
-								textTransform: "lowercase",
-							},
-						}}
-					/>
+					<DatePicker />
 				</InnerPaper>
 			</ExampleWrapper>
 		</LocalizationProvider>
