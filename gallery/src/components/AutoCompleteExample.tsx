@@ -26,9 +26,11 @@ export const AutoCompleteExample = () => {
 					getOptionLabel={option => option.title}
 					disableCloseOnSelect
 					renderTags={(tagValue, getTagProps) =>
-						tagValue.map((option, index) => (
-							<Chip color={color} label={option.title} {...getTagProps({ index })} disabled={disabled} />
-						))
+						tagValue.map((option, index) => {
+							const props = getTagProps({ index })
+							const { key, ...otherProps } = props
+							return <Chip key={key} {...otherProps} color={color} label={option.title} disabled={disabled} />
+						})
 					}
 					style={{ width: 500 }}
 					renderInput={params => <TextField {...params} label="Favorittfilmer" placeholder="Favoritter" />}

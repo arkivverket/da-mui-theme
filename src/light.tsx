@@ -18,6 +18,9 @@ import {
 	tabsClasses,
 } from "@mui/material"
 import ExpandIcon from "./icons/ExpandIcon"
+import CalendarMonthIcon from "./icons/CalendarMonthIcon"
+import { Dayjs } from "dayjs"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 
 /**
  * Digitalarkivet base typography
@@ -947,9 +950,25 @@ const theme = createTheme(
 				styleOverrides: {
 					listbox: ({ theme }) => ({
 						[`& .${autocompleteClasses.option}`]: {
+							padding: theme.spacing(1.5, 2),
+							[`&:hover`]: {
+								color: theme.palette.fills.secondary,
+							},
 							[`&[aria-selected='true']`]: {
 								backgroundColor: theme.palette.fills.secondary,
 								color: theme.palette.text.primaryInvert,
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "space-between",
+								"&::after": {
+									content: '""',
+									width: 24,
+									height: 24,
+									backgroundImage:
+										"url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>\")",
+									backgroundRepeat: "no-repeat",
+									backgroundPosition: "center",
+								},
 								[`&:hover`]: {
 									backgroundColor: theme.palette.fills.secondary,
 									color: theme.palette.text.primaryInvert,
@@ -969,7 +988,6 @@ const theme = createTheme(
 				defaultProps: {
 					variant: "outlined",
 					color: "secondary",
-					diableRipple: true,
 				},
 				styleOverrides: {
 					root: ({ theme }) => ({
@@ -1092,6 +1110,38 @@ const theme = createTheme(
 			MuiDatePicker: {
 				defaultProps: {
 					format: "DD.MM.YYYY",
+					slots: {
+						openPickerIcon: CalendarMonthIcon,
+					},
+					showDaysOutsideCurrentMonth: true,
+					disableHighlightToday: true,
+					slotProps: {
+						textField: {
+							inputProps: {
+								style: {
+									textTransform: "lowercase",
+								},
+							},
+						},
+						popper: {
+							sx: theme => ({
+								marginTop: `${theme.spacing(1)} !important`,
+								"& .MuiPaper-root": {
+									boxShadow: theme.customShadows.variant2,
+								},
+							}),
+						},
+					},
+				},
+			},
+			MuiPickersLayout: {
+				styleOverrides: {
+					root: {
+						"& .MuiPickersCalendarHeader-label": {
+							fontWeight: themeTypography.typography.fontWeightBold,
+							textTransform: "capitalize",
+						},
+					},
 				},
 			},
 			MuiYearCalendar: {
@@ -1113,11 +1163,23 @@ const theme = createTheme(
 				},
 			},
 			MuiDayCalendar: {
+				defaultProps: {
+					dayOfWeekFormatter: (date: Dayjs) => {
+						const fullDay = date.format("dddd")
+						return fullDay.substring(0, 3)
+					},
+				},
 				styleOverrides: {
+					weekDayLabel: {
+						fontWeight: themeTypography.typography.fontWeightBold,
+						color: themeColors.palette.text.primary,
+						textTransform: "capitalize",
+					},
 					root: {
 						"& button": {
 							borderRadius: 0,
 							"&.Mui-selected": {
+								borderRadius: themeBorderRadius.borderRadiusSm,
 								backgroundColor: themeColors.palette.fills.secondary,
 								"&:focus": {
 									backgroundColor: themeColors.palette.fills.secondary,
@@ -1127,6 +1189,13 @@ const theme = createTheme(
 								backgroundColor: themeColors.palette.background.green,
 							},
 						},
+					},
+				},
+			},
+			MuiPickersCalendarHeader: {
+				defaultProps: {
+					slots: {
+						switchViewIcon: KeyboardArrowDownIcon,
 					},
 				},
 			},
