@@ -18,6 +18,12 @@ import {
 	tabsClasses,
 } from "@mui/material"
 import ExpandIcon from "./icons/ExpandIcon"
+import CalendarMonthIcon from "./icons/CalendarMonthIcon"
+import { Dayjs } from "dayjs"
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import RadioCheckedIcon from "./icons/RadioChecked"
+import RadioUncheckedIcon from "./icons/RadioUnchecked"
+import CheckBoxBlank from "./icons/CheckBoxBlank"
 
 /**
  * Digitalarkivet base typography
@@ -496,6 +502,30 @@ const actionChipStyles = {
 	},
 }
 
+const selectedOptionStyle = {
+	backgroundColor: themeColors.palette.fills.secondary,
+	color: themeColors.palette.text.primaryInvert,
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "space-between",
+	"&::after": {
+		content: '""',
+		width: 24,
+		height: 24,
+		backgroundImage:
+			"url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>\")",
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "center",
+	},
+	[`&:hover`]: {
+		backgroundColor: themeColors.palette.fills.secondary,
+		color: themeColors.palette.text.primaryInvert,
+	},
+	[`&.Mui-focused`]: {
+		backgroundColor: themeColors.palette.secondary.main,
+	},
+}
+
 export const filterChipStyles = {
 	color: themeColors.palette.secondary.main,
 	backgroundColor: themeColors.palette.background.default,
@@ -642,9 +672,19 @@ const theme = createTheme(
 			MuiCheckbox: {
 				defaultProps: {
 					disableRipple: true,
+					icon: <CheckBoxBlank />,
 				},
 				styleOverrides: {
 					root: {
+						[`&.${checkboxClasses.root}:not(.${checkboxClasses.checked}):not(.${checkboxClasses.indeterminate})`]:
+							{
+								"&:hover": {
+									"& svg path": {
+										stroke: themeColors.palette.common.black,
+										strokeWidth: 20,
+									},
+								},
+							},
 						[`&.${checkboxClasses.disabled}`]: {
 							color: themeColors.palette.borders.disabled,
 						},
@@ -801,6 +841,12 @@ const theme = createTheme(
 				},
 			},
 			MuiRadio: {
+				defaultProps: {
+					icon: <RadioUncheckedIcon />,
+					checkedIcon: <RadioCheckedIcon />,
+					disableRipple: true,
+					disableTouchRipple: true,
+				},
 				styleOverrides: {
 					root: {
 						color: themeColors.palette.text.primary,
@@ -809,6 +855,12 @@ const theme = createTheme(
 						},
 						[`&.${radioClasses.disabled}`]: {
 							color: themeColors.palette.text.disabled,
+						},
+						"&:hover": {
+							"& svg path": {
+								stroke: themeColors.palette.common.black,
+								strokeWidth: 20,
+							},
 						},
 					},
 				},
@@ -839,8 +891,9 @@ const theme = createTheme(
 					disableRipple: true,
 				},
 				styleOverrides: {
-					root: {
+					root: ({ theme }) => ({
 						[`&.${menuItemClasses.root}`]: {
+							padding: theme.spacing(1.5, 2),
 							[`&.${menuItemClasses.focusVisible}`]: {
 								backgroundColor: themeColors.palette.secondary.main,
 							},
@@ -848,14 +901,13 @@ const theme = createTheme(
 								backgroundColor: themeColors.palette.action.hover,
 							},
 							[`&.${menuItemClasses.selected}`]: {
-								color: themeColors.palette.text.primaryInvert,
-								backgroundColor: themeColors.palette.secondary.main,
+								...selectedOptionStyle,
 								"&:hover": {
 									backgroundColor: themeColors.palette.secondary.main,
 								},
 							},
 						},
-					},
+					}),
 				},
 			},
 			MuiTabs: {
@@ -947,16 +999,12 @@ const theme = createTheme(
 				styleOverrides: {
 					listbox: ({ theme }) => ({
 						[`& .${autocompleteClasses.option}`]: {
+							padding: theme.spacing(1.5, 2),
+							[`&:hover`]: {
+								color: theme.palette.fills.secondary,
+							},
 							[`&[aria-selected='true']`]: {
-								backgroundColor: theme.palette.fills.secondary,
-								color: theme.palette.text.primaryInvert,
-								[`&:hover`]: {
-									backgroundColor: theme.palette.fills.secondary,
-									color: theme.palette.text.primaryInvert,
-								},
-								[`&.Mui-focused`]: {
-									backgroundColor: themeColors.palette.secondary.main,
-								},
+								...selectedOptionStyle,
 							},
 						},
 					}),
@@ -969,7 +1017,6 @@ const theme = createTheme(
 				defaultProps: {
 					variant: "outlined",
 					color: "secondary",
-					diableRipple: true,
 				},
 				styleOverrides: {
 					root: ({ theme }) => ({
@@ -1092,6 +1139,49 @@ const theme = createTheme(
 			MuiDatePicker: {
 				defaultProps: {
 					format: "DD.MM.YYYY",
+					slots: {
+						openPickerIcon: props => {
+							return !props.ownerState?.value ? <CalendarMonthIcon /> : null
+						},
+					},
+					showDaysOutsideCurrentMonth: true,
+					disableHighlightToday: true,
+					slotProps: {
+						field: {
+							clearable: true,
+						},
+						textField: {
+							InputProps: {
+								sx: {
+									"& .MuiInputBase-input": {
+										textTransform: "lowercase",
+									},
+									"& .MuiInputAdornment-root:has(.clearButton) ~ .MuiInputAdornment-root:has(.MuiIconButton-loadingIndicator)":
+										{
+											display: "none",
+										},
+								},
+							},
+						},
+						popper: {
+							sx: theme => ({
+								marginTop: `${theme.spacing(1)} !important`,
+								"& .MuiPaper-root": {
+									boxShadow: theme.customShadows.variant2,
+								},
+							}),
+						},
+					},
+				},
+			},
+			MuiPickersLayout: {
+				styleOverrides: {
+					root: {
+						"& .MuiPickersCalendarHeader-label": {
+							fontWeight: themeTypography.typography.fontWeightBold,
+							textTransform: "capitalize",
+						},
+					},
 				},
 			},
 			MuiYearCalendar: {
@@ -1113,11 +1203,23 @@ const theme = createTheme(
 				},
 			},
 			MuiDayCalendar: {
+				defaultProps: {
+					dayOfWeekFormatter: (date: Dayjs) => {
+						const fullDay = date.format("dddd")
+						return fullDay.substring(0, 3)
+					},
+				},
 				styleOverrides: {
+					weekDayLabel: {
+						fontWeight: themeTypography.typography.fontWeightBold,
+						color: themeColors.palette.text.primary,
+						textTransform: "capitalize",
+					},
 					root: {
 						"& button": {
 							borderRadius: 0,
 							"&.Mui-selected": {
+								borderRadius: themeBorderRadius.borderRadiusSm,
 								backgroundColor: themeColors.palette.fills.secondary,
 								"&:focus": {
 									backgroundColor: themeColors.palette.fills.secondary,
@@ -1127,6 +1229,13 @@ const theme = createTheme(
 								backgroundColor: themeColors.palette.background.green,
 							},
 						},
+					},
+				},
+			},
+			MuiPickersCalendarHeader: {
+				defaultProps: {
+					slots: {
+						switchViewIcon: KeyboardArrowDownIcon,
 					},
 				},
 			},
