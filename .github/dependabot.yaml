@@ -4,12 +4,12 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    target-branch: "1.x"
+    target-branch: "2.x"
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
-    target-branch: "1.x"
+    target-branch: "2.x"
   - package-ecosystem: github-actions
     directory: /
     schedule:
