@@ -21,6 +21,8 @@ import ExpandIcon from "./icons/ExpandIcon"
 import CalendarMonthIcon from "./icons/CalendarMonthIcon"
 import { Dayjs } from "dayjs"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import RadioCheckedIcon from "./icons/RadioChecked"
+import RadioUncheckedIcon from "./icons/RadioUnchecked"
 
 /**
  * Digitalarkivet base typography
@@ -804,6 +806,10 @@ const theme = createTheme(
 				},
 			},
 			MuiRadio: {
+				defaultProps: {
+					icon: <RadioUncheckedIcon />,
+					checkedIcon: <RadioCheckedIcon />,
+				},
 				styleOverrides: {
 					root: {
 						color: themeColors.palette.text.primary,
