@@ -23,6 +23,7 @@ import { Dayjs } from "dayjs"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import RadioCheckedIcon from "./icons/RadioChecked"
 import RadioUncheckedIcon from "./icons/RadioUnchecked"
+import CheckBoxBlank from "./icons/CheckBoxBlank"
 
 /**
  * Digitalarkivet base typography
@@ -501,6 +502,30 @@ const actionChipStyles = {
 	},
 }
 
+const selectedOptionStyle = {
+	backgroundColor: themeColors.palette.fills.secondary,
+	color: themeColors.palette.text.primaryInvert,
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "space-between",
+	"&::after": {
+		content: '""',
+		width: 24,
+		height: 24,
+		backgroundImage:
+			"url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>\")",
+		backgroundRepeat: "no-repeat",
+		backgroundPosition: "center",
+	},
+	[`&:hover`]: {
+		backgroundColor: themeColors.palette.fills.secondary,
+		color: themeColors.palette.text.primaryInvert,
+	},
+	[`&.Mui-focused`]: {
+		backgroundColor: themeColors.palette.secondary.main,
+	},
+}
+
 export const filterChipStyles = {
 	color: themeColors.palette.secondary.main,
 	backgroundColor: themeColors.palette.background.default,
@@ -647,9 +672,19 @@ const theme = createTheme(
 			MuiCheckbox: {
 				defaultProps: {
 					disableRipple: true,
+					icon: <CheckBoxBlank />,
 				},
 				styleOverrides: {
 					root: {
+						[`&.${checkboxClasses.root}:not(.${checkboxClasses.checked}):not(.${checkboxClasses.indeterminate})`]:
+							{
+								"&:hover": {
+									"& svg path": {
+										stroke: themeColors.palette.common.black,
+										strokeWidth: 20,
+									},
+								},
+							},
 						[`&.${checkboxClasses.disabled}`]: {
 							color: themeColors.palette.borders.disabled,
 						},
@@ -809,6 +844,8 @@ const theme = createTheme(
 				defaultProps: {
 					icon: <RadioUncheckedIcon />,
 					checkedIcon: <RadioCheckedIcon />,
+					disableRipple: true,
+					disableTouchRipple: true,
 				},
 				styleOverrides: {
 					root: {
@@ -818,6 +855,12 @@ const theme = createTheme(
 						},
 						[`&.${radioClasses.disabled}`]: {
 							color: themeColors.palette.text.disabled,
+						},
+						"&:hover": {
+							"& svg path": {
+								stroke: themeColors.palette.common.black,
+								strokeWidth: 20,
+							},
 						},
 					},
 				},
@@ -848,8 +891,9 @@ const theme = createTheme(
 					disableRipple: true,
 				},
 				styleOverrides: {
-					root: {
+					root: ({ theme }) => ({
 						[`&.${menuItemClasses.root}`]: {
+							padding: theme.spacing(1.5, 2),
 							[`&.${menuItemClasses.focusVisible}`]: {
 								backgroundColor: themeColors.palette.secondary.main,
 							},
@@ -857,14 +901,13 @@ const theme = createTheme(
 								backgroundColor: themeColors.palette.action.hover,
 							},
 							[`&.${menuItemClasses.selected}`]: {
-								color: themeColors.palette.text.primaryInvert,
-								backgroundColor: themeColors.palette.secondary.main,
+								...selectedOptionStyle,
 								"&:hover": {
 									backgroundColor: themeColors.palette.secondary.main,
 								},
 							},
 						},
-					},
+					}),
 				},
 			},
 			MuiTabs: {
@@ -961,27 +1004,7 @@ const theme = createTheme(
 								color: theme.palette.fills.secondary,
 							},
 							[`&[aria-selected='true']`]: {
-								backgroundColor: theme.palette.fills.secondary,
-								color: theme.palette.text.primaryInvert,
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "space-between",
-								"&::after": {
-									content: '""',
-									width: 24,
-									height: 24,
-									backgroundImage:
-										"url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>\")",
-									backgroundRepeat: "no-repeat",
-									backgroundPosition: "center",
-								},
-								[`&:hover`]: {
-									backgroundColor: theme.palette.fills.secondary,
-									color: theme.palette.text.primaryInvert,
-								},
-								[`&.Mui-focused`]: {
-									backgroundColor: themeColors.palette.secondary.main,
-								},
+								...selectedOptionStyle,
 							},
 						},
 					}),
