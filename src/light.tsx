@@ -506,12 +506,13 @@ const selectedOptionStyle = {
 	backgroundColor: themeColors.palette.fills.secondary,
 	color: themeColors.palette.text.primaryInvert,
 	display: "flex",
-	alignItems: "center",
+	alignItems: "flex-start",
 	justifyContent: "space-between",
 	"&::after": {
 		content: '""',
 		width: 24,
 		height: 24,
+		flexShrink: 0,
 		backgroundImage:
 			"url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>\")",
 		backgroundRepeat: "no-repeat",
@@ -996,6 +997,9 @@ const theme = createTheme(
 				},
 			},
 			MuiAutocomplete: {
+				defaultProps: {
+					popupIcon: <KeyboardArrowDownIcon />,
+				},
 				styleOverrides: {
 					listbox: ({ theme }) => ({
 						[`& .${autocompleteClasses.option}`]: {
@@ -1140,9 +1144,7 @@ const theme = createTheme(
 				defaultProps: {
 					format: "DD.MM.YYYY",
 					slots: {
-						openPickerIcon: props => {
-							return !props.ownerState?.value ? <CalendarMonthIcon /> : null
-						},
+						openPickerIcon: CalendarMonthIcon,
 					},
 					showDaysOutsideCurrentMonth: true,
 					disableHighlightToday: true,
@@ -1152,15 +1154,17 @@ const theme = createTheme(
 						},
 						textField: {
 							InputProps: {
-								sx: {
+								sx: theme => ({
 									"& .MuiInputBase-input": {
 										textTransform: "lowercase",
+										display: "flex",
+										alignItems: "center",
 									},
-									"& .MuiInputAdornment-root:has(.clearButton) ~ .MuiInputAdornment-root:has(.MuiIconButton-loadingIndicator)":
-										{
-											display: "none",
-										},
-								},
+									"& .MuiInputAdornment-root:has(.clearButton)": {
+										position: "absolute",
+										right: theme.spacing(6),
+									},
+								}),
 							},
 						},
 						popper: {
@@ -1261,6 +1265,22 @@ const theme = createTheme(
 							},
 						},
 					},
+				},
+			},
+			MuiCard: {
+				styleOverrides: {
+					root: {
+						"&.MuiPaper-outlined": {
+							borderRadius: 10,
+							boxShadow: themeShadows.customShadows.variant1,
+							borderColor: themeColors.palette.borders.default,
+						},
+					},
+				},
+			},
+			MuiSelect: {
+				defaultProps: {
+					IconComponent: KeyboardArrowDownIcon,
 				},
 			},
 		},
