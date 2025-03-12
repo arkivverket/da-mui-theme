@@ -8,6 +8,7 @@ import {
 	buttonBaseClasses,
 	checkboxClasses,
 	chipClasses,
+	inputBaseClasses,
 	inputLabelClasses,
 	menuItemClasses,
 	outlinedInputClasses,
@@ -59,53 +60,6 @@ const themeTypography = createTheme({
 		fontSize56: 56,
 		fontSize72: 72,
 		fontSize96: 96,
-	},
-	components: {
-		/* This needs to be updated when hosting of fonts is decided
-		MuiCssBaseline: {
-			styleOverrides: `
-				@font-face {
-					font-family: 'Suisse Intl';
-					font-style: normal;
-					font-display: swap;
-					font-weight: 400;
-					src: local('Suisse Intl'), local('SuisseIntl-Regular'),
-						url('/assets/fonts/SuisseIntl-Regular.woff2') format('woff2'),
-						url('/assets/fonts/SuisseIntl-Regular.woff') format('woff');
-					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-			  	},
-				@font-face {
-					font-family: 'Suisse Intl';
-					font-style: normal;
-					font-display: swap;
-					font-weight: 500;
-					src: local('Suisse Intl'), local('SuisseIntl-Medium'),
-						url('/assets/fonts/SuisseIntl-Medium.woff2') format('woff2'),
-						url('/assets/fonts/SuisseIntl-Medium.woff') format('woff');
-					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-			  	},
-				@font-face {
-					font-family: 'Suisse Intl Mono';
-					font-style: normal;
-					font-display: swap;
-					font-weight: 400;
-					src: local('Suisse Intl Mono'),
-						url('/assets/fonts/SuisseIntlMono-Regular.woff2') format('woff2'),
-						url('/assets/fonts/SuisseIntlMono-Regular.woff') format('woff');
-					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-			  	},
-				@font-face {
-					font-family: 'Suisse Neue';
-					font-style: normal;
-					font-display: swap;
-					font-weight: 400;
-					src: local('Suisse Neue'),
-						url('/assets/fonts/SuisseNeue-Regular.woff2') format('woff2'),
-						url('/assets/fonts/SuisseNeue-Regular.woff') format('woff');
-					unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-			  	},
-			`,
-		}, */
 	},
 })
 
@@ -193,6 +147,7 @@ const themeBorderRadius = {
 	borderRadiusMd: "4px",
 	borderRadiusFull: "9999px",
 }
+
 /**
  * Digitalarkivet palette and typography
  */
@@ -411,7 +366,7 @@ const themeColors = createTheme({
 			},
 		},
 		section: {
-			fontFamily: "'Suisse Intl Mono', monospace",
+			fontFamily: fontFamilies.suisseIntlMono,
 			fontSize: themeTypography.typography.fontSize24,
 			lineHeight: themeTypography.typography.lineHeight150,
 		},
@@ -873,7 +828,7 @@ const theme = createTheme(
 							borderColor: themeColors.palette.error.accent,
 						},
 						[`&.${outlinedInputClasses.disabled}`]: {
-							backgroundColor: themeColors.palette.disabled.background,
+							backgroundColor: themeColors.palette.background.gray,
 						},
 						[`&.${outlinedInputClasses.focused}`]: {
 							[`& .${outlinedInputClasses.notchedOutline}`]: {
@@ -885,6 +840,19 @@ const theme = createTheme(
 								borderColor: themeColors.palette.error.accent,
 							},
 					},
+				},
+			},
+			MuiFilledInput: {
+				styleOverrides: {
+					root: ({ theme }) => ({
+						backgroundColor: theme.palette.background.white,
+						"&:hover:not(.Mui-disabled)": {
+							backgroundColor: theme.palette.background.white,
+						},
+						"&.Mui-focused:not(.Mui-disabled)": {
+							backgroundColor: theme.palette.background.white,
+						},
+					}),
 				},
 			},
 			MuiMenuItem: {
@@ -1104,7 +1072,19 @@ const theme = createTheme(
 			},
 			MuiInputBase: {
 				styleOverrides: {
+					root: ({ theme }) => ({
+						[`&.${inputBaseClasses.root}`]: {
+							backgroundColor: theme.palette.background.white,
+							[`& .${inputBaseClasses.input}`]: {
+								borderRadius: 2,
+							},
+							[`&.${inputBaseClasses.disabled}`]: {
+								borderColor: theme.palette.borders.disabled,
+							},
+						},
+					}),
 					input: ({ theme }) => ({
+						backgroundColor: "inherit",
 						[theme.breakpoints.down("md")]: {
 							padding: theme.spacing(1.5),
 							height: theme.spacing(3),
@@ -1136,6 +1116,9 @@ const theme = createTheme(
 						[`& .MuiInputBase-inputMultiline`]: {
 							resize: "vertical",
 							minHeight: "136px",
+						},
+						[`& .MuiFormLabel-root`]: {
+							zIndex: 1,
 						},
 					},
 				},
