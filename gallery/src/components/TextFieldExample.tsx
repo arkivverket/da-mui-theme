@@ -24,7 +24,7 @@ const TextFieldSection = ({ title, fields }: TextFieldSectionProps) => (
 export const TextFieldExample = () => {
 	const sections = [
 		{
-			title: "Contained (default)",
+			title: "Outlined (default)",
 			fields: [
 				[
 					<TextField label="Enabled" helperText="Helper text" />,
@@ -53,14 +53,13 @@ export const TextFieldExample = () => {
 				[<TextField label="With error" variant="filled" error />],
 			],
 		},
-
 		{
-			title: "Multiline filled (rich)",
-			fields: [[<TextField multiline fullWidth label="Rich" variant="filled" />]],
+			title: "Multiline outlined (rich)",
+			fields: [[<TextField multiline fullWidth label="Outlined" />]],
 		},
 		{
 			title: "Multiline standard (rich)",
-			fields: [[<TextField multiline fullWidth label="Rich" error />]],
+			fields: [[<TextField multiline fullWidth label="Standard" variant="standard" />]],
 		},
 	]
 
