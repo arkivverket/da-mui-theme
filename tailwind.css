@@ -195,19 +195,58 @@
 
 	/*
 	 * -----------------------------------------------------
-	 * Tailwind font sizes
+	 * Tailwind font sizes (TODO: breakpoints?)
 	 * -----------------------------------------------------
 	 */
 
-	--text-size-12: var(--typography-font-size-12);
-	--text-size-14: var(--typography-font-size-14);
-	--text-size-16: var(--typography-font-size-16);
-	--text-size-20: var(--typography-font-size-20);
-	--text-size-24: var(--typography-font-size-24);
-	--text-size-32: var(--typography-font-size-32);
-	--text-size-40: var(--typography-font-size-40);
-	--text-size-48: var(--typography-font-size-48);
-	--text-size-56: var(--typography-font-size-56);
-	--text-size-72: var(--typography-font-size-72);
-	--text-size-96: var(--typography-font-size-96);
+	--text-2xl: var(--typography-font-size-48);
+	--text-2xl--line-height: var(--typography-line-height-150);
+
+	--text-xl: var(--typography-font-size-24);
+	--text-xl--line-height: var(--typography-line-height-150);
+
+	--text-lg: var(--typography-font-size-20);
+	--text-lg--line-height: var(--typography-line-height-150);
+
+	--text-md: var(--typography-font-size-16);
+	--text-md--line-height: var(--typography-line-height-150);
+
+	--text-sm: var(--typography-font-size-14);
+	--text-sm--line-height: var(--typography-line-height-140);
+
+	--text-xs: var(--typography-font-size-12);
+	--text-xs--line-height: var(--typography-line-height-130);
+
+	/*--text-mono-md: var(--typography-font-size-16);
+	--text-mono-md--line-height: var(--typography-line-height-150);
+
+	--text-mono-xs: var(--typography-font-size-12);
+	--text-mono-xs--line-height: var(--typography-line-height-130);*/
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind font famlilies
+	 * -----------------------------------------------------
+	 */
+
+	--font-suisse-intl: var(--typography-font-familiy-suisse-intl);
+	--font-suisse-neue: var(--typography-font-familiy-suisse-neue);
+	--font-suisse-intl-mono: var(--typography-font-familiy-suisse-intl-mono);
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind spacing (TODO: Finnes ikke i tailwind ... bare ha som variabler?)
+	 * -----------------------------------------------------
+	 */
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind border radius
+	 * -----------------------------------------------------
+	 */
+
+	--radius-none: var(--border-radius-none);
+	--radius-sm: var(--border-radius-sm);
+	--radius-md: var(--border-radius-md);
+	--radius-full: var(--border-radius-full);
 }
