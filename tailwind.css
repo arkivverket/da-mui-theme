@@ -89,7 +89,7 @@
 	--news-accent: #7540D6;
 	--news-background: #E6D9FF;
 
-	/* Neutral colors */
+	/* Neutral colors (TODO: Skal disse med?) */
 
 	--neutral-content: var(--brand-black-1);
 	--neutral-background: var(--brand-grey-1);
