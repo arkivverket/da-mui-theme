@@ -1,7 +1,7 @@
 @theme {
 	/*
 	 * -----------------------------------------------------
-	 * Design system 2.0 variables
+	 * Designsystem 2.0 variables
 	 * -----------------------------------------------------
 	 */
 
@@ -195,7 +195,7 @@
 	--color-news-accent: var(--news-accent);
 	--color-news-background: var(--news-background);
 
-	/* Neutral colors (TODO: Skal denne med?) */
+	/* Neutral colors (TODO: Skal disse med?) */
 
 	--color-neutral-content: var(--neutral-content);
 	--color-neutral-background: var(--neutral-background);
