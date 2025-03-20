@@ -59,26 +59,34 @@
 	--brand-grey-variant-5: #545454;
 	--brand-grey-variant-6: #1D1D1D;
 
-	/* Warnings colors */
+	/* Error colors */
 
-	--warnings-error-content: #631901;
-	--warnings-error-accent: #EB3B00;
-	--warnings-error-background: #FFDCD7;
+	--error-content: #631901;
+	--error-accent: #EB3B00;
+	--error-background: #FFDCD7;
 
-	--warnings-warning-content: #4D3814;
-	--warnings-warning-accent: #E25F00;
-	--warnings-warning-background: #FFEED1;
+	/* Warning colors */
 
-	--warnings-info-content: #133565;
-	--warnings-info-accent: #2A6AC5;
-	--warnings-info-background: var(--brand-blue-variant-1);
+	--warning-content: #4D3814;
+	--warning-accent: #E25F00;
+	--warning-background: #FFEED1;
 
-	--warnings-news-content: #230064;
-	--warnings-news-accent: #7540D6;
-	--warnings-news-background: #E6D9FF;
+	/* Info colors */
 
-	--warnings-neutral-content: var(--brand-black-variant-1);
-	--warnings-neutral-background: var(--brand-grey-variant-1);
+	--info-content: #133565;
+	--info-accent: #2A6AC5;
+	--info-background: var(--brand-blue-variant-1);
+
+	/* News colors */
+
+	--news-content: #230064;
+	--news-accent: #7540D6;
+	--news-background: #E6D9FF;
+
+	/* Neutral colors */
+
+	--neutral-content: var(--brand-black-variant-1);
+	--neutral-background: var(--brand-grey-variant-1);
 
 	/* Shadows */
 
@@ -147,32 +155,32 @@
 
 	/* Error colors */
 
-	--color-error-main: var(--warnings-error-content);
-	--color-error-accent: var(--warnings-error-accent);
-	--color-error-background: var(--warnings-error-background);
+	--color-error-main: var(--error-content);
+	--color-error-accent: var(--error-accent);
+	--color-error-background: var(--error-background);
 
 	/* Warning colors */
 
-	--color-warning-main: var(--warnings-warning-content);
-	--color-warning-accent: var(--warnings-warning-accent);
-	--color-warning-background: var(--warnings-warning-background);
+	--color-warning-main: var(--warning-content);
+	--color-warning-accent: var(--warning-accent);
+	--color-warning-background: var(--warning-background);
 
 	/* Info colors */
 
-	--color-info-main: var(--warnings-info-content);
-	--color-info-accent: var(--warnings-info-accent);
-	--color-info-background: var(--warnings-info-background);
+	--color-info-main: var(--info-content);
+	--color-info-accent: var(--info-accent);
+	--color-info-background: var(--info-background);
 
 	/* News colors */
 
-	--color-news-main: var(--warnings-news-content);
-	--color-news-accent: var(--warnings-news-accent);
-	--color-news-background: var(--warnings-news-background);
+	--color-news-main: var(--news-content);
+	--color-news-accent: var(--news-accent);
+	--color-news-background: var(--news-background);
 
 	/* Neutral colors */
 
-	--color-neutral-main: var(--warnings-neutral-content);
-	--color-neutral-background: var(--warnings-neutral-background);
+	--color-neutral-main: var(--neutral-content);
+	--color-neutral-background: var(--neutral-background);
 
 	/* Disabled colors */
 
