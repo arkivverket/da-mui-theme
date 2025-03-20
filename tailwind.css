@@ -3,6 +3,9 @@
 
 	--typography-font-size: 14px;
 	--typography-font-family: "'Suisse Intl', 'Suisse Intl Mono', 'Suisse Neue', Arial, sans-serif";
+	--typography-font-familiy-suisse-intl: "'Suisse Intl', Arial";
+	--typography-font-familiy-suisse-neue: "'Suisse Neue', 'Times New Roman'";
+	--typography-font-familiy-suisse-intl-mono: "'Suisse Intl Mono', Arial";
 	--typography-font-weight-bold: 500;
 	--typography-font-weight-roman: 400;
 	--typography-line-height-100: 1.0;
