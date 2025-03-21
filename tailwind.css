@@ -204,8 +204,8 @@
 	/* Display huge */
 
 	--text-display-huge: var(--typography-font-size-96);
-	--text-display-huge: var(--typography-line-height-125);
-	--text-display-huge: var(--typography-font-weight-roman);
+	--text-display-huge--line-height: var(--typography-line-height-125);
+	--text-display-huge--font-weight: var(--typography-font-weight-roman);
 
 	/* Display 1 */
 
