@@ -281,6 +281,7 @@
 
 	--text-xs: var(--typography-font-size-12);
 	--text-xs--line-height: var(--typography-line-height-130);
+	--text-xs--font-weight: var(--typography-font-weight-roman);
 
 	--text-xs-bold: var(--typography-font-size-12);
 	--text-xs-bold--line-height: var(--typography-line-height-130);
@@ -288,6 +289,7 @@
 
 	--text-label: var(--typography-font-size-12);
 	--text-label--line-height: var(--typography-line-height-130);
+	--text-label--font-weight: var(--typography-font-weight-roman);
 
 	--text-label-bold: var(--typography-font-size-12);
 	--text-label-bold--line-height: var(--typography-line-height-130);
