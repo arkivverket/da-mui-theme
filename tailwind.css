@@ -1,0 +1,250 @@
+@theme {
+	/*
+	 * -----------------------------------------------------
+	 * Designsystem 2.0 variables
+	 * -----------------------------------------------------
+	 */
+
+	/* Typography */
+
+	--typography-font-size: 14px;
+	--typography-font-family: "'Suisse Intl', 'Suisse Intl Mono', 'Suisse Neue', Arial, sans-serif";
+	--typography-font-familiy-suisse-intl: "'Suisse Intl', Arial";
+	--typography-font-familiy-suisse-neue: "'Suisse Neue', 'Times New Roman'";
+	--typography-font-familiy-suisse-intl-mono: "'Suisse Intl Mono', Arial";
+	--typography-font-weight-bold: 500;
+	--typography-font-weight-roman: 400;
+	--typography-line-height-100: 1.0;
+	--typography-line-height-110: 1.1;
+	--typography-line-height-120: 1.2;
+	--typography-line-height-125: 1.25;
+	--typography-line-height-130: 1.3;
+	--typography-line-height-140: 1.4;
+	--typography-line-height-150: 1.5;
+	--typography-font-size-12: 12px;
+	--typography-font-size-14: 14px;
+	--typography-font-size-16: 16px;
+	--typography-font-size-20: 20px;
+	--typography-font-size-24: 24px;
+	--typography-font-size-32: 32px;
+	--typography-font-size-40: 40px;
+	--typography-font-size-48: 48px;
+	--typography-font-size-56: 56px;
+	--typography-font-size-72: 72px;
+	--typography-font-size-96: 96px;
+
+	/* Brand colors */
+
+	--brand-green-05: #E4F3DD;
+	--brand-green-1: #9DF1AD;
+	--brand-green-2: #287938;
+	--brand-green-3: #1C5B29;
+	--brand-green-4: #0A4431;
+	--brand-green-5: #0F3329;
+
+	--brand-blue-1: #E3ECF9;
+
+	--brand-orange-1: #FBEEC8;
+	--brand-orange-2: #FCD1A4;
+	--brand-orange-3: #FEB37F;
+	--brand-orange-4: #FF965B;
+	--brand-orange-5: #A73C2E;
+
+	--brand-beige-05: #FAF9F3;
+	--brand-beige-1: #E5E2D7;
+
+	--brand-black-1: #000000;
+
+	--brand-white-1: #FFFFFF;
+
+	--brand-grey-05: #F8F8F8;
+	--brand-grey-1: #EBEBEB;
+	--brand-grey-2: #D7D7D7;
+	--brand-grey-3: #C2C2C2;
+	--brand-grey-4: #8E8D8D;
+	--brand-grey-5: #545454;
+	--brand-grey-6: #1D1D1D;
+
+	/* Error colors */
+
+	--error-content: #631901;
+	--error-accent: #EB3B00;
+	--error-background: #FFDCD7;
+
+	/* Warning colors */
+
+	--warning-content: #4D3814;
+	--warning-accent: #E25F00;
+	--warning-background: #FFEED1;
+
+	/* Info colors */
+
+	--info-content: #133565;
+	--info-accent: #2A6AC5;
+	--info-background: var(--brand-blue-1);
+
+	/* News colors */
+
+	--news-content: #230064;
+	--news-accent: #7540D6;
+	--news-background: #E6D9FF;
+
+	/* Shadows */
+
+	--box-shadow-01: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+	--box-shadow-02: 0px 8px 20px 5px rgba(0, 0, 0, 0.05);
+	--box-shadow-03: 0px 12px 20px 10px rgba(0, 0, 0, 0.05);
+
+	/* Border radius */
+
+	--border-radius-none: 0px;
+	--border-radius-sm: 2px;
+	--border-radius-md: 4px;
+	--border-radius-full: 9999px;
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind colors
+	 * -----------------------------------------------------
+	 */
+
+	/* Text colors */
+
+	--color-text-primary: var(--brand-grey-6);
+	--color-text-primary-invert: var(--brand-white-1);
+	--color-text-secondary: var(--brand-grey-5);
+	--color-text-disabled: var(--brand-grey-4);
+
+	/* Content link colors */
+
+	--color-content-link: var(--brand-black-1);
+
+	/* Fill colors */
+
+	--color-fill-primary: var(--brand-green-4);
+	--color-fill-secondary: var(--brand-green-3);
+	--color-fill-primary-hover: var(--brand-black-1);
+	--color-fill-hover: var(--brand-green-05);
+
+	/* Background colors */
+
+	--color-background-default: var(--brand-beige-05); /* TODO: Skal denne med? */
+	--color-background-paper: var(--brand-white-1); /* TODO: Skal denne med? */
+	--color-background-white: var(--brand-white-1);
+	--color-background-beige: var(--brand-beige-05);
+	--color-background-green: var(--brand-green-05);
+	--color-background-gray: var(--brand-grey-05);
+	--color-background-floating: --alpha(var(--brand-black-1) / 80%);
+	--color-background-darkgreen: var(--brand-green-5);
+
+	/* Border colors */
+
+	--color-border-default: var(--brand-grey-3);
+	--color-border-active: var(--brand-grey-6);
+	--color-border-line: var(--brand-beige-1);
+	--color-border-highlight: var(--brand-green-1);
+	--color-border-disabled: var(--brand-grey-1);
+	--color-border-invert: var(--brand-white-1);
+
+	/* Primary colors (TODO: Skal disse med?) */
+
+	--color-primary-main: var(--brand-green-4);
+	--color-primary-contrast-text: var(--brand-white-1);
+	--color-primary-dark: var(--brand-black-1);
+	--color-primary-background: var(--brand-green-4);
+
+	/* Secondary colors (TODO: Skal disse med?) */
+
+	--color-secondary-main: var(--brand-green-3);
+	--color-secondary-contrast-text: var(--brand-white-1);
+	--color-secondary-dark: var(--brand-green-4);
+	--color-secondary-background: var(--brand-green-3);
+
+	/* Success colors */
+
+	--color-success-content: var(--brand-green-5);
+	--color-success-accent: var(--brand-green-3);
+	--color-success-background: var(--brand-green-05);
+
+	/* Error colors */
+
+	--color-error-content: var(--error-content);
+	--color-error-accent: var(--error-accent);
+	--color-error-background: var(--error-background);
+
+	/* Warning colors */
+
+	--color-warning-content: var(--warning-content);
+	--color-warning-accent: var(--warning-accent);
+	--color-warning-background: var(--warning-background);
+
+	/* Info colors */
+
+	--color-info-content: var(--info-content);
+	--color-info-accent: var(--info-accent);
+	--color-info-background: var(--info-background);
+
+	/* News colors */
+
+	--color-news-content: var(--news-content);
+	--color-news-accent: var(--news-accent);
+	--color-news-background: var(--news-background);
+
+	/* Disabled colors */
+
+	--color-disabled-content: var(--brand-grey-5);
+	--color-disabled-background: var(--brand-grey-1);
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind font sizes (TODO: breakpoints)
+	 * -----------------------------------------------------
+	 */
+
+	--text-2xl: var(--typography-font-size-48);
+	--text-2xl--line-height: var(--typography-line-height-150);
+
+	--text-xl: var(--typography-font-size-24);
+	--text-xl--line-height: var(--typography-line-height-150);
+
+	--text-lg: var(--typography-font-size-20);
+	--text-lg--line-height: var(--typography-line-height-150);
+
+	--text-md: var(--typography-font-size-16);
+	--text-md--line-height: var(--typography-line-height-150);
+
+	--text-sm: var(--typography-font-size-14);
+	--text-sm--line-height: var(--typography-line-height-140);
+
+	--text-xs: var(--typography-font-size-12);
+	--text-xs--line-height: var(--typography-line-height-130);
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind font famlilies
+	 * -----------------------------------------------------
+	 */
+
+	--font-suisse-intl: var(--typography-font-familiy-suisse-intl);
+	--font-suisse-neue: var(--typography-font-familiy-suisse-neue);
+	--font-suisse-intl-mono: var(--typography-font-familiy-suisse-intl-mono);
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind spacing
+	 * -----------------------------------------------------
+	 */
+
+	--spacing: 1px;
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind border radiuses
+	 * -----------------------------------------------------
+	 */
+
+	--radius-none: var(--border-radius-none);
+	--radius-sm: var(--border-radius-sm);
+	--radius-md: var(--border-radius-md);
+	--radius-full: var(--border-radius-full);
+}
