@@ -89,11 +89,6 @@
 	--news-accent: #7540D6;
 	--news-background: #E6D9FF;
 
-	/* Neutral colors (TODO: Skal disse med?) */
-
-	--neutral-content: var(--brand-black-1);
-	--neutral-background: var(--brand-grey-1);
-
 	/* Shadows */
 
 	--box-shadow-01: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
@@ -109,7 +104,7 @@
 
 	/*
 	 * -----------------------------------------------------
-	 * Tailwind colors (TODO: Sjekke opp mot Figma)
+	 * Tailwind colors
 	 * -----------------------------------------------------
 	 */
 
@@ -195,23 +190,14 @@
 	--color-news-accent: var(--news-accent);
 	--color-news-background: var(--news-background);
 
-	/* Neutral colors (TODO: Skal disse med?) */
-
-	--color-neutral-content: var(--neutral-content);
-	--color-neutral-background: var(--neutral-background);
-
 	/* Disabled colors */
 
 	--color-disabled-content: var(--brand-grey-5);
 	--color-disabled-background: var(--brand-grey-1);
 
-	/* Action colors (TODO: Skal denne med?) */
-
-	--color-action-hover: var(--brand-green-05);
-
 	/*
 	 * -----------------------------------------------------
-	 * Tailwind font sizes (TODO: breakpoints?)
+	 * Tailwind font sizes (TODO: breakpoints)
 	 * -----------------------------------------------------
 	 */
 
@@ -233,12 +219,6 @@
 	--text-xs: var(--typography-font-size-12);
 	--text-xs--line-height: var(--typography-line-height-130);
 
-	/*--text-mono-md: var(--typography-font-size-16);
-	--text-mono-md--line-height: var(--typography-line-height-150);
-
-	--text-mono-xs: var(--typography-font-size-12);
-	--text-mono-xs--line-height: var(--typography-line-height-130);*/
-
 	/*
 	 * -----------------------------------------------------
 	 * Tailwind font famlilies
@@ -251,9 +231,11 @@
 
 	/*
 	 * -----------------------------------------------------
-	 * Tailwind spacing (TODO: Finnes kanskje fra før i tailwind?)
+	 * Tailwind spacing
 	 * -----------------------------------------------------
 	 */
+
+	--spacing: 1px;
 
 	/*
 	 * -----------------------------------------------------
