@@ -201,9 +201,35 @@
 	 * -----------------------------------------------------
 	 */
 
-	--text-2xl: var(--typography-font-size-48);
-	--text-2xl--line-height: var(--typography-line-height-150);
-	--text-2xl--font-weight: var(--typography-font-weight-roman);
+	/* Display huge */
+
+	--text-display-huge: var(--typography-font-size-96);
+	--text-display-huge: var(--typography-line-height-125);
+	--text-display-huge: var(--typography-font-weight-roman);
+
+	/* Display 1 */
+
+	--text-display-1: var(--typography-font-size-72);
+	--text-display-1--line-height: var(--typography-line-height-125);
+	--text-display-1--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 2 */
+
+	--text-display-2: var(--typography-font-size-56);
+	--text-display-2--line-height: var(--typography-line-height-125);
+	--text-display-2--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 3 */
+
+	--text-display-3: var(--typography-font-size-40);
+	--text-display-3--line-height: var(--typography-line-height-125);
+	--text-display-3--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 4 */
+
+	--text-display-4: var(--typography-font-size-32);
+	--text-display-4--line-height: var(--typography-line-height-125);
+	--text-display-4--font-weight: var(--typography-font-weight-roman);
 
 	/* Section */
 
