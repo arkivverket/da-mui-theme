@@ -203,21 +203,95 @@
 
 	--text-2xl: var(--typography-font-size-48);
 	--text-2xl--line-height: var(--typography-line-height-150);
+	--text-2xl--font-weight: var(--typography-font-weight-roman);
+
+	/* Section */
 
 	--text-xl: var(--typography-font-size-24);
 	--text-xl--line-height: var(--typography-line-height-150);
+	--text-xl--font-weight: var(--typography-font-weight-roman);
+
+	--text-section: var(--typography-font-size-24);
+	--text-section--line-height: var(--typography-line-height-150);
+	--text-section--font-weight: var(--typography-font-weight-roman);
+
+	/* Body large */
 
 	--text-lg: var(--typography-font-size-20);
 	--text-lg--line-height: var(--typography-line-height-150);
+	--text-lg--font-weight: var(--typography-font-weight-roman);
+
+	--text-lg-bold: var(--typography-font-size-20);
+	--text-lg-bold--line-height: var(--typography-line-height-150);
+	--text-lg-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-body-large: var(--typography-font-size-20);
+	--text-body-large--line-height: var(--typography-line-height-150);
+	--text-body-large--font-weight: var(--typography-font-weight-roman);
+
+	--text-body-large-bold: var(--typography-font-size-20);
+	--text-body-large-bold--line-height: var(--typography-line-height-150);
+	--text-body-large-bold--font-weight: var(--typography-font-weight-bold);
+
+	/* Body */
 
 	--text-md: var(--typography-font-size-16);
 	--text-md--line-height: var(--typography-line-height-150);
+	--text-md--font-weight: var(--typography-font-weight-roman);
+
+	--text-md-bold: var(--typography-font-size-16);
+	--text-md-bold--line-height: var(--typography-line-height-150);
+	--text-md-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-body: var(--typography-font-size-16);
+	--text-body--line-height: var(--typography-line-height-150);
+	--text-body--font-weight: var(--typography-font-weight-roman);
+
+	--text-body-bold: var(--typography-font-size-16);
+	--text-body-bold--line-height: var(--typography-line-height-150);
+	--text-body-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-button-link: var(--typography-font-size-16);
+	--text-button-link--line-height: var(--typography-line-height-150);
+	--text-button-link--font-weight: var(--typography-font-weight-bold);
+
+	/* Caption */
 
 	--text-sm: var(--typography-font-size-14);
 	--text-sm--line-height: var(--typography-line-height-140);
+	--text-sm--font-weight: var(--typography-font-weight-roman);
+
+	--text-sm-bold: var(--typography-font-size-14);
+	--text-sm-bold--line-height: var(--typography-line-height-140);
+	--text-sm-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-caption: var(--typography-font-size-14);
+	--text-caption--line-height: var(--typography-line-height-140);
+	--text-caption--font-weight: var(--typography-font-weight-roman);
+
+	--text-caption-bold: var(--typography-font-size-14);
+	--text-caption-bold--line-height: var(--typography-line-height-140);
+	--text-caption-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-button-link-small: var(--typography-font-size-14);
+	--text-button-link-small--line-height: var(--typography-line-height-140);
+	--text-button-link-small--font-weight: var(--typography-font-weight-bold);
+
+	/* Label */
 
 	--text-xs: var(--typography-font-size-12);
 	--text-xs--line-height: var(--typography-line-height-130);
+
+	--text-xs-bold: var(--typography-font-size-12);
+	--text-xs-bold--line-height: var(--typography-line-height-130);
+	--text-xs-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-label: var(--typography-font-size-12);
+	--text-label--line-height: var(--typography-line-height-130);
+
+	--text-label-bold: var(--typography-font-size-12);
+	--text-label-bold--line-height: var(--typography-line-height-130);
+	--text-label-bold--font-weight: var(--typography-font-weight-bold);
 
 	/*
 	 * -----------------------------------------------------
