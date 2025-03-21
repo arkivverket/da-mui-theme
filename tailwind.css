@@ -201,23 +201,125 @@
 	 * -----------------------------------------------------
 	 */
 
-	--text-2xl: var(--typography-font-size-48);
-	--text-2xl--line-height: var(--typography-line-height-150);
+	/* Display huge */
+
+	--text-display-huge: var(--typography-font-size-96);
+	--text-display-huge--line-height: var(--typography-line-height-125);
+	--text-display-huge--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 1 */
+
+	--text-display-1: var(--typography-font-size-72);
+	--text-display-1--line-height: var(--typography-line-height-125);
+	--text-display-1--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 2 */
+
+	--text-display-2: var(--typography-font-size-56);
+	--text-display-2--line-height: var(--typography-line-height-125);
+	--text-display-2--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 3 */
+
+	--text-display-3: var(--typography-font-size-40);
+	--text-display-3--line-height: var(--typography-line-height-125);
+	--text-display-3--font-weight: var(--typography-font-weight-roman);
+
+	/* Display 4 */
+
+	--text-display-4: var(--typography-font-size-32);
+	--text-display-4--line-height: var(--typography-line-height-125);
+	--text-display-4--font-weight: var(--typography-font-weight-roman);
+
+	/* Section */
 
 	--text-xl: var(--typography-font-size-24);
 	--text-xl--line-height: var(--typography-line-height-150);
+	--text-xl--font-weight: var(--typography-font-weight-roman);
+
+	--text-section: var(--typography-font-size-24);
+	--text-section--line-height: var(--typography-line-height-150);
+	--text-section--font-weight: var(--typography-font-weight-roman);
+
+	/* Body large */
 
 	--text-lg: var(--typography-font-size-20);
 	--text-lg--line-height: var(--typography-line-height-150);
+	--text-lg--font-weight: var(--typography-font-weight-roman);
+
+	--text-lg-bold: var(--typography-font-size-20);
+	--text-lg-bold--line-height: var(--typography-line-height-150);
+	--text-lg-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-body-large: var(--typography-font-size-20);
+	--text-body-large--line-height: var(--typography-line-height-150);
+	--text-body-large--font-weight: var(--typography-font-weight-roman);
+
+	--text-body-large-bold: var(--typography-font-size-20);
+	--text-body-large-bold--line-height: var(--typography-line-height-150);
+	--text-body-large-bold--font-weight: var(--typography-font-weight-bold);
+
+	/* Body */
 
 	--text-md: var(--typography-font-size-16);
 	--text-md--line-height: var(--typography-line-height-150);
+	--text-md--font-weight: var(--typography-font-weight-roman);
+
+	--text-md-bold: var(--typography-font-size-16);
+	--text-md-bold--line-height: var(--typography-line-height-150);
+	--text-md-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-body: var(--typography-font-size-16);
+	--text-body--line-height: var(--typography-line-height-150);
+	--text-body--font-weight: var(--typography-font-weight-roman);
+
+	--text-body-bold: var(--typography-font-size-16);
+	--text-body-bold--line-height: var(--typography-line-height-150);
+	--text-body-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-button-link: var(--typography-font-size-16);
+	--text-button-link--line-height: var(--typography-line-height-150);
+	--text-button-link--font-weight: var(--typography-font-weight-bold);
+
+	/* Caption */
 
 	--text-sm: var(--typography-font-size-14);
 	--text-sm--line-height: var(--typography-line-height-140);
+	--text-sm--font-weight: var(--typography-font-weight-roman);
+
+	--text-sm-bold: var(--typography-font-size-14);
+	--text-sm-bold--line-height: var(--typography-line-height-140);
+	--text-sm-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-caption: var(--typography-font-size-14);
+	--text-caption--line-height: var(--typography-line-height-140);
+	--text-caption--font-weight: var(--typography-font-weight-roman);
+
+	--text-caption-bold: var(--typography-font-size-14);
+	--text-caption-bold--line-height: var(--typography-line-height-140);
+	--text-caption-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-button-link-small: var(--typography-font-size-14);
+	--text-button-link-small--line-height: var(--typography-line-height-140);
+	--text-button-link-small--font-weight: var(--typography-font-weight-bold);
+
+	/* Label */
 
 	--text-xs: var(--typography-font-size-12);
 	--text-xs--line-height: var(--typography-line-height-130);
+	--text-xs--font-weight: var(--typography-font-weight-roman);
+
+	--text-xs-bold: var(--typography-font-size-12);
+	--text-xs-bold--line-height: var(--typography-line-height-130);
+	--text-xs-bold--font-weight: var(--typography-font-weight-bold);
+
+	--text-label: var(--typography-font-size-12);
+	--text-label--line-height: var(--typography-line-height-130);
+	--text-label--font-weight: var(--typography-font-weight-roman);
+
+	--text-label-bold: var(--typography-font-size-12);
+	--text-label-bold--line-height: var(--typography-line-height-130);
+	--text-label-bold--font-weight: var(--typography-font-weight-bold);
 
 	/*
 	 * -----------------------------------------------------
@@ -247,4 +349,14 @@
 	--radius-sm: var(--border-radius-sm);
 	--radius-md: var(--border-radius-md);
 	--radius-full: var(--border-radius-full);
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind shadows
+	 * -----------------------------------------------------
+	 */
+
+	 --shadow-01: var(--box-shadow-01);
+	 --shadow-02: var(--box-shadow-02);
+	 --shadow-03: var(--box-shadow-03);
 }
