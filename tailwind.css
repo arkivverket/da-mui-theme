@@ -323,4 +323,14 @@
 	--radius-sm: var(--border-radius-sm);
 	--radius-md: var(--border-radius-md);
 	--radius-full: var(--border-radius-full);
+
+	/*
+	 * -----------------------------------------------------
+	 * Tailwind shadows
+	 * -----------------------------------------------------
+	 */
+
+	 --shadow-01: var(--box-shadow-01);
+	 --shadow-02: var(--box-shadow-02);
+	 --shadow-03: var(--box-shadow-03);
 }
