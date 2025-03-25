@@ -2,6 +2,7 @@ import { Stack, Grid2 as Grid, Typography, Box, Chip } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 import FilterChip from "@digitalarkivet/mui-theme/components/FilterChip"
 import ActionChip from "@digitalarkivet/mui-theme/components/ActionChip"
+import { useState } from "react"
 
 export const ChipExample = () => {
 	return (
@@ -45,13 +46,29 @@ const ChipSection = ({ title, description, descriptionComponent, children }: Chi
 	</Box>
 )
 
-const ActionChips = () => (
-	<ChipSection title="ActionChip" description="Made using the " descriptionComponent="<ActionChip>">
-		<Stack direction="row" spacing={2}>
-			<ActionChip label="Action" menuItems={["Item 1", "Item 2", "Item 3"]} />
-		</Stack>
-	</ChipSection>
-)
+const ActionChips = () => {
+	const [selected, setSelected] = useState("item1")
+
+	const items = [
+		{ key: "item1", label: "Item 1" },
+		{ key: "item2", label: "Item 2" },
+		{ key: "item3", label: "Item 3" },
+	]
+
+	return (
+		<ChipSection title="ActionChip" description="Made using the " descriptionComponent="<ActionChip>">
+			<Stack direction="row" spacing={2}>
+				<ActionChip
+					label={items.find(i => i.key === selected)?.label ?? "Action"}
+					menuItems={items}
+					selectedKey={selected}
+					onChange={setSelected}
+					closeOnSelect
+				/>
+			</Stack>
+		</ChipSection>
+	)
+}
 
 const FilterChips = () => (
 	<ChipSection title="FilterChip" description="Made using the " descriptionComponent="<FilterChip>">
