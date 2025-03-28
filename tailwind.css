@@ -8,10 +8,10 @@
 	/* Typography */
 
 	--typography-font-size: 14px;
-	--typography-font-family: "'Suisse Intl', 'Suisse Intl Mono', 'Suisse Neue', Arial, sans-serif";
-	--typography-font-familiy-suisse-intl: "'Suisse Intl', Arial";
-	--typography-font-familiy-suisse-neue: "'Suisse Neue', 'Times New Roman'";
-	--typography-font-familiy-suisse-intl-mono: "'Suisse Intl Mono', Arial";
+	--typography-font-family: "Suisse Intl", "Suisse Intl Mono", "Suisse Neue", "Arial", "sans-serif";
+	--typography-font-family-suisse-intl: "Suisse Intl", "Arial";
+	--typography-font-family-suisse-neue: "Suisse Neue", "Times New Roman";
+	--typography-font-family-suisse-intl-mono: "Suisse Intl Mono", "Arial";
 	--typography-font-weight-bold: 500;
 	--typography-font-weight-roman: 400;
 	--typography-line-height-100: 1.0;
@@ -327,9 +327,9 @@
 	 * -----------------------------------------------------
 	 */
 
-	--font-suisse-intl: var(--typography-font-familiy-suisse-intl);
-	--font-suisse-neue: var(--typography-font-familiy-suisse-neue);
-	--font-suisse-intl-mono: var(--typography-font-familiy-suisse-intl-mono);
+	--font-suisse-intl: var(--typography-font-family-suisse-intl);
+	--font-suisse-neue: var(--typography-font-family-suisse-neue);
+	--font-suisse-intl-mono: var(--typography-font-family-suisse-intl-mono);
 
 	/*
 	 * -----------------------------------------------------
