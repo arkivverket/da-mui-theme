@@ -4,7 +4,7 @@ import { ExampleWrapper } from "./ExampleWrapper"
 export const SearchBarExample = () => {
 	return (
 		<ExampleWrapper title="Eksempel på søkefelt">
-			<SearchBar photoSearch onPhotoSearch={() => alert("onPhotoSearch callback")} />
+			<SearchBar photoSearch handlePhotoClick={() => alert("handlePhotoClick callback")} />
 		</ExampleWrapper>
 	)
 }
