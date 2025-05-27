@@ -55,22 +55,44 @@ const StyledMenu = styled((props: MenuProps) => (
 interface ActionChipProps {
 	label: string
 	startIcon?: React.ReactNode
-	menuItems: Array<{ key: string; label: React.ReactNode }>
+	menuItems?: Array<{ key: string; label: React.ReactNode }>
 	selectedKey?: string
 	closeOnSelect?: boolean
 	onChange?: (key: string) => void
+	onClick?: () => void
+	disabled?: boolean
+	variant?: "dropdown" | "button"
 }
 
 export default function ActionChip({
 	label,
 	startIcon,
-	menuItems,
+	menuItems = [],
 	selectedKey,
 	closeOnSelect = false,
 	onChange,
+	onClick,
+	disabled = false,
+	variant = "dropdown",
 }: ActionChipProps) {
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 	const open = Boolean(anchorEl)
+
+	if (variant === "button") {
+		return (
+			<StyledButton
+				variant="outlined"
+				disableElevation
+				onClick={onClick}
+				startIcon={startIcon}
+				disabled={disabled}
+			>
+				<Box component="span" className="MuiChip-label MuiChip-labelMedium">
+					<Box>{label}</Box>
+				</Box>
+			</StyledButton>
+		)
+	}
 
 	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorEl(event.currentTarget)
@@ -99,6 +121,7 @@ export default function ActionChip({
 				onClick={handleClick}
 				startIcon={startIcon}
 				endIcon={<KeyboardArrowDownOutlined />}
+				disabled={disabled}
 			>
 				<Box component="span" className="MuiChip-label MuiChip-labelMedium">
 					<Box>{label}</Box>
@@ -117,25 +140,21 @@ export default function ActionChip({
 						<MenuItem
 							key={key}
 							onClick={() => handleSelect(key)}
-							sx={theme => {
-								return {
-									backgroundColor: isSelected ? theme.palette.fills.secondary : undefined,
-									color: isSelected ? theme.palette.text.primaryInvert : theme.palette.text.primary,
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "space-between",
-									"&:hover": {
-										backgroundColor: isSelected ? theme.palette.fills.secondary : theme.palette.action.hover,
-										color: theme.palette.text.primary,
-
-									},
-								}
-							}}
+							sx={theme => ({
+								backgroundColor: isSelected ? theme.palette.fills.secondary : undefined,
+								color: isSelected ? theme.palette.text.primaryInvert : theme.palette.text.primary,
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "space-between",
+								"&:hover": {
+									backgroundColor: isSelected ? theme.palette.fills.secondary : theme.palette.action.hover,
+									color: theme.palette.text.primary,
+								},
+							})}
 						>
 							<Box>{label}</Box>
 							{isSelected && <CheckOutlined style={{ color: theme.palette.text.primaryInvert }} fontSize="small" />}
 						</MenuItem>
-
 					)
 				})}
 			</StyledMenu>

@@ -13,6 +13,9 @@ export const ChipExample = () => {
 			<Grid size={{ xs: 12 }}>
 				<ActionChips />
 			</Grid>
+			<Grid size={{ xs: 12 }}>
+				<ButtonActionChipExample />
+			</Grid>
 			<ChipSection title="Variants" description="Different styling for variants">
 				<Chip variant="filter" label="filter" />
 				<Chip variant="action" label="action" />
@@ -56,7 +59,7 @@ const ActionChips = () => {
 	]
 
 	return (
-		<ChipSection title="ActionChip" description="Made using the " descriptionComponent="<ActionChip>">
+		<ChipSection title="ActionChip (Dropdown)" description="Made using the " descriptionComponent="<ActionChip variant='dropdown'>">
 			<Stack direction="row" spacing={2}>
 				<ActionChip
 					label={items.find(i => i.key === selected)?.label ?? "Action"}
@@ -64,8 +67,29 @@ const ActionChips = () => {
 					selectedKey={selected}
 					onChange={setSelected}
 					closeOnSelect
+					variant="dropdown"
 				/>
 			</Stack>
+		</ChipSection>
+	)
+}
+
+const ButtonActionChipExample = () => {
+	const [clicked, setClicked] = useState(false)
+
+	return (
+		<ChipSection title="ActionChip (Button)" description="No dropdown, just an action" descriptionComponent="<ActionChip variant='button'>">
+			<ActionChip
+				label={clicked ? "Clicked!" : "Click me"}
+				onClick={() => setClicked(true)}
+				variant="button"
+			/>
+			<ActionChip
+				label="Disabled"
+				onClick={() => {}}
+				disabled
+				variant="button"
+			/>
 		</ChipSection>
 	)
 }
@@ -73,7 +97,7 @@ const ActionChips = () => {
 const FilterChips = () => (
 	<ChipSection title="FilterChip" description="Made using the " descriptionComponent="<FilterChip>">
 		{Array.from({ length: 5 }).map((_, i) => (
-			<FilterChip key={i} label={`Label`} />
+			<FilterChip key={i} label={`Label ${i + 1}`} />
 		))}
 	</ChipSection>
 )
