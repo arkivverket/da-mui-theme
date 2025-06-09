@@ -34,7 +34,7 @@
 		"react": "^19.0.0"
 	},
 	"devDependencies": {
-		"@mui/x-date-pickers": "^7.23.2",
+		"@mui/x-date-pickers": "^8.5.1",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
 		"@svgr/webpack": "^8.1.0",
 		"@types/node": "^22.10.2",
