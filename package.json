@@ -37,7 +37,7 @@
 		"@mui/x-date-pickers": "^7.23.2",
 		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
 		"@svgr/webpack": "^8.1.0",
-		"@types/node": "^22.10.2",
+		"@types/node": "^24.0.3",
 		"@types/react": "^19.0.1",
 		"@types/react-dom": "^19.0.1",
 		"dayjs": "^1.11.13",
