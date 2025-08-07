@@ -2,6 +2,7 @@ import type { DaBadgeClassKey, DaBadgeProps } from "@digitalarkivet/mui-theme/co
 import type { ProgressBarProps } from "@digitalarkivet/mui-theme/components/ProgressBar"
 import type { PaletteColorOptions } from "@mui/material"
 import type { OverridesStyleRules } from "@mui/material/styles/overrides"
+import type { CSSProperties } from "@mui/material/styles/createMixins"
 
 export type BorderColor = {
 	default: string
@@ -82,6 +83,53 @@ declare module "@mui/material/styles" {
 		floating: string
 		darkGreen: string
 	}
+
+	interface TypographyVariants {
+		body: CSSProperties
+		bodyBold: CSSProperties
+		bodyLarge: CSSProperties
+		bodyLargeBold: CSSProperties
+		bodyLink: CSSProperties
+		bodyMono: CSSProperties
+		buttonLink: CSSProperties
+		buttonLinkSmall: CSSProperties
+		caption: CSSProperties
+		captionBold: CSSProperties
+		display1: CSSProperties
+		display2: CSSProperties
+		display3: CSSProperties
+		display4: CSSProperties
+		displayHuge: CSSProperties
+		input: CSSProperties
+		label: CSSProperties
+		labelBold: CSSProperties
+		labelMono: CSSProperties
+		section: CSSProperties
+	}
+
+	interface TypographyVariantsOptions {
+		body?: CSSProperties
+		bodyBold?: CSSProperties
+		bodyLarge?: CSSProperties
+		bodyLargeBold?: CSSProperties
+		bodyLink?: CSSProperties
+		bodyMono?: CSSProperties
+		buttonLink?: CSSProperties
+		buttonLinkSmall?: CSSProperties
+		caption?: CSSProperties
+		captionBold?: CSSProperties
+		display1?: CSSProperties
+		display2?: CSSProperties
+		display3?: CSSProperties
+		display4?: CSSProperties
+		displayHuge?: CSSProperties
+		input?: CSSProperties
+		label?: CSSProperties
+		labelBold?: CSSProperties
+		labelMono?: CSSProperties
+		section?: CSSProperties
+	}
+
 	interface Components {
 		DaBadge?: {
 			defaultProps?: DaBadgeProps
@@ -95,90 +143,96 @@ declare module "@mui/material/styles" {
 
 declare module "@mui/material/styles/createTypography" {
 	interface FontStyle {
-		fontWeightRoman: React.CSSProperties["fontWeight"]
-		lineHeight100: React.CSSProperties["lineHeight"]
-		lineHeight110: React.CSSProperties["lineHeight"]
-		lineHeight120: React.CSSProperties["lineHeight"]
-		lineHeight125: React.CSSProperties["lineHeight"]
-		lineHeight130: React.CSSProperties["lineHeight"]
-		lineHeight140: React.CSSProperties["lineHeight"]
-		lineHeight150: React.CSSProperties["lineHeight"]
-		fontSize12: React.CSSProperties["fontSize"]
-		fontSize14: React.CSSProperties["fontSize"]
-		fontSize16: React.CSSProperties["fontSize"]
-		fontSize20: React.CSSProperties["fontSize"]
-		fontSize24: React.CSSProperties["fontSize"]
-		fontSize32: React.CSSProperties["fontSize"]
-		fontSize40: React.CSSProperties["fontSize"]
-		fontSize48: React.CSSProperties["fontSize"]
-		fontSize56: React.CSSProperties["fontSize"]
-		fontSize72: React.CSSProperties["fontSize"]
-		fontSize96: React.CSSProperties["fontSize"]
+		fontWeightRoman: CSSProperties["fontWeight"]
+		lineHeight100: CSSProperties["lineHeight"]
+		lineHeight110: CSSProperties["lineHeight"]
+		lineHeight120: CSSProperties["lineHeight"]
+		lineHeight125: CSSProperties["lineHeight"]
+		lineHeight130: CSSProperties["lineHeight"]
+		lineHeight140: CSSProperties["lineHeight"]
+		lineHeight150: CSSProperties["lineHeight"]
+		fontSize12: CSSProperties["fontSize"]
+		fontSize14: CSSProperties["fontSize"]
+		fontSize16: CSSProperties["fontSize"]
+		fontSize20: CSSProperties["fontSize"]
+		fontSize24: CSSProperties["fontSize"]
+		fontSize32: CSSProperties["fontSize"]
+		fontSize40: CSSProperties["fontSize"]
+		fontSize48: CSSProperties["fontSize"]
+		fontSize56: CSSProperties["fontSize"]
+		fontSize72: CSSProperties["fontSize"]
+		fontSize96: CSSProperties["fontSize"]
 	}
 
 	interface Typography {
-		body: React.CSSProperties
-		bodyBold: React.CSSProperties
-		bodyLarge: React.CSSProperties
-		bodyLargeBold: React.CSSProperties
-		bodyLink: React.CSSProperties
-		buttonLink: React.CSSProperties
-		buttonLinkSmall: React.CSSProperties
-		captionBold: React.CSSProperties
-		input: React.CSSProperties
-		label: React.CSSProperties
-		labelBold: React.CSSProperties
-
-		displayHuge: React.CSSProperties
-		display1: React.CSSProperties
-		display2: React.CSSProperties
-		display3: React.CSSProperties
-		display4: React.CSSProperties
+		body: CSSProperties
+		bodyBold: CSSProperties
+		bodyLarge: CSSProperties
+		bodyLargeBold: CSSProperties
+		bodyLink: CSSProperties
+		bodyMono: CSSProperties
+		buttonLink: CSSProperties
+		buttonLinkSmall: CSSProperties
+		caption: CSSProperties
+		captionBold: CSSProperties
+		display1: CSSProperties
+		display2: CSSProperties
+		display3: CSSProperties
+		display4: CSSProperties
+		displayHuge: CSSProperties
+		input: CSSProperties
+		label: CSSProperties
+		labelBold: CSSProperties
+		labelMono: CSSProperties
+		section: CSSProperties
 	}
 
 	interface TypographyOptions {
-		body?: React.CSSProperties
-		bodyBold?: React.CSSProperties
-		bodyLarge?: React.CSSProperties
-		bodyLargeBold?: React.CSSProperties
-		bodyLink?: React.CSSProperties
-		buttonLink?: React.CSSProperties
-		buttonLinkSmall?: React.CSSProperties
-		captionBold?: React.CSSProperties
-		input?: React.CSSProperties
-		label?: React.CSSProperties
-		labelBold?: React.CSSProperties
-		displayHuge?: React.CSSProperties
-		display1?: React.CSSProperties
-		display2?: React.CSSProperties
-		display3?: React.CSSProperties
-		display4?: React.CSSProperties
-		section?: React.CSSProperties
-		bodyMono?: React.CSSProperties
-		labelMono?: React.CSSProperties
+		body?: CSSProperties
+		bodyBold?: CSSProperties
+		bodyLarge?: CSSProperties
+		bodyLargeBold?: CSSProperties
+		bodyLink?: CSSProperties
+		bodyMono?: CSSProperties
+		buttonLink?: CSSProperties
+		buttonLinkSmall?: CSSProperties
+		caption?: CSSProperties
+		captionBold?: CSSProperties
+		display1?: CSSProperties
+		display2?: CSSProperties
+		display3?: CSSProperties
+		display4?: CSSProperties
+		displayHuge?: CSSProperties
+		input?: CSSProperties
+		label?: CSSProperties
+		labelBold?: CSSProperties
+		labelMono?: CSSProperties
+		section?: CSSProperties
 	}
 }
 
 declare module "@mui/material/Typography" {
 	interface TypographyPropsVariantOverrides {
-		displayHuge: true
-		display1: true
-		display2: true
-		display3: true
-		display4: true
-		section: true
+		body: true
+		bodyBold: true
 		bodyLarge: true
 		bodyLargeBold: true
-		body: true
+		bodyLink: true
 		bodyMono: true
-		bodyBold: true
 		buttonLink: true
 		buttonLinkSmall: true
 		caption: true
 		captionBold: true
+		display1: true
+		display2: true
+		display3: true
+		display4: true
+		displayHuge: true
+		input: true
 		label: true
 		labelBold: true
 		labelMono: true
+		section: true
 	}
 }
 
