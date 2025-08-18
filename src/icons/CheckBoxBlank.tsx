@@ -17,7 +17,7 @@ const CheckBoxBlank: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
 				rx={2}
 				fill="none"
 				stroke="#1D1D1D"
-				strokeWidth={1.5}
+				strokeWidth={1}
 			/>
 		</SvgIcon>
 	),
