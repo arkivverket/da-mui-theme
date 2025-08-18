@@ -6,9 +6,19 @@ const CheckBoxBlank: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
 	muiName: string
 } = Object.assign(
 	(props: SvgIconProps) => (
-		<SvgIcon {...props} viewBox="0 -960 960 960">
-			<rect x="190" y="-770" width="580" height="580" fill="white" />
-			<path d="M215.38-160q-23.05 0-39.22-16.16Q160-192.33 160-215.38v-529.24q0-23.05 16.16-39.22Q192.33-800 215.38-800h529.24q23.05 0 39.22 16.16Q800-767.67 800-744.62v529.24q0 23.05-16.16 39.22Q767.67-160 744.62-160H215.38Zm0-30.77h529.24q9.23 0 16.92-7.69 7.69-7.69 7.69-16.92v-529.24q0-9.23-7.69-16.92-7.69-7.69-16.92-7.69H215.38q-9.23 0-16.92 7.69-7.69 7.69-7.69 16.92v529.24q0 9.23 7.69 16.92 7.69 7.69 16.92 7.69Z" />
+		<SvgIcon {...props} viewBox="0 0 24 24">
+			<rect className="checkbox-bg" x={0.5} y={0.5} width={23} height={23} rx={2} fill="currentColor" />
+			<rect
+				className="checkbox-border"
+				x={0.5}
+				y={0.5}
+				width={23}
+				height={23}
+				rx={2}
+				fill="none"
+				stroke="#1D1D1D"
+				strokeWidth={1.5}
+			/>
 		</SvgIcon>
 	),
 	{ muiName: "CheckBoxBlank" },

@@ -7,7 +7,9 @@ export const CheckboxExample = () => {
 			<Grid>
 				<Checkbox />
 				<Checkbox indeterminate />
+				<Checkbox checked />
 				<Checkbox disabled />
+				<Checkbox indeterminate disabled />
 				<Checkbox checked disabled />
 			</Grid>
 		</ExampleWrapper>

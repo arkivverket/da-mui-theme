@@ -19,6 +19,8 @@ import {
 	tabsClasses,
 } from "@mui/material"
 import ExpandIcon from "./icons/ExpandIcon"
+import CheckBoxChecked from "./icons/CheckBoxChecked"
+import CheckBoxIndeterminate from "./icons/CheckBoxIndeterminate"
 import CalendarMonthIcon from "./icons/CalendarMonthIcon"
 import { Dayjs } from "dayjs"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
@@ -629,27 +631,38 @@ const theme = createTheme(
 				defaultProps: {
 					disableRipple: true,
 					icon: <CheckBoxBlank />,
+					checkedIcon: <CheckBoxChecked />,
+					indeterminateIcon: <CheckBoxIndeterminate />,
 				},
 				styleOverrides: {
 					root: {
+						"& svg .checkbox-bg": {
+							color: themeColors.palette.background.white,
+						},
 						[`&.${checkboxClasses.root}:not(.${checkboxClasses.checked}):not(.${checkboxClasses.indeterminate})`]:
 							{
 								"&:hover": {
-									"& svg path": {
+									"& svg .checkbox-border": {
 										stroke: themeColors.palette.common.black,
-										strokeWidth: 20,
+										strokeWidth: 3,
 									},
 								},
 							},
 						[`&.${checkboxClasses.disabled}`]: {
-							color: themeColors.palette.borders.disabled,
+							"& svg .checkbox-bg": {
+								fill: themeColors.palette.background.gray,
+							},
+							"& svg .checkbox-border": {
+								stroke: themeColors.palette.borders.disabled,
+							},
 						},
-						[`&.${checkboxClasses.checked}`]: {
+						[`&.${checkboxClasses.checked},&.${checkboxClasses.indeterminate}`]: {
 							color: themeColors.palette.fills.secondary,
 						},
-						[`&.${checkboxClasses.indeterminate}`]: {
-							color: themeColors.palette.fills.secondary,
-						},
+						[`&.${checkboxClasses.checked}.${checkboxClasses.disabled},&.${checkboxClasses.indeterminate}.${checkboxClasses.disabled}`]:
+							{
+								opacity: 0.5,
+							},
 					},
 				},
 			},
