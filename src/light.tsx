@@ -644,7 +644,7 @@ const theme = createTheme(
 								"&:hover": {
 									"& svg .checkbox-border": {
 										stroke: themeColors.palette.common.black,
-										strokeWidth: 3,
+										strokeWidth: 2,
 									},
 								},
 							},
