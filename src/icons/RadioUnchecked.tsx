@@ -7,7 +7,7 @@ const RadioUncheckedIcon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
 } = Object.assign(
 	(props: SvgIconProps) => (
 		<SvgIcon {...props} viewBox="0 0 24 24">
-			<circle cx="14" cy="12" r="9" fill="white" stroke="#1D1D1D" strokeWidth={1} />
+			<circle cx="13" cy="12" r="10" fill="white" stroke="#1D1D1D" strokeWidth={1} />
 		</SvgIcon>
 	),
 	{ muiName: "RadioUncheckedIcon" },
