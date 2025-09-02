@@ -825,17 +825,20 @@ const theme = createTheme(
 						[`&.${radioClasses.disabled}`]: {
 							color: themeColors.palette.text.disabled,
 							"& svg": {
-								"& path": {
+								"& circle": {
 									stroke: themeColors.palette.borders.disabled,
+								},
+								"& circle:first-of-type": {
 									fill: themeColors.palette.background.gray,
 								},
-								"& circle": {
+								"& circle:nth-of-type(2)": {
+									// inner circle in checked state
 									fill: themeColors.palette.borders.disabled,
 								},
 							},
 						},
 						"&:hover": {
-							"& svg path": {
+							"& svg circle": {
 								strokeWidth: 2,
 							},
 						},
