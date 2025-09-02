@@ -6,9 +6,14 @@ const RadioCheckedIcon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
 	muiName: string
 } = Object.assign(
 	(props: SvgIconProps) => (
-		<SvgIcon {...props} viewBox="0 -960 960 960">
-			<circle cx="480" cy="-480" r="360" fill="white" />
-			<path d="M480-294q78 0 132-54t54-132q0-78-54-132t-132-54q-78 0-132 54t-54 132q0 78 54 132t132 54Zm0 214q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Zm0-60q142 0 241-99.5T820-480q0-142-99-241t-241-99q-141 0-240.5 99T140-480q0 141 99.5 240.5T480-140Zm0-340Z" />
+		<SvgIcon {...props} viewBox="0 0 24 24">
+			<path
+				d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+				fill="white"
+				stroke="#0D0D0D"
+				strokeWidth={2}
+			/>
+			<circle cx="12" cy="12" r="6" fill="#0D0D0D" />
 		</SvgIcon>
 	),
 	{ muiName: "RadioCheckedIcon" },

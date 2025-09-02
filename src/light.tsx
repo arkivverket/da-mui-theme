@@ -824,11 +824,19 @@ const theme = createTheme(
 						},
 						[`&.${radioClasses.disabled}`]: {
 							color: themeColors.palette.text.disabled,
+							"& svg": {
+								"& path": {
+									stroke: themeColors.palette.borders.disabled,
+									fill: themeColors.palette.background.gray,
+								},
+								"& circle": {
+									fill: themeColors.palette.borders.disabled,
+								},
+							},
 						},
 						"&:hover": {
 							"& svg path": {
-								stroke: themeColors.palette.common.black,
-								strokeWidth: 20,
+								strokeWidth: 2,
 							},
 						},
 					},
