@@ -1,4 +1,4 @@
-import { Checkbox, Grid2 as Grid } from "@mui/material"
+import { Checkbox,  Grid } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 
 export const CheckboxExample = () => {

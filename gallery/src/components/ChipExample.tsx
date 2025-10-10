@@ -1,4 +1,4 @@
-import { Stack, Grid2 as Grid, Typography, Box, Chip } from "@mui/material"
+import { Stack,  Grid, Typography, Box, Chip } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 import FilterChip from "@digitalarkivet/mui-theme/components/FilterChip"
 import ActionChip from "@digitalarkivet/mui-theme/components/ActionChip"
