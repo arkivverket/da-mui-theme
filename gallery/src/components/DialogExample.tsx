@@ -1,4 +1,4 @@
-import { Box, Button, Dialog, DialogContent, DialogTitle, IconButton, Grid2 as Grid } from "@mui/material"
+import { Box, Button, Dialog, DialogContent, DialogTitle, IconButton,  Grid } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 import { useState } from "react"
 import { CloseOutlined as CloseIcon } from "@mui/icons-material"
