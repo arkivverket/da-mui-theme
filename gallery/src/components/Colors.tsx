@@ -1,4 +1,4 @@
-import { Box, Grid2 as Grid, Stack, StackProps, styled, Tooltip, Typography, useTheme } from "@mui/material"
+import { Box, Grid, Stack, StackProps, styled, Tooltip, Typography, useTheme } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 
 const ColorDropRectangle = styled("div")({

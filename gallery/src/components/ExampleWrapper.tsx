@@ -1,4 +1,4 @@
-import { Grid2 as Grid, Paper, Typography } from "@mui/material"
+import { Grid, Paper, Typography } from "@mui/material"
 
 type ExampleWrapperProps = {
 	title: string

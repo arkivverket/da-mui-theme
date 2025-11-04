@@ -1,4 +1,4 @@
-import { Fab, Grid2 as Grid, Stack, Tooltip, Typography } from "@mui/material"
+import { Fab, Grid, Stack, Tooltip, Typography } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 import { TuneOutlined } from "@mui/icons-material"
 
