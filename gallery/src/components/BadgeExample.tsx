@@ -1,6 +1,6 @@
 import { DaBadge } from "@digitalarkivet/mui-theme/components/DaBadge"
 import { ExampleWrapper } from "./ExampleWrapper"
-import { Grid2 as Grid } from "@mui/material"
+import {  Grid } from "@mui/material"
 import { CardGiftcardOutlined as GiftIcon } from "@mui/icons-material"
 
 export const BadgeExample = () => {
