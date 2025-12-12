@@ -216,3 +216,8 @@ $RECYCLE.BIN/
 
 .vscode
 gallery/build
+
+
+.history/
+aliases*
+mise*.toml
