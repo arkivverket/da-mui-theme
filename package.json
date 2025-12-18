@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.dist.json",
-    "gallery": "npx webpack serve",
+    "gallery": "pnpm webpack serve",
     "clean": "rm -r dist/*",
     "format": "prettier --write .",
     "format-ci": "prettier --list-different .",
