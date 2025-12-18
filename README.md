@@ -10,4 +10,4 @@ Use `npm run gallery` to start a local dev server that serves the application de
 
 * Bump version in package.json using semantic versioning.
 * Commit and tag with same version.
-* Create the release, workflow handles publishing to NPM. 
+* Create the release, workflow handles publishing to NPM.
