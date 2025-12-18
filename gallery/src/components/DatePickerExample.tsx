@@ -1,10 +1,10 @@
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers"
-import { ExampleWrapper } from "./ExampleWrapper"
-import { InnerPaper } from "./InnerPaper"
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
+import { nbNO } from "@mui/x-date-pickers/locales"
 import dayjs from "dayjs"
 import "dayjs/locale/nb"
-import { nbNO } from "@mui/x-date-pickers/locales"
+import { ExampleWrapper } from "./ExampleWrapper"
+import { InnerPaper } from "./InnerPaper"
 
 dayjs.locale("nb")
 

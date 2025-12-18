@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.dist.json",
-    "gallery": "npx webpack serve",
+    "gallery": "pnpm webpack serve",
     "clean": "rm -r dist/*",
     "format": "prettier --write .",
     "format-ci": "prettier --list-different .",
@@ -33,7 +33,8 @@
     "up": "pnpm update --no-save # Update without changing package.json",
     "iup": "pnpm upgrade --interactive --latest",
     "rmnm": "rm -rf node_modules && rm -f pnpm-lock.yaml && rm -f package-lock.json",
-    "depcheck": "pnpm dlx depcheck"
+    "depcheck": "pnpm dlx depcheck",
+    "check-unmet-deps": "pnpm install --resolution-only"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
@@ -43,7 +44,7 @@
     "react": "^19.1.1"
   },
   "devDependencies": {
-    "@mui/x-date-pickers": "^7.29.4",
+    "@mui/x-date-pickers": "^8.22.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.2",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^25.0.3",
