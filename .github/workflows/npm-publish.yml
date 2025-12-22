@@ -27,4 +27,5 @@ jobs:
 
       - run: pnpm run ci
       - run: pnpm run build
-      - run: pnpm publish --no-git-checks --provenance
+      - run: pnpm publish --no-git-checks --provenance --access public
+
