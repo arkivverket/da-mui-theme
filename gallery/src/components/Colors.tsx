@@ -1,4 +1,4 @@
-import { Box,  Grid, Stack, StackProps, styled, Tooltip, Typography, useTheme } from "@mui/material"
+import { Box, Grid, Stack, StackProps, styled, Theme, Tooltip, Typography, useTheme } from "@mui/material"
 import { ExampleWrapper } from "./ExampleWrapper"
 
 const ColorDropRectangle = styled("div")({
@@ -110,9 +110,17 @@ const calculateGridLayout = (colors: string[]): { xs: string; md: string } => {
 	}
 }
 
+type ThemePalette = Theme["palette"]
+type PaletteDisplay = Array<{
+	name: string
+	path: keyof ThemePalette
+	colors: string[]
+}>
+
 export const Colors = () => {
 	const defaultColors = ["Main", "Dark", "Light"]
-	const palette = [
+
+	const palette: PaletteDisplay = [
 		{ name: "Primary colors", path: "primary", colors: defaultColors },
 		{ name: "Secondary colors", path: "secondary", colors: defaultColors },
 		{ name: "Error colors", path: "error", colors: [...defaultColors, "Accent", "Background"] },
